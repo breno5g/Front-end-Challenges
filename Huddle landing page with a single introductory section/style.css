@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    box-sizing: border-box;
+    text-decoration: none;
+    user-select: none;
+    outline: none;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #6751B1;
+    background-image: url(assets/images/bg-desktop.svg);
+    padding: 32px 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* =-=-=-=-= Header =-=-=-=-= */
+header {
+    width: 1200px;
+    padding: 15px;
+}
+
+header img{
+    align-self: start;
+    width: 170px;
+}
+
+/* =-=-=-=-= Container =-=-=-=-= */
+.container {
+    width: 1200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    height: 80%;
+    margin-top: 25px;
+}
+
+.leftSide  img{
+    width: 100%;
+}
+
+.rightSide h1:first-child{
+    margin-top: 50px;
+}
+
+.rightSide h1 {
+    font-size: 37px;
+    font-weight: 600;
+}
+
+.rightSide p {
+    width: 90%;
+    margin-top: 20px;
+}
+
+.rightSide button {
+    margin-top: 25px;
+    padding: 15px 60px;
+    color: #6751B1;
+    border-radius: 30px;
+    box-shadow: 2px 2px 6px 2px rgba(0, 0, 0, 0.349);
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.rightSide button:hover {
+    color: white;
+    background-color: hsl(300, 69%, 71%);
+}
+
+.socialMedia {
+    display: flex;
+    margin-top: 40px;
+    justify-content: flex-end;
+    /* background-color: rgb(255, 166, 0); */
+}
+
+.socialMedia img {
+    width: 40px;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 750px) {
+    body {
+        padding: 20px;
+        overflow: auto;
+    }
+    
+    header {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        height: 80%;
+        margin-top: 25px;
+    }
+
+    .leftSide  img{
+        width: 100%;
+    }
+    
+    .rightSide h1 {
+        font-size: 32px;
+        text-align: left;
+    }
+
+    .rightSide button {
+        margin-top: 15px; 
+        transform: translateX(50%);
+    }
+
+    .socialMedia {
+        justify-content: center;
+    }
+
+    footer {
+        transform: translateY(150px);
+    }
+}
+
+footer {
+    padding: 15px;
+}
+
+footer a:hover {
+    color: white;
+}
