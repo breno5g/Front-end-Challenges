@@ -61,6 +61,9 @@ body {
     grid-area: c4;
     background-color: #1A222D;
 }
+.container .four .top img {
+    border: 2px solid #765CC8;
+}
 .five {
     grid-area: c5;
     background-color: #FFFFFF;
@@ -77,6 +80,7 @@ body {
     width: 40px;
     border-radius: 50%;
     margin-right: 25px;
+    border: 2px solid rgba(255, 255, 255, 0.493);
 }
 
 .card .top .info h1{
