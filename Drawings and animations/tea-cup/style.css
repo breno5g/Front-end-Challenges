@@ -23,3 +23,10 @@ body {
     justify-content: center;
 }
 
+.tea-cup .inside {
+    width: 90%;
+    height: 90%;
+    border: 5px solid black;
+    border-radius: 50%;
+    position: relative;
+}
