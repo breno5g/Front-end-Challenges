@@ -30,3 +30,16 @@ body {
     border-radius: 50%;
     position: relative;
 }
+
+.tea-cup .handle {
+    width: 50px;
+    height: 60px;
+    border-top: 6px solid black;
+    border-left: 6px solid black;
+    border-right: 6px solid black;
+    position: absolute;
+    border-radius: 20px 20px 0 0;
+    top: -7px;
+    right: 7px;
+    transform: rotate(45deg);
+}
