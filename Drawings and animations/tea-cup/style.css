@@ -30,6 +30,7 @@ body {
     border-radius: 50%;
     position: relative;
     background-color: #A67A53;
+    overflow: hidden;
 }
 
 .tea-cup .handle {
@@ -43,4 +44,47 @@ body {
     top: -7px;
     right: 7px;
     transform: rotate(45deg);
+}
+
+.tea-cup .inside .main-shadow {
+    transform: rotate(45deg);
+}
+
+.tea-cup .inside .main-shadow .shadow:nth-child(1){
+    background-color: #734C23;
+    width: 80%;
+    height: 160px;
+    border-radius: 0% 86% 73% 0% / 10% 61% 92% 58% ;
+    transform: translateY(-40px);
+}
+
+.tea-cup .inside .main-shadow .shadow:nth-child(2){
+    background-color: #734C23;
+    width: 80%;
+    height: 130px;
+    border-radius: 0% 86% 83% 0% / 10% 97% 92% 10%;
+    position: absolute;
+    transform: translateY(-5px);
+}
+
+.tea-cup .inside .main-shadow .gambiarra{
+    background-color: #734C23;
+    width: 155px;
+    height: 50px;
+    position: absolute;
+    transform: translate(0, -45px);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.tea-cup .inside .main-shadow .gambiarra div {
+    width: 30px;
+    height: 42px;
+    background-color: #A67A53;
+    position: absolute;
+    right: -17px;
+    top: 0px;
+    border-radius: 50% ;
+    transform: rotate(180deg);
 }
