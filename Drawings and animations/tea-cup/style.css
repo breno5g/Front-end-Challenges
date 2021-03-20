@@ -29,6 +29,7 @@ body {
     border: 5px solid black;
     border-radius: 50%;
     position: relative;
+    background-color: #A67A53;
 }
 
 .tea-cup .handle {
