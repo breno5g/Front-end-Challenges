@@ -46,11 +46,11 @@ body {
     transform: rotate(45deg);
 }
 
-.tea-cup .inside .main-shadow {
+.tea-cup .inside .second-color {
     transform: rotate(45deg);
 }
 
-.tea-cup .inside .main-shadow .shadow:nth-child(1){
+.tea-cup .inside .second-color .shadow:nth-child(1){
     background-color: #734C23;
     width: 80%;
     height: 160px;
@@ -58,33 +58,191 @@ body {
     transform: translateY(-40px);
 }
 
-.tea-cup .inside .main-shadow .shadow:nth-child(2){
+.tea-cup .inside .second-color .shadow:nth-child(2){
     background-color: #734C23;
     width: 80%;
     height: 130px;
-    border-radius: 0% 86% 83% 0% / 10% 97% 92% 10%;
+    border-radius: 0% 86% 100% 0% / 10% 61% 92% 58% ;
     position: absolute;
-    transform: translateY(-5px);
+    transform: translateY(10px);
 }
 
-.tea-cup .inside .main-shadow .gambiarra{
+.tea-cup .inside .second-color .gambiarra{
     background-color: #734C23;
-    width: 155px;
-    height: 50px;
+    width: 160px;
+    height: 70px;
     position: absolute;
     transform: translate(0, -45px);
-    overflow: hidden;
     display: flex;
     align-items: center;
 }
 
-.tea-cup .inside .main-shadow .gambiarra div {
+.tea-cup .inside .second-color .gambiarra div {
     width: 30px;
-    height: 42px;
+    height: 60px;
     background-color: #A67A53;
     position: absolute;
     right: -17px;
-    top: 0px;
+    top: -1px;
     border-radius: 50% ;
     transform: rotate(180deg);
+}
+
+.tea-cup .inside .details div:nth-child(1) {
+    background-color: #A67A53;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    position: absolute;
+    margin: auto;
+    top: -150px;
+    bottom: 0;
+    left: -100px;
+    right: 0;
+}
+
+.tea-cup .inside .details div:nth-child(2) {
+    background-color: #A67A53;
+    width: 40px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    margin: auto;
+    top: -130px;
+    bottom: 0;
+    left: 0px;
+    right: -50px;
+}
+
+.tea-cup .inside .details div:nth-child(3) {
+    background-color: #A67A53;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    position: absolute;
+    margin: auto;
+    top: 0px;
+    bottom: -60px;
+    left: -200px;
+    right: 0px;
+}
+
+.tea-cup .inside .details div:nth-child(4) {
+    background-color: #A67A53;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    margin: auto;
+    top: 0px;
+    bottom: -160px;
+    left: -130px;
+    right: 0px;
+}
+
+.tea-cup .inside .details div:nth-child(5) {
+    background-color: #734C23;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    position: absolute;
+    margin: auto;
+    top: 0px;
+    bottom: -250px;
+    left: -50px;
+    right: 0px;
+}
+
+.tea-cup .inside .details div:nth-child(6) {
+    background-color: #734C23;
+    width: 40px;
+    height: 25px;
+    border-radius: 50%;
+    position: absolute;
+    margin: auto;
+    top: 0px;
+    bottom: 0px;
+    left: -30px;
+    right: 0px;
+}
+
+.tea-cup .inside .details div:nth-child(7) {
+    background-color: #734C23;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    position: absolute;
+    margin: auto;
+    top: -70px;
+    bottom: 0px;
+    left: 0px;
+    right: -250px;
+}
+
+.tea-cup .inside .details div:nth-child(8) {
+    background-color: #734C23;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    position: absolute;
+    margin: auto;
+    top: -60px;
+    bottom: 0px;
+    left: 0px;
+    right: -240px;
+}
+
+.tea-cup .inside .details div:nth-child(9) {
+    background-color: #734C23;
+    width: 10px;
+    height: 30px;
+    border-radius: 76% 86% 100% 50% ;
+    position: absolute;
+    margin: auto;
+    top: 0px;
+    bottom: -20px;
+    left: 0px;
+    right: -270px;
+}
+
+.tea-cup .inside .details div:nth-child(10) {
+    background-color: #734C23;
+    width: 20px;
+    height: 120px;
+    border-radius: 0 86% 100% 0 ;
+    position: absolute;
+    margin: auto;
+    top: 0px;
+    bottom: -190px;
+    left: 0px;
+    right: -160px;
+    transform: rotate(50deg);
+}
+
+.tea-cup .inside .details div:nth-child(11) {
+    background-color: #A67A53;
+    width: 20px;
+    height: 125px;
+    border-radius: 0 86% 0 50% ;
+    position: absolute;
+    margin: auto;
+    top: 0px;
+    bottom: -173px;
+    left: 0px;
+    right: -150px;
+    transform: rotate(55deg);
+}
+
+.tea-cup .inside .details div:nth-child(12) {
+    background-color: #734C23;
+    width: 7px;
+    height: 7px;
+    border-radius: 50% ;
+    position: absolute;
+    margin: auto;
+    top: 0px;
+    bottom: -10px;
+    left: 0px;
+    right: -150px;
+    transform: rotate(55deg);
 }
