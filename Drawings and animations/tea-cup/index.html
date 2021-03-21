@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="handle"></div>
-    <div class="tea-cup">
+    <div class="tea-cup" onclick="fill()">
         <div class="inside">
             <div class="consume-coffee">
                 <div></div>
@@ -38,5 +38,15 @@
             </div>
         </div>
     </div>
+    <script>
+        function fill() {
+            let cup = document.querySelector(".consume-coffee");
+            if(cup.style.opacity > 0) {
+                cup.style.opacity = 0;
+            } else {
+                cup.style.opacity = 100;
+            }
+        }
+    </script>
 </body>
 </html>
