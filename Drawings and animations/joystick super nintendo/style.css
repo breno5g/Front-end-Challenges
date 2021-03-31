@@ -32,14 +32,28 @@ body {
 }
 
 .joystick-body .joystick-body-stroke {
-    width: 90px;
+    width: 100px;
     height: 5px;
     background-color: #53243D;
     position: absolute;
     margin: auto;
-    bottom: -5px;
+    bottom: -10px;
     left: 0;
     right: 0;
+    box-shadow:  0 -5px #a59e95;
+}
+
+.joystick .cable {
+    width: 10px;
+    height: 200px;
+    background-color: #53243D;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: -190px;
+    border: 1px solid #53243D;
+    box-shadow: inset -4px 0 #9B7188;
 }
 
 .joystick .left-hand,
@@ -49,6 +63,7 @@ body {
     background-color: #DBD1C7;
     position: absolute;
     border: 5px solid #53243D;
+    box-shadow: inset 0 -5px #a59e95;
 }
 
 .joystick .left-hand,
@@ -79,7 +94,8 @@ body {
     align-items: center;
     justify-content: center;
     border: 5px solid #53243D;
-    box-shadow: inset 0 5px #FFFFFF70;
+    box-shadow: inset 0 5px #FFFFFF70,
+                0 5px #00000031;
 }
 
 .arrows::before {
@@ -167,6 +183,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: inset 0 5px #FFFFFF70,
+                0 5px #00000031;
 }
 
 .joystick .right-hand .buttons section {
