@@ -3,3 +3,46 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: #b2e9cd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.joystick {
+    width: 530px;
+    height: 250px;
+    position: relative;
+}
+
+.joystick-body {
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    background-color: aqua;
+    margin: auto;
+    left: 0;
+    right: 0;
+}
+
+.joystick .left,
+.joystick .right {
+    width: 250px;
+    height: 250px;
+    background-color: aqua;
+    position: absolute;
+}
+
+.joystick .left {
+    left: 0px;
+    border-radius: 50%;
+}
+
+.joystick .right {
+    right: 0px;
+    border-radius: 50%;
+}
