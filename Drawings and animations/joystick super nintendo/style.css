@@ -23,12 +23,12 @@ body {
     width: 300px;
     height: 200px;
     position: absolute;
-    background-color: #CDB8C4;
+    background-color: #DBD1C7;
     margin: auto;
     left: 0;
     right: 0;
     border-top: 5px solid #53243D;
-    z-index: 10;
+    z-index: 1;
 }
 
 .joystick-body .joystick-body-stroke {
@@ -42,21 +42,114 @@ body {
     right: 0;
 }
 
-.joystick .left,
-.joystick .right {
+.joystick .left-hand,
+.joystick .right-hand {
     width: 250px;
     height: 250px;
-    background-color: #CDB8C4;
+    background-color: #DBD1C7;
     position: absolute;
     border: 5px solid #53243D;
 }
 
-.joystick .left {
+.joystick .left-hand {
     left: 0px;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.joystick .right-hand {
+    right: 0px;
     border-radius: 50%;
 }
 
-.joystick .right {
-    right: 0px;
+
+.arrows {
+    position: absolute;
+    z-index: 5;
+    width: 70%;
+    height: 70%;
+    background-color: #D9BCCD;
     border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid #53243D;
+    box-shadow: inset 0 5px #FFFFFF70;
+}
+
+.arrows::before {
+    content: "";
+    width: 35px;
+    height: 35px;
+    background-color: #9B7188;
+}
+
+.arrows::after {
+    content: "";
+    width: 25px;
+    height: 25px;
+    border: 2px solid #53243D;
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: inset 3px 0 #FFFFFF70;
+}
+
+.joystick .left-hand .arrows button {
+    width: 35px;
+    height: 35px;
+    background-color: #9B7188;
+    border: 5px solid #53243D;
+    position: absolute;
+    box-shadow: inset 0 3px #FFFFFF80;
+}
+
+.joystick .left-hand .arrows button.top {
+    top: 30px;
+    border-bottom: none;
+}
+
+.joystick .left-hand .arrows button.bottom {
+    bottom: 30px;
+    border-top: none;
+    box-shadow: inset 0 -3px #00000036;
+}
+
+.joystick .left-hand .arrows button.right {
+    right: 30px;
+    border-left: none;
+}
+.joystick .left-hand .arrows button.left {
+    left: 30px;
+    border-right: none;
+}
+
+.joystick .left-hand .arrows button::after {
+    content: "\25B2";
+    font-size: 25px;
+    color: #53243D;
+    position: absolute;
+    margin: 0;
+    left: 0;
+    top: -4px;    
+}
+
+.joystick .left-hand .arrows button.right::after {
+    transform: rotate(90deg);
+    left: 7px;
+    top: -2px;
+}
+
+.joystick .left-hand .arrows button.left::after {
+    transform: rotate(-90deg);
+    right: 7px;
+    top: -2px;
+}
+
+.joystick .left-hand .arrows button.bottom::after {
+    transform: rotate(180deg);
+    left: 0px;
+    top: 4px;
 }
