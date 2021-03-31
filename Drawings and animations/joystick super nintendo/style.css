@@ -51,18 +51,20 @@ body {
     border: 5px solid #53243D;
 }
 
-.joystick .left-hand {
-    left: 0px;
+.joystick .left-hand,
+.joystick .right-hand {
     border-radius: 50%;
-    position: relative;
+    position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+.joystick .left-hand {
+    left: 0px;
+}
 
 .joystick .right-hand {
     right: 0px;
-    border-radius: 50%;
 }
 
 
@@ -103,7 +105,7 @@ body {
     background-color: #9B7188;
     border: 5px solid #53243D;
     position: absolute;
-    box-shadow: inset 0 3px #FFFFFF80;
+    box-shadow: inset 0 3px #FFFFFF90;
 }
 
 .joystick .left-hand .arrows button.top {
@@ -152,4 +154,68 @@ body {
     transform: rotate(180deg);
     left: 0px;
     top: 4px;
+}
+
+.joystick .right-hand .buttons {
+    width: 80%;
+    height: 80%;
+    background-color: #D9BCCD;
+    z-index: 5;
+    position: absolute;
+    border-radius: 50%;
+    border: 5px solid #53243D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.joystick .right-hand .buttons section {
+    width: 110px;
+    height: 50px;
+    background-color: #DBD1C7;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 50px;
+    border: 5px solid #53243D;
+    margin: 10px;
+    transform: rotate(-45deg);
+    position: absolute;
+    box-shadow: inset 0 3px #FFFFFF90,
+                0 3px #0000005d;
+}
+
+.joystick .right-hand .buttons section:nth-child(1) {
+    top: 30px;
+    left: 10px;
+}
+
+.joystick .right-hand .buttons section:nth-child(2) {
+    bottom: 30px;
+    right: 10px;
+}
+
+.joystick .right-hand .buttons section button {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #53243D;
+    border-radius: 50%;
+    box-shadow: inset 0 3px #FFFFFF90;
+}
+
+.joystick .right-hand .buttons section button:nth-child(1) {
+    background-color: #B5E27C;
+}
+
+.joystick .right-hand .buttons section button:nth-child(2) {
+    background-color: #6AC3D5;
+}
+
+.joystick .right-hand .buttons section:nth-child(2) button:nth-child(1) {
+    background-color: #e2d87c;
+}
+
+.joystick .right-hand .buttons section:nth-child(2) button:nth-child(2) {
+    background-color: #d56a8a;
 }
