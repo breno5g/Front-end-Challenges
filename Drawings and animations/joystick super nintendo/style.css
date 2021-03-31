@@ -23,7 +23,7 @@ body {
     content: "";
     width: 100%;
     height: 100px;
-    background-color: rgba(0, 0, 0, 0.082);
+    background-color: #0000001e;
     position: absolute;
     border-radius: 50%;
     bottom: -120px;
