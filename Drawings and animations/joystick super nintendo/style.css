@@ -31,6 +31,30 @@ body {
     z-index: 1;
 }
 
+.joystick-body::before {
+    content: "";
+    width: 120px;
+    height: 2px;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 20px;
+    border: 1px dashed #53243D;
+}
+
+.joystick-body::after {
+    content: "";
+    width: 120px;
+    height: 2px;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 30px;
+    border: 1px solid #53243D;
+}
+
 .joystick-body .joystick-body-stroke {
     width: 100px;
     height: 5px;
@@ -235,7 +259,7 @@ body {
 }
 
 .joystick .right-hand .buttons section:nth-child(2) button:nth-child(2) {
-    background-color: #d56a8a;
+    background-color: #d56a81;
 }
 
 .joystick .start-select::before,
