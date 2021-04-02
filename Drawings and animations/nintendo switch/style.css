@@ -172,6 +172,7 @@ body {
     position: absolute;
     text-shadow: 0 1px 0 #00000023;
     top: 5px;
+    color: var(--border);
 }
 
 .joycon-left span {
@@ -180,4 +181,23 @@ body {
 
 .joycon-right span {
     left: 10px;
+}
+
+.square-button,
+.home-button {
+    width: 20px;
+    height: 20px;
+    background-color: var(--buttons);
+    position: absolute;
+    border: 3px solid var(--border);
+    bottom: 50px;
+}
+
+.square-button {
+    right: 10px;
+}
+
+.home-button {
+    left: 10px;
+    border-radius: 50%;
 }
