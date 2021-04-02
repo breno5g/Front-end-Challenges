@@ -164,3 +164,20 @@ body {
 .joycon-left .action-buttons button:nth-child(4):after {
     transform: rotate(180deg);
 }
+
+.joycon-left span,
+.joycon-right span {
+    font-size: 20px;
+    font-weight: 900;
+    position: absolute;
+    text-shadow: 0 1px 0 #00000023;
+    top: 5px;
+}
+
+.joycon-left span {
+    right: 10px;
+}
+
+.joycon-right span {
+    left: 10px;
+}
