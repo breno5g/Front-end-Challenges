@@ -123,6 +123,8 @@ body {
     border-radius: 50%;
     border: 3px solid var(--border);
     position: absolute;
+    color: #f1f1f1;
+    font-weight: 800;
 }
 
 .action-buttons button:nth-child(1) {
@@ -139,4 +141,26 @@ body {
 
 .action-buttons button:nth-child(4) {
     bottom: 3px;
+}
+
+.joycon-left .action-buttons button::after {
+    content: "\25B2";
+    color: var(--border);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.joycon-left .action-buttons button:nth-child(2):after {
+    transform: rotate(90deg);
+}
+
+.joycon-left .action-buttons button:nth-child(3):after {
+    transform: rotate(-90deg);
+}
+
+.joycon-left .action-buttons button:nth-child(4):after {
+    transform: rotate(180deg);
 }
