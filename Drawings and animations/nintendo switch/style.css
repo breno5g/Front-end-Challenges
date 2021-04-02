@@ -230,13 +230,13 @@ body {
     display: inline-block;
     width: 400px;
     height: 280px;
-    background-color: #a9e4ee;
+    background: linear-gradient(0deg, rgba(60,194,239,1) 0%, rgba(237,96,119,1) 100%);
     border: 15px solid #3c3f47;
     box-shadow: inset 25px 25px var(--border),
                 inset -25px -25px var(--border);
     margin: 0;
     position: relative;
-    display: flex;
+    display: flex;    background-color: ;
 }
 
 .logo span {
