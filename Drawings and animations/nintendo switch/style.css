@@ -23,9 +23,13 @@ body {
 .joycon-right {
     width: 100px;
     height: 280px;
-    background-color: aqua;
+    background-color: #3cc2ef;
     display: inline-block;
-    border: 3px solid rgb(46, 39, 39);
+    border: 3px solid #2e2727;
+    position: relative;
+    box-shadow: inset 5px 5px #ffffff70,
+                inset 10px 0 #FFFFFF50,
+                inset -20px 0 #00000010;
 }
 
 .joycon-left {
@@ -34,4 +38,43 @@ body {
 
 .joycon-right {
     border-radius: 0 50px 50px 0;
+}
+
+.analog {
+    width: 50px;
+    height: 50px;
+    background-color: #585c6b;
+    border-radius: 50%;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 30px;
+    border: 3px solid #2e2727;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.analog::before,
+.analog::after {
+    content: "";
+    width: 42px;
+    height: 3px;
+    background-color: #2e2727;
+    position: absolute;
+}
+
+.analog::after {
+    transform: rotate(90deg);
+}
+
+.analog .circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #585c6b;
+    border: 3px solid #2e2727;
+    box-shadow: inset 3px 3px #ffffff5b;
+    z-index: 1;
 }
