@@ -247,7 +247,7 @@ body {
                 inset -25px -25px var(--border);
     margin: 0;
     position: relative;
-    display: flex;    background-color: ;
+    display: flex;
 }
 
 .logo span {
