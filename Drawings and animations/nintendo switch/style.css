@@ -35,8 +35,8 @@ body {
     display: inline-block;
     border: 3px solid var(--border);
     position: relative;
-    box-shadow: inset 5px 5px #ffffff70,
-                inset 10px 0 #FFFFFF50,
+    box-shadow: inset 5px 5px #ffffff50,
+                inset 10px 0 #FFFFFF30,
                 inset -20px 0 #00000010;
 }
 
