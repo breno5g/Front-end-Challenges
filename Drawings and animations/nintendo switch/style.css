@@ -24,6 +24,7 @@ body {
     width: 600px;
     height: 300px;
     position: relative;
+    display: flex;
 }
 
 .joycon-left,
@@ -41,6 +42,7 @@ body {
 
 .joycon-right {
     background-color: var(--red);
+
 }
 
 .joycon-left {
@@ -222,4 +224,15 @@ body {
 .joycon-right::before {
     right: -6px;
     border-radius: 0 50px;
+}
+
+.screen {
+    display: inline-block;
+    width: 400px;
+    height: 280px;
+    background-color: rgb(169, 228, 238);
+    border: 15px solid #3c3f47;
+    box-shadow: inset 25px 25px var(--border),
+                inset -25px -25px var(--border);
+    margin: 0;
 }
