@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form animation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form action="">
+        <input type="email" placeholder="Insert your email" id="email">
+        <label for="email" onclick="expand(this)">Email</label>
+        <input type="password" placeholder="insert your password" id="password">
+        <label for="password" onclick="expand(this)">Password</label>
+        <input type="button" value="Submit" onclick="reload()">
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>

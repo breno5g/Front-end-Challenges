@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: #cf8aa1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    width: 350px;
+    height: 350px;
+    background-color: #44485c;
+    border-radius: 20px;
+    border: 3px solid #e0e0e0;
+    position: relative;
+}
+
+input {
+    width: 300px;
+    height: 1px;
+    border-radius: 10px;
+    border: none;
+    background-color: #696969;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    padding: 0 10px;
+    outline: none;
+    transition: all 0.3s;
+}
+
+input[type = "email"] {
+    bottom: 210px;
+}
+
+input[type = "password"] {
+    bottom: 120px;
+}
+
+input[type = "button"] {
+    bottom: 20px;
+    width: 200px;
+    height: 50px;
+    background-color: #87e987;
+    color: white;
+    font-size: 25px;
+    text-transform: uppercase;
+    font-size: 700;
+    cursor: pointer;
+}
+
+input[type = "button"]:hover {
+    background-color: #61db61;
+}
+
+::placeholder {
+    color: rgba(255, 255, 255, 0.575);
+    font-size: 16px;
+    font-weight: 500;
+    visibility: hidden;
+}
+
+.show-placeholder::placeholder {
+    visibility: visible;
+}
+
+label {
+    width: 300px;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    position: absolute;
+    margin: auto;
+    left: 10px;
+    right: 0;
+    text-transform: uppercase;
+    user-select: none;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+label[for = "email"] {
+    bottom: 210px;
+}
+
+label[for = "password"] {
+    bottom: 120px;
+}
