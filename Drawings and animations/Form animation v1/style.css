@@ -10,7 +10,7 @@
 body {
     height: 100vh;
     width: 100vw;
-    background-color: #cf8aa1;
+    background-color: #f2f2f8;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,7 +21,7 @@ form {
     height: 350px;
     background-color: #44485c;
     border-radius: 20px;
-    border: 3px solid #e0e0e0;
+    border: 3px solid #747474;
     position: relative;
 }
 
@@ -52,7 +52,7 @@ input[type = "button"] {
     bottom: 20px;
     width: 200px;
     height: 50px;
-    background-color: #87e987;
+    background-color: #61db61;
     color: white;
     font-size: 25px;
     text-transform: uppercase;
@@ -61,7 +61,7 @@ input[type = "button"] {
 }
 
 input[type = "button"]:hover {
-    background-color: #61db61;
+    background-color: #4cbe4c;
 }
 
 ::placeholder {
