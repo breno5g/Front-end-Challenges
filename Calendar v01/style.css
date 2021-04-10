@@ -114,3 +114,66 @@ body {
     height: 40px;
     border-radius: 50%;
 }
+
+/* =-=-=-= Tabela =-=-=-=-= */
+
+.calendar table {
+    width: 99%;
+    height: 500px;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 0 50px;
+}
+
+.calendar table thead:first-of-type td {
+    background-color: #388E37;
+    padding: 5px 10px ;
+    text-align: center;
+    width: 100px;
+    color: white;
+}
+
+.calendar table thead td:first-child {
+    border-radius: 5px 0 0 0 ;
+}
+
+.calendar table thead td:last-child {
+    border-radius: 0 5px 0 0 ;
+}
+
+.calendar table tr td {
+    text-align: center;
+    border: 1px solid #eeeeee;
+    color: #888888;
+    overflow: hidden;
+    position: relative;
+}
+
+.calendar table .first-line td:nth-child(1),
+.calendar table .first-line td:nth-child(2),
+.calendar table .first-line td:nth-child(3),
+.calendar table .first-line td:nth-child(4),
+.calendar table .last-line td:last-child {
+    background-color: rgba(128, 128, 128, 0.397);
+}
+
+.calendar table tr .marked::before, 
+.calendar table tr .marked::after {
+    content: "";
+    width: 50px;
+    height: 50px;
+    background-color: #388E37;
+    position: absolute;
+}
+
+.calendar table tr .marked::before {
+    top: -25px;
+    left: -25px;
+    transform: rotate(45deg);
+}
+
+.calendar table tr .marked::after {
+    bottom: -25px;
+    right: -25px;
+    transform: rotate(-45deg);
+}
