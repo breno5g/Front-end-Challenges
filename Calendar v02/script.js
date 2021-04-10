@@ -1,8 +1,8 @@
 let date = new Date();
 
-let firstDay = new Date(date.getFullYear(), date.getMonth() + 1, 1);
+let firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
 
-var lastDay = new Date(date.getFullYear(), date.getMonth() + 2, 0);
+var lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
 
 let days = [];
 
@@ -26,19 +26,36 @@ while (days.length % 7 != 0) {
     days.push(0)
 } 
 
-let semana = ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"];
-let diaSemana = 0;
+// let semana = ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"];
+// let diaSemana = 0;
 
-for(let i = 0; i <= days.length; i++) {
-    if (i != 0 && i % 7 == 0 && i != days.length) {
-        console.log("nova semana")
-        console.log(`${semana[diaSemana]} : ${days[i]}`);
-        diaSemana++;
-    } else {
-        console.log(`${semana[diaSemana]} : ${days[i]}`);
-        diaSemana++;
-    }
-    if (diaSemana > 6) {
-        diaSemana = 0;
+// for(let i = 0; i <= days.length; i++) {
+//     if (i != 0 && i % 7 == 0 && i != days.length) {
+//         console.log("nova semana")
+//         console.log(`${semana[diaSemana]} : ${days[i]}`);
+//         diaSemana++;
+//     } else {
+//         console.log(`${semana[diaSemana]} : ${days[i]}`);
+//         diaSemana++;
+//     }
+//     if (diaSemana > 6) {
+//         diaSemana = 0;
+//     }
+// }
+
+
+let table = document.querySelector(".days");
+
+function createTable() {
+    for (let i = 0; i < days.length; i++) {
+        if (days[i] != 0) {
+            let day = document.createElement("div");
+            day.innerHTML += days[i];
+            table.appendChild(day);
+        } else {
+            let day = document.createElement("div");
+            day.classList.add("weekend");
+            table.appendChild(day);
+        }
     }
 }
