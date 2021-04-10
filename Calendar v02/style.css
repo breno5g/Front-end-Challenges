@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+}
+
+.calendar header {
+    padding: 20px 50px;
+    border-bottom: 1px solid #00000010;
+}
+
+.calendar header menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.calendar header menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    position: relative;
+}
+
+.calendar header menu div {
+    display: flex;
+    align-items: center;
+}
+
+.calendar header menu div:nth-child(1) {
+    justify-content: space-evenly;
+}
+
+.calendar header menu div:nth-child(1) span:nth-child(1) {
+    font-size: 20px;
+    color: #525252;
+}
+
+.calendar header menu div:nth-child(1) span:nth-child(2) {
+    width: 30px;
+    height: 30px;
+    color: #388E37;
+    font-weight: 700;
+    border: 3px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.calendar header menu div:nth-child(1) h1 {
+    font-weight: 500;
+    color: #424141;
+}
+
+.calendar header menu div:nth-child(2) button{
+    margin-right: 15px;
+    padding: 10px 15px;
+    background-color: #e0e0e0a9;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #525252;
+}
+
+.calendar header menu div:nth-child(2) div button{
+    margin-right: 5px;
+    color: #52525281;
+}
+
+.calendar header menu div:nth-child(2) span {
+    margin-left: 15px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #504f4f;
+    letter-spacing: 2px;
+}
+
+.calendar header menu div:nth-child(3) {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.calendar header menu div:nth-child(3) button,
+.calendar header menu div:nth-child(3) select {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #e0e0e0a9;
+    color: #5e5e5eaf;
+}
+
+.calendar header menu div:nth-child(3) select {
+    color: #525252;
+    padding-right: 35px;
+    appearance: none;
+    background-image: url(assets/icons8-expand-arrow-50.png);
+    background-repeat: no-repeat;
+    background-size: 13px;
+    background-position: 55px center;
+}
+
+.calendar header menu div:nth-child(3) img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* =-=-=-= Tabela =-=-=-=-= */
+
+.calendar .table {
+    width: 100%;
+    height: 500px;
+    margin: 0 auto;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 50px;
+}
+
+.calendar .table .header {
+    width: 100%;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.calendar .table .header span {
+    background-color: #388E37;
+    padding: 5px 10px ;
+    text-align: center;
+    width: 100px;
+    color: white;
+    width: 100%;
+}
+
+.calendar .table .header span:first-child {
+    border-radius: 5px 0 0 0 ;
+}
+
+.calendar .table .header span:last-child {
+    border-radius: 0 5px 0 0 ;
+}
+
+.calendar .table .days {
+    width: 100%;
+    height: 500px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 5px;
+}
+
+.calendar .table .days div {
+    border: 1px solid #00000010;
+    box-shadow: 0 0 2px 0 #00000018;
+    padding: 10px 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #777777;
+    position: relative;
+    overflow: hidden;
+}
+
+.calendar .table .days div:nth-child(18)::before,
+.calendar .table .days div:nth-child(18)::after {
+    content: "";
+    width: 40px;
+    height: 40px;
+    background-color: #388E37;
+    position: absolute;
+}
+
+.calendar .table .days div:nth-child(18)::before {
+    top: -20px;
+    left: -20px;
+    transform: rotate(45deg);
+}
+
+.calendar .table .days div:nth-child(18)::after {
+    bottom: -20px;
+    right: -20px;
+    transform: rotate(-45deg);
+}
+
+.calendar .table .days div div {
+    width: 80%;
+    border: none;
+    box-shadow: none;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.calendar .table .days div div img{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
