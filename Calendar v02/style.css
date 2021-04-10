@@ -195,6 +195,10 @@ body {
     transform: rotate(-45deg);
 }
 
+.calendar .table .days div[value = "0"] {
+    background-color: #D7D7D7;
+}
+
 .calendar .table .days div div {
     width: 80%;
     border: none;
@@ -210,4 +214,8 @@ body {
     width: 20px;
     height: 20px;
     border-radius: 50%;
+}
+
+.weekend {
+    background-color: #EBEBEB;
 }
