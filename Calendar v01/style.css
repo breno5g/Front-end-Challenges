@@ -101,6 +101,12 @@ body {
 
 .calendar header menu div:nth-child(3) select {
     color: #525252;
+    padding-right: 35px;
+    appearance: none;
+    background-image: url(assets/icons8-expand-arrow-50.png);
+    background-repeat: no-repeat;
+    background-size: 13px;
+    background-position: 55px center;
 }
 
 .calendar header menu div:nth-child(3) img {
