@@ -46,16 +46,30 @@ while (days.length % 7 != 0) {
 
 let table = document.querySelector(".days");
 
+
 function createTable() {
+    let diaSemana = 0;
     for (let i = 0; i < days.length; i++) {
         if (days[i] != 0) {
-            let day = document.createElement("div");
-            day.innerHTML += days[i];
-            table.appendChild(day);
+            if (diaSemana == 0 || diaSemana == 6) {
+                let day = document.createElement("div");
+                day.innerHTML += days[i];
+                day.classList.add("weekend");
+                table.appendChild(day);
+            } else {
+                let day = document.createElement("div");
+                day.innerHTML += days[i];
+                table.appendChild(day);
+            }
         } else {
             let day = document.createElement("div");
-            day.classList.add("weekend");
+            day.classList.add("extraDays");
             table.appendChild(day);
+        }
+        if (diaSemana != 6) {
+            diaSemana ++
+        } else {
+            diaSemana = 0
         }
     }
 }
