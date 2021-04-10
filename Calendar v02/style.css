@@ -8,7 +8,7 @@
 }
 
 body {
-    height: 100vh;
+    height: 1000px;
 }
 
 .calendar header {
@@ -119,7 +119,7 @@ body {
 
 .calendar .table {
     width: 100%;
-    height: 500px;
+    height: fit-content;
     margin: 0 auto;
     margin-top: 20px;
     display: flex;
@@ -155,10 +155,10 @@ body {
 
 .calendar .table .days {
     width: 100%;
-    height: 500px;
+    /* height: 600px; */
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    /* grid-template-rows: repeat(5, 110px); */
     gap: 5px;
 }
 
