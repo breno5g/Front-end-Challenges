@@ -105,16 +105,25 @@
     border-radius: 5px;
     background-color: #e0e0e0a9;
     color: #5e5e5eaf;
+    cursor: pointer;
+    transition: all 0.3s;
+    outline: none;
 }
 
 .calendar header menu div:nth-child(3) select {
     color: #525252;
-    padding-right: 35px;
+    padding-right: 15px;
+    width: 80px;
     appearance: none;
     background-image: url(assets/icons8-expand-arrow-50.png);
     background-repeat: no-repeat;
     background-size: 13px;
     background-position: 55px center;
+}
+
+.calendar header menu div:nth-child(3) button:hover,
+.calendar header menu div:nth-child(3) select:hover {
+    background-color: #bdbdbda9;
 }
 
 .calendar header menu div:nth-child(3) img {

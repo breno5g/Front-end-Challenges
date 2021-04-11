@@ -2,14 +2,17 @@ let date = new Date();                          // Data total
 let month = date.getMonth();                    // Mês
 let year = date.getUTCFullYear();               // Ano
 
-let firstDay = new Date(year, month , 1);       // Primeiro dia do mês
+let firstDay;
 
-let lastDay = new Date(year, month + 1, 0);     // Ultimo dia do mês
+let lastDay;
 
 let days = [];                                  // Array com todos os dias em ordem
 
 /* =-=-=-=-= Pegando os dias do mês =-=-=-=-= */
 function getDays() {
+    firstDay = new Date(year, month , 1);    
+    lastDay = new Date(year, month + 1, 0);
+
     for (let i = 1; i < firstDay.getUTCDay(); i++) {
         if (i < firstDay.getUTCDay()) { // Pega a posição do primeiro dia da semana e se o index for menor, adiciona o valor 0
           days.push(0); 
@@ -61,7 +64,7 @@ function createTable() {
         }
     }
 
-    let actualDayDiv = document.querySelector(`[value='${date.getDate()}']`) // Pega o dia atual
+    let actualDayDiv = document.querySelector(`div[value='${date.getDate()}']`) // Pega o dia atual
     actualDayDiv.classList.add("actualDay"); // Coloca a classe actual day para marcar no calendario
 }
 
@@ -102,6 +105,25 @@ function previousMonth() {                  // Mesma coisa da função de cima m
     setTheHeaderDate()
 }
 
+/* =-=-=-= change the month with select =-=-=-=-= */
+
+function changeTheMonth(e) {
+    month = e.value;
+    if (e.value == 0 || e.value == 1 || e.value == 8 || e.value == 9 || e.value == 10 || e.value == 11) {
+        e.style.width = "120px"
+        e.style.backgroundPosition = "93px center"
+    } else  if (e.value == "") {
+        e.style.width = "80px";
+        e.style.backgroundPosition = "55px center"
+    }else {
+        e.style.width = "90px"
+        e.style.backgroundPosition = "70px center"
+    }
+
+    clearTable();
+    createTable();
+}
+
 /* =-=-=-= Change to actual day =-=-=-=-= */
 
 function actualDay() {
@@ -111,11 +133,14 @@ function actualDay() {
     lastDay = new Date(year, month + 1, 0);         // ultimo dia desse mês
     clearTable();                                   // Limpa a tabela
     createTable();                                  // Gera uma nova tabela
+    document.getElementById("select-month").value = "Mês";
+    document.getElementById("select-month").style.width = "80px";
+    document.getElementById("select-month").style.backgroundPosition = "55px center"
 }
 
 /* =-=-=-=-= Header menu functions =-=-=-=-= */
 
-function setTheHeaderDate(mes) {
+function setTheHeaderDate() {
     // Todos os meses do ano
     let months = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
     // Day
