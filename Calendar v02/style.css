@@ -66,6 +66,11 @@
     color: #525252;
     cursor: pointer;
     outline: none;
+    transition: all 0.3s;
+}
+
+.calendar header menu div:nth-child(2) button:hover {
+    background-color: #c2c2c2c4;
 }
 
 .calendar header menu div:nth-child(2) div button {
