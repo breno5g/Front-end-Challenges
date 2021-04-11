@@ -56,7 +56,7 @@
     color: #424141;
 }
 
-.calendar header menu div:nth-child(2) button{
+.calendar header menu div:nth-child(2) button {
     margin-right: 15px;
     padding: 10px 15px;
     background-color: #e0e0e0a9;
@@ -64,11 +64,18 @@
     border-radius: 5px;
     font-size: 16px;
     color: #525252;
+    cursor: pointer;
+    outline: none;
 }
 
-.calendar header menu div:nth-child(2) div button{
+.calendar header menu div:nth-child(2) div button {
     margin-right: 5px;
     color: #52525281;
+}
+
+.calendar header menu div:nth-child(2) div button:hover {
+    background-color: #b3b3b3d5;
+    color: #e0e0e0ee;
 }
 
 .calendar header menu div:nth-child(2) span {
@@ -168,27 +175,11 @@
     color: #777777;
     position: relative;
     overflow: hidden;
+    cursor: pointer;
 }
 
-.calendar .table .days div:nth-child(18)::before,
-.calendar .table .days div:nth-child(18)::after {
-    content: "";
-    width: 40px;
-    height: 40px;
-    background-color: #388E37;
-    position: absolute;
-}
-
-.calendar .table .days div:nth-child(18)::before {
-    top: -20px;
-    left: -20px;
-    transform: rotate(45deg);
-}
-
-.calendar .table .days div:nth-child(18)::after {
-    bottom: -20px;
-    right: -20px;
-    transform: rotate(-45deg);
+.calendar .table .days div:hover {
+    background-color: #eeeeee;
 }
 
 .calendar .table .days div[value = "0"] {
@@ -218,4 +209,25 @@
 
 .extraDays {
     background-color: #D7D7D7;
+}
+
+.actualDay::before,
+.actualDay::after {
+    content: "";
+    width: 40px;
+    height: 40px;
+    background-color: #388E37;
+    position: absolute;
+}
+
+.actualDay::before {
+    top: -20px;
+    left: -20px;
+    transform: rotate(45deg);
+}
+
+.actualDay::after {
+    bottom: -20px;
+    right: -20px;
+    transform: rotate(-45deg);
 }
