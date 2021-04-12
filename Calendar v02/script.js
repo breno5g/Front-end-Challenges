@@ -164,8 +164,37 @@ let appointments = [
 function appointmentSubmit() {
     let name = document.querySelector("[name = 'appointmentName']");
     let image = document.querySelector("[name = 'appointmentImage']");
-    appointments.push({day:10, name: name.value, image: image.value});
-    console.log(appointments);
+    if (name.value == "" || image.value == "") {
+        alert("Por favor preencha todos os campos");
+    }else {
+        appointments.push({day:10, name: name.value, image: image.value});
+        createAppointment();
+        closeAppointmentModal();
+    }
+}
+
+function createAppointment() {
+    let day = document.querySelector("div[value = '13']");
+    let appointment = document.createElement("div");
+    let image = document.createElement("img");
+    image.setAttribute("src", appointments[0].image);
+    if (!day.children[0]) {
+        appointment.appendChild(image);
+        day.appendChild(appointment);
+    } else {
+        day.children[0].appendChild(image);
+    }
+}
+
+function closeAppointmentModal() {
+    let modal = document.querySelector(".makeAppointmentModal");
+    modal.style.display = "none";
+    clearModal();
+}
+
+function clearModal() {
+    let name = document.querySelector("[name = 'appointmentName']");
+    let image = document.querySelector("[name = 'appointmentImage']");
     name.value = "";
     image.value = "";
 }
