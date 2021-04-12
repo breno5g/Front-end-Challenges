@@ -258,7 +258,7 @@ body {
     position: absolute;
     top: 0;
     background-color: #42414141;
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;

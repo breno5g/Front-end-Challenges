@@ -48,6 +48,7 @@ function createTable() {
                 let day = document.createElement("div");
                 day.innerHTML += days[i];
                 day.setAttribute("value", days[i]);
+                day.setAttribute("onclick", `openModal(${days[i]})`);
                 table.appendChild(day);
             }
         } else { // se o valor do dia for 0
@@ -153,6 +154,8 @@ function setTheHeaderDate() {
 
 /* =-=-=-= Create an appointment =-=-=-= */
 
+let selectedDay;
+
 let appointments = [
     {
         day: 13,
@@ -174,10 +177,10 @@ function appointmentSubmit() {
 }
 
 function createAppointment() {
-    let day = document.querySelector("div[value = '13']");
+    let day = document.querySelector(`div[value = '${selectedDay}']`);
     let appointment = document.createElement("div");
     let image = document.createElement("img");
-    image.setAttribute("src", appointments[0].image);
+    image.setAttribute("src", appointments[appointments.length - 1].image);
     if (!day.children[0]) {
         appointment.appendChild(image);
         day.appendChild(appointment);
@@ -197,4 +200,10 @@ function clearModal() {
     let image = document.querySelector("[name = 'appointmentImage']");
     name.value = "";
     image.value = "";
+}
+
+function openModal(e) {
+    selectedDay = e;
+    let modal = document.querySelector(".makeAppointmentModal");
+    modal.style.display = "flex";
 }
