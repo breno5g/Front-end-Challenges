@@ -213,12 +213,41 @@ body {
     gap: 5px;
     justify-content: center;
     flex-wrap: wrap;
+    /* overflow: hidden scroll; */
+    position: relative;
 }
 
 .calendar .table .days div div img{
     width: 25px;
     height: 25px;
     border-radius: 50%;
+    position: relative;
+    right: -15px;
+}
+
+.calendar .table .days div div img:hover {
+    box-shadow: 0 0 0 2px #EEEEEE,
+                0 0 0 4px #424141;
+}
+
+.calendar .table .days div div img:hover + label {
+    visibility: visible;
+}
+
+.calendar .table .days div div label {
+    position: relative;
+    left: -15px;
+    font-size: 20px;
+    background-color: #424141;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    color: white;
+    visibility: hidden;
+    opacity: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .weekend {

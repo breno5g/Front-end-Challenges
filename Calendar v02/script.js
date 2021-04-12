@@ -157,11 +157,6 @@ function setTheHeaderDate() {
 let selectedDay;
 
 let appointments = [
-    {
-        day: 13,
-        name: "Breno Santos",
-        image: "https://avatars.githubusercontent.com/u/51424478?v=4"
-    }
 ]
 
 function appointmentSubmit() {
@@ -180,12 +175,19 @@ function createAppointment() {
     let day = document.querySelector(`div[value = '${selectedDay}']`);
     let appointment = document.createElement("div");
     let image = document.createElement("img");
+    let imageId = Math.random() * 100;
     image.setAttribute("src", appointments[appointments.length - 1].image);
+    image.setAttribute("name", `image${imageId}`);
+    let label = document.createElement("label");
+    label.setAttribute("for", `image${imageId}`);
+    label.innerHTML = "X";
     if (!day.children[0]) {
         appointment.appendChild(image);
+        appointment.appendChild(label);
         day.appendChild(appointment);
     } else {
         day.children[0].appendChild(image);
+        day.children[0].appendChild(label);
     }
 }
 
