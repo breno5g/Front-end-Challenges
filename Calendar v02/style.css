@@ -222,10 +222,11 @@ body {
     height: 25px;
     border-radius: 50%;
     position: relative;
-    right: -15px;
+    /* right: -15px; */
+    z-index: 10;
 }
 
-.calendar .table .days div div img:hover {
+/* .calendar .table .days div div img:hover {
     box-shadow: 0 0 0 2px #EEEEEE,
                 0 0 0 4px #424141;
 }
@@ -248,7 +249,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-}
+    z-index: 10;
+} */
 
 .weekend {
     background-color: #EBEBEB;

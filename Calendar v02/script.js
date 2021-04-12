@@ -10,22 +10,22 @@ let days = [];                                  // Array com todos os dias em or
 
 /* =-=-=-=-= Pegando os dias do mês =-=-=-=-= */
 function getDays() {
-    firstDay = new Date(year, month , 1);    
+    firstDay = new Date(year, month , 1);
     lastDay = new Date(year, month + 1, 0);
 
     for (let i = 1; i < firstDay.getUTCDay(); i++) {
         if (i < firstDay.getUTCDay()) { // Pega a posição do primeiro dia da semana e se o index for menor, adiciona o valor 0
-          days.push(0); 
+          days.push(0);
         }
     }
-    
+
     for (let i = 0; i <= lastDay.getUTCDate(); i++) { // Pega o ultimo dia do mês para saber quantos dias teremos
       days.push(i); // adiciona o valor do index ao dia
     }
-    
+
     while (days.length % 7 != 0) { // Se a quantidade de dias divido por 7 não tiver um resto 0
         days.push(0); // Acrescenta mais dias para fechar a tabela
-    } 
+    }
 }
 
 /* =-=-=-=-= Criando a tabela =-=-=-=-= */
@@ -71,7 +71,7 @@ function createTable() {
 
 /* =-=-=-= Crear table =-=-=-=-= */
 
-function clearTable() { 
+function clearTable() {
     table.innerHTML = ""; // Limpa o html da tabela
     days = [];            // Limpa a div com os dias
 }
@@ -178,16 +178,18 @@ function createAppointment() {
     let imageId = Math.random() * 100;
     image.setAttribute("src", appointments[appointments.length - 1].image);
     image.setAttribute("name", `image${imageId}`);
-    let label = document.createElement("label");
-    label.setAttribute("for", `image${imageId}`);
-    label.innerHTML = "X";
+
+    // let label = document.createElement("label");
+    // label.setAttribute("for", `image${imageId}`);
+    // label.setAttribute("onclick", `deleteImage(${imageId})`);
+    // label.innerHTML = "X";
     if (!day.children[0]) {
         appointment.appendChild(image);
-        appointment.appendChild(label);
+        // appointment.appendChild(label);
         day.appendChild(appointment);
     } else {
         day.children[0].appendChild(image);
-        day.children[0].appendChild(label);
+        // day.children[0].appendChild(label);
     }
 }
 
@@ -208,4 +210,9 @@ function openModal(e) {
     selectedDay = e;
     let modal = document.querySelector(".makeAppointmentModal");
     modal.style.display = "flex";
+}
+
+function deleteImage(e) {
+    document.querySelector(".makeAppointmentModal").style.display = "none";
+    console.log(e);
 }
