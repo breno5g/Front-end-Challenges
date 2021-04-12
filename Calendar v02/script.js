@@ -95,7 +95,7 @@ function previousMonth() {                  // Mesma coisa da função de cima m
     clearTable();
     if (month > 0) {
         month--;
-    } else {
+    } else {    console.log(testeinput)
         month = 11;
         year--;
     }
@@ -149,4 +149,23 @@ function setTheHeaderDate() {
     // Month
     let headerMonth = document.querySelector(".actual-month");  // Mês e ano do header
     headerMonth.innerHTML = `${months[month]} de ${year}`       // Altera os valores
+}
+
+/* =-=-=-= Create an appointment =-=-=-= */
+
+let appointments = [
+    {
+        day: 13,
+        name: "Breno Santos",
+        image: "https://avatars.githubusercontent.com/u/51424478?v=4"
+    }
+]
+
+function appointmentSubmit() {
+    let name = document.querySelector("[name = 'appointmentName']");
+    let image = document.querySelector("[name = 'appointmentImage']");
+    appointments.push({day:10, name: name.value, image: image.value});
+    console.log(appointments);
+    name.value = "";
+    image.value = "";
 }
