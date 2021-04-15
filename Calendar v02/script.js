@@ -44,7 +44,13 @@ function createTable() {
                 day.classList.add("weekend");                 // cria uma div com a classe weekend
                 day.setAttribute("value", days[i]);           // adiciona um value a div igual ao dia
                 table.appendChild(day);                       // Coloca a nova div no elemento pai
-            } else { // se não, cria uma div normal
+            } else if (days[i] < date.getUTCDate()) { // se não, cria uma div normal
+                let day = document.createElement("div");
+                day.innerHTML += days[i];
+                day.setAttribute("value", days[i]);
+                day.classList.add("unavailableDay");
+                table.appendChild(day);
+            } else {
                 let day = document.createElement("div");
                 day.innerHTML += days[i];
                 day.setAttribute("value", days[i]);
@@ -179,17 +185,11 @@ function createAppointment() {
     image.setAttribute("src", appointments[appointments.length - 1].image);
     image.setAttribute("name", `image${imageId}`);
 
-    // let label = document.createElement("label");
-    // label.setAttribute("for", `image${imageId}`);
-    // label.setAttribute("onclick", `deleteImage(${imageId})`);
-    // label.innerHTML = "X";
     if (!day.children[0]) {
         appointment.appendChild(image);
-        // appointment.appendChild(label);
         day.appendChild(appointment);
     } else {
         day.children[0].appendChild(image);
-        // day.children[0].appendChild(label);
     }
 }
 

@@ -222,42 +222,29 @@ body {
     height: 25px;
     border-radius: 50%;
     position: relative;
-    /* right: -15px; */
-    z-index: 10;
 }
-
-/* .calendar .table .days div div img:hover {
-    box-shadow: 0 0 0 2px #EEEEEE,
-                0 0 0 4px #424141;
-}
-
-.calendar .table .days div div img:hover + label {
-    visibility: visible;
-}
-
-.calendar .table .days div div label {
-    position: relative;
-    left: -15px;
-    font-size: 20px;
-    background-color: #424141;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    color: white;
-    visibility: hidden;
-    opacity: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-} */
 
 .weekend {
     background-color: #EBEBEB;
 }
 
+.unavailableDay {
+    background-color: #EBEBEB;
+}
+
 .extraDays {
     background-color: #D7D7D7;
+}
+
+.calendar .table .days div[class="weekend"],
+.calendar .table .days div[class="unavailableDay"],
+.calendar .table .days div[value="0"] {
+    cursor: not-allowed;
+}
+
+.calendar .table .days div[class="weekend"]:hover,
+.calendar .table .days div[class="unavailableDay"]:hover {
+    background-color: #EBEBEB;
 }
 
 .actualDay::before,
