@@ -100,13 +100,28 @@ function nextMonth() {
     lastDay = new Date(year, month + 1, 0); // Define o ultimo dia do mês
     createTable();                          // Limpa a tabela
     setTheHeaderDate()                      // Altera os dados do header
+
+    if (month < date.getMonth() || year < date.getFullYear()) {
+        for (let i = 0; i < days.length; i++) {
+            table.children[i].classList.add("unavailableDay");
+            table.children[i].setAttribute("onclick", "");
+        }
+    }
+
+    if (month != date.getMonth() || year != date.getFullYear()) {
+        document.querySelector(".actualDay").classList.remove("actualDay");
+    }
+
+    if (selectedDay != undefined) {
+        document.querySelector(`div[value= "${selectedDay.getAttribute("value")}"]`).classList.add("selectedDay");
+    }
 }
 
 function previousMonth() {                  // Mesma coisa da função de cima mas para diminuir os valores
     clearTable();
     if (month > 0) {
         month--;
-    } else {    console.log(testeinput)
+    } else {
         month = 11;
         year--;
     }
@@ -114,6 +129,22 @@ function previousMonth() {                  // Mesma coisa da função de cima m
     lastDay = new Date(year, month + 1, 0);
     createTable();
     setTheHeaderDate()
+
+    if (month < date.getMonth() || year < date.getFullYear()) {
+        for (let i = 0; i < days.length; i++) {
+            table.children[i].classList.add("unavailableDay");
+            table.children[i].setAttribute("onclick", "");
+
+        }
+    }
+
+    if (month != date.getMonth() || year != date.getFullYear()) {
+        document.querySelector(".actualDay").classList.remove("actualDay");
+    }
+    
+    if (selectedDay != undefined) {
+        document.querySelector(`div[value= "${selectedDay.getAttribute("value")}"]`).classList.add("selectedDay");
+    }
 }
 
 /* =-=-=-= change the month with select =-=-=-=-= */
