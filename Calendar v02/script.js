@@ -44,7 +44,7 @@ function createTable() {
                 day.classList.add("weekend");                 // cria uma div com a classe weekend
                 day.setAttribute("value", days[i]);           // adiciona um value a div igual ao dia
                 table.appendChild(day);                       // Coloca a nova div no elemento pai
-            } else if (days[i] < date.getUTCDate()) { // se não, cria uma div normal
+            } else if (days[i] < date.getUTCDate() || days[i] == date.getUTCDate()) { // se não, cria uma div normal
                 let day = document.createElement("div");
                 day.innerHTML += days[i];
                 day.setAttribute("value", days[i]);

@@ -224,10 +224,7 @@ body {
     position: relative;
 }
 
-.weekend {
-    background-color: #EBEBEB;
-}
-
+.weekend,
 .unavailableDay {
     background-color: #EBEBEB;
 }
@@ -238,7 +235,8 @@ body {
 
 .calendar .table .days div[class="weekend"],
 .calendar .table .days div[class="unavailableDay"],
-.calendar .table .days div[value="0"] {
+.calendar .table .days div[value="0"],
+.calendar .table .days .actualDay {
     cursor: not-allowed;
 }
 
