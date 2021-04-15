@@ -62,12 +62,11 @@ body {
 
 .calendar header menu div:nth-child(2) {
     display: flex;
-    gap: 10px;
+    gap: 15px;
     width: fit-content;
 }
 
 .calendar header menu div:nth-child(2) button {
-    /* margin-right: 15px; */
     padding: 10px 15px;
     background-color: #e0e0e0a9;
     border: none;
@@ -82,16 +81,6 @@ body {
 .calendar header menu div:nth-child(2) button:hover {
     background-color: #c2c2c2c4;
 }
-
-/* .calendar header menu div:nth-child(2) div button {
-    margin-right: 5px;
-    color: #52525281;
-} */
-
-/* .calendar header menu div:nth-child(2) div button:hover {
-    background-color: #b3b3b3d5;
-    color: #e0e0e0ee;
-} */
 
 .calendar header menu div:nth-child(2) span {
     font-size: 20px;
