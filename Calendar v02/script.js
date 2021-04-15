@@ -260,31 +260,28 @@ function weekMode() {
         hiddenDays.children[i].style.display = "none";
     }
 
-    let week = parseInt(selectedDay.getAttribute("week"))
+    let week = parseInt(selectedDay.getAttribute("week")) // Seleciona a semana de acordo com o dia selecionado
 
 
     for (let i = 0; i <= days.length; i++) { // laço de repetição com os todos os dias da tabela;
         let visibleDay = document.querySelector(`.days`); // Pega todos os dias da tabela
-        // Se o index .calendar .table .daysfor maior ou igual a 7 vezes o numero da semana e menor que 7 vezes o numero da semana +1
+        // Se o index for maior ou igual a 7 vezes o numero da semana e menor que 7 vezes o numero da semana +1
         if (i >= 7 * week && i < 7 * (week + 1)) {
             visibleDay.children[i].style.display = "flex"; // Deixa visivel de acordo com os elementos filhos
         }
     }
 }
 
-function setWeeks() {
-    let week = 0;
+function setWeeks() { // Configura em qual semana está cada dia
+    let week = 0; // inicia a semana em 0 (primeira semana do mês)
 
-    for (let i = 0; i <= days.length; i++) {
-        let visibleDay = document.querySelector(`.days`);
-        if (i >= 7 * week && i < 7 * (week + 1)) {
-            visibleDay.children[i].setAttribute("week", week);
-            // console.log(`${days[i]} : ${visibleDay.children[i].getAttribute("week")}`);
+    for (let i = 0; i <= days.length; i++) { // Percorre todos os dias do array
+        if (i >= 7 * week && i < 7 * (week + 1)) { // Mesma logica da função acima
+            table.children[i].setAttribute("week", week); // Coloca um atributo com o numero da semana atual
         } else {
-            week++
-            if (i < days.length) {
-                visibleDay.children[i].setAttribute("week", week);
-                // console.log(`${days[i]} : ${visibleDay.children[i].getAttribute("week")}`);
+            week++; // Aumenta o numero da semana
+            if (i < days.length) { // Se o index for menor que o tamanho do array
+                table.children[i].setAttribute("week", week); // Coloca um atributo com o numero da semana atual
             } 
         }
     }
