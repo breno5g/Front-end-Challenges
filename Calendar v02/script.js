@@ -54,7 +54,7 @@ function createTable() {
                 let day = document.createElement("div");
                 day.innerHTML += days[i];
                 day.setAttribute("value", days[i]);
-                day.setAttribute("onclick", `openModal(${days[i]})`);
+                day.setAttribute("onclick", `dayClick(this)`);
                 table.appendChild(day);
             }
         } else { // se o valor do dia for 0
@@ -73,6 +73,9 @@ function createTable() {
 
     let actualDayDiv = document.querySelector(`div[value='${date.getDate()}']`) // Pega o dia atual
     actualDayDiv.classList.add("actualDay"); // Coloca a classe actual day para marcar no calendario
+
+    setWeeks();
+
 }
 
 /* =-=-=-= Crear table =-=-=-=-= */
@@ -162,6 +165,7 @@ function setTheHeaderDate() {
 
 let selectedDay;
 
+
 let appointments = [
 ]
 
@@ -178,7 +182,7 @@ function appointmentSubmit() {
 }
 
 function createAppointment() {
-    let day = document.querySelector(`div[value = '${selectedDay}']`);
+    let day = document.querySelector(`div[value = '${selectedDay.getAttribute("value")}']`);
     let appointment = document.createElement("div");
     let image = document.createElement("img");
     let imageId = Math.random() * 100;
@@ -206,28 +210,49 @@ function clearModal() {
     image.value = "";
 }
 
-function openModal(e) {
+function dayClick(e) {
     selectedDay = e;
-    let modal = document.querySelector(".makeAppointmentModal");
-    modal.style.display = "flex";
+    let table = document.querySelector(`.days`)
+    for(let i = 0; i < table.children.length; i++) {
+        if(table.children[i].classList.contains("selectedDay")) {
+            table.children[i].classList.remove("selectedDay");
+        }
+    }
+    // let modal = document.querySelector(".makeAppointmentModal");
+    // modal.style.display = "flex";
+    selectedDay.classList.add("selectedDay");
 }
 
-function deleteImage(e) {
-    document.querySelector(".makeAppointmentModal").style.display = "none";
-    console.log(e);
-}
-
-function weekMode(week) { // Recebe o valor da semana, começando em 0 (primeira semana);
+function weekMode() {
     for (let i = 0; i < days.length; i++) { // Some com todos os dias
         let hiddenDays = document.querySelector(".days");
         hiddenDays.children[i].style.display = "none";
     }
 
+    let week = parseInt(selectedDay.getAttribute("week"))
+
+
     for (let i = 0; i <= days.length; i++) { // laço de repetição com os todos os dias da tabela;
         let visibleDay = document.querySelector(`.days`); // Pega todos os dias da tabela
-        // Se o index for maior ou igual a 7 vezes o numero da semana e menor que 7 vezes o numero da semana +1
-        if (i >= 7 * week && i < 7 * (week + 1)) { 
+        // Se o index .calendar .table .daysfor maior ou igual a 7 vezes o numero da semana e menor que 7 vezes o numero da semana +1
+        if (i >= 7 * week && i < 7 * (week + 1)) {
             visibleDay.children[i].style.display = "flex"; // Deixa visivel de acordo com os elementos filhos
+        }
+    }
+}
+
+function setWeeks() {
+    let week = 0;
+
+    for (let i = 0; i <= days.length; i++) {
+        let visibleDay = document.querySelector(`.days`);
+        if (i >= 7 * week && i < 7 * (week + 1)) {
+            visibleDay.children[i].setAttribute("week", week);
+            // console.log(`${days[i]} : ${visibleDay.children[i].getAttribute("week")}`);
+        } else {
+            week++
+            visibleDay.children[i].setAttribute("week", week);
+            // console.log(`${days[i]} : ${visibleDay.children[i].getAttribute("week")}`);
         }
     }
 }

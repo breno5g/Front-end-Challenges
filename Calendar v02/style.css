@@ -227,6 +227,10 @@ body {
     background-color: #D7D7D7;
 }
 
+.calendar .table .days .selectedDay {
+    border: 1px solid #48c246;
+}
+
 .calendar .table .days div[class="weekend"],
 .calendar .table .days div[class="unavailableDay"],
 .calendar .table .days div[value="0"],
