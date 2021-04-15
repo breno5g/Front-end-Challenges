@@ -14,9 +14,12 @@ body {
 .calendar header {
     padding: 20px 50px;
     border-bottom: 1px solid #00000010;
+    display: flex;
+    justify-content: center;
 }
 
 .calendar header menu {
+    width: 1100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -24,7 +27,7 @@ body {
 
 .calendar header menu {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 2.5fr 2.5fr 120px;
     gap: 20px;
     position: relative;
 }
@@ -35,7 +38,8 @@ body {
 }
 
 .calendar header menu div:nth-child(1) {
-    justify-content: space-evenly;
+    justify-content: flex-start;
+    gap: 20px;
 }
 
 .calendar header menu div:nth-child(1) span:nth-child(1) {
@@ -63,23 +67,35 @@ body {
 .calendar header menu div:nth-child(2) {
     display: flex;
     gap: 15px;
-    width: fit-content;
+    justify-content: flex-end;
+    position: relative;
 }
 
-.calendar header menu div:nth-child(2) button {
-    padding: 10px 15px;
+.calendar header menu div:nth-child(2)::after {
+    content: "";
+    width: 3px;
+    height: 90%;
     background-color: #e0e0e0a9;
+    position: absolute;
+    right: -20px;
+}
+
+.calendar header menu div:nth-child(2) button,
+.calendar header menu div:nth-child(1) button {
+    padding: 10px 15px;
+    background-color: #F2F2F8;
     border: none;
     border-radius: 5px;
     font-size: 16px;
-    color: #525252;
+    color: #7979799a;
     cursor: pointer;
     outline: none;
-    transition: all 0.3s;
+    transition: all 0.5s;
 }
 
-.calendar header menu div:nth-child(2) button:hover {
-    background-color: #c2c2c2c4;
+.calendar header menu div:nth-child(2) button:hover,
+.calendar header menu div:nth-child(1) button:hover {
+    background-color: #D7EED6;
 }
 
 .calendar header menu div:nth-child(2) span {
@@ -102,7 +118,7 @@ body {
     border: none;
     border-radius: 5px;
     background-color: #e0e0e0a9;
-    color: #5e5e5eaf;
+    color: #7979799a;
     cursor: pointer;
     transition: all 0.3s;
     outline: none;
@@ -121,7 +137,7 @@ body {
 
 .calendar header menu div:nth-child(3) button:hover,
 .calendar header menu div:nth-child(3) select:hover {
-    background-color: #bdbdbda9;
+    background-color: #D7EED6;
 }
 
 .calendar header menu div:nth-child(3) img {
@@ -134,7 +150,6 @@ body {
 
 .calendar .table {
     width: 100%;
-    height: fit-content;
     margin: 0 auto;
     margin-top: 20px;
     display: flex;
@@ -144,43 +159,47 @@ body {
 }
 
 .calendar .table .header {
-    width: 100%;
+    width: 1100px;
+    height: 40px;
     padding: 0;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: 5px;
+    gap: 2px;
+    margin-bottom: 2px;
 }
 
 .calendar .table .header span {
     background-color: #388E37;
     padding: 5px 10px ;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100px;
     color: white;
     width: 100%;
 }
 
 .calendar .table .header span:first-child {
-    border-radius: 5px 0 0 0 ;
+    border-radius: 10px 0 0 0 ;
 }
 
 .calendar .table .header span:last-child {
-    border-radius: 0 5px 0 0 ;
+    border-radius: 0 10px 0 0 ;
 }
 
 .calendar .table .days {
-    width: 100%;
+    width: 1100px;
+    height: 475px;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(5, 110px);
-    gap: 5px;
-    margin-bottom: 50px;
+    grid-template-rows: repeat(5, 1fr);
+    gap: 2px;
 }
 
 .calendar .table .days div {
     border: 1px solid #00000010;
     box-shadow: 0 0 2px 0 #00000018;
-    padding: 10px 5px;
+    padding: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -199,7 +218,8 @@ body {
 }
 
 .calendar .table .days div div {
-    width: 80%;
+    width: 100%;
+    height: 100%;
     border: none;
     box-shadow: none;
     display: flex;
@@ -207,13 +227,12 @@ body {
     gap: 5px;
     justify-content: center;
     flex-wrap: wrap;
-    /* overflow: hidden scroll; */
     position: relative;
 }
 
 .calendar .table .days div div img{
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     position: relative;
 }

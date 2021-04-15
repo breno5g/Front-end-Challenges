@@ -35,7 +35,7 @@ function createTable() {
     getDays();
     setTheHeaderDate()
     let diaSemana = 0; // Define o dia da semana
-    table.style.gridTemplateRows = `repeat(${days.length / 7}, 110px)`; // Define a quantidade de linhas da nossa tabela de acordo com o numero de dias
+    table.style.gridTemplateRows = `repeat(${days.length / 7}, 1fr)`; // Define a quantidade de linhas da nossa tabela de acordo com o numero de dias
     for (let i = 0; i < days.length; i++) {
         if (days[i] != 0) { // se o valor dia for diferente de 0
             if (diaSemana == 0 || diaSemana == 6) { // Se o dia da semana for um final de semana
@@ -73,8 +73,17 @@ function createTable() {
 
     let actualDayDiv = document.querySelector(`div[value='${date.getDate()}']`) // Pega o dia atual
     actualDayDiv.classList.add("actualDay"); // Coloca a classe actual day para marcar no calendario
+    let presetDayWeek = document.querySelector(`div[value='${date.getDate() + 1}']`);
+    presetDayWeek.classList.add("selectedDay");
 
     setWeeks();
+
+    let totalWeeks = days.length / 7;
+
+    let teste = document.querySelectorAll(`[week="${totalWeeks - 1}"]`)
+
+    teste[0].style.borderRadius = "0 0 0 10px";
+    teste[6].style.borderRadius = "0 0 10px 0";
 
 }
 
@@ -150,7 +159,7 @@ function previousMonth() {                  // Mesma coisa da função de cima m
 /* =-=-=-= change the month with select =-=-=-=-= */
 
 function changeTheMonth(e) {
-    month = e.value;
+    month = e.value; // Muda o mês
     if (e.value == 0 || e.value == 1 || e.value == 8 || e.value == 9 || e.value == 10 || e.value == 11) {
         e.style.width = "120px"
         e.style.backgroundPosition = "93px center"
@@ -195,69 +204,67 @@ function setTheHeaderDate() {
 
 /* =-=-=-= Create an appointment =-=-=-= */
 
-let selectedDay;
+let selectedDay; // Variavel para guardar qual dia está selecionado
 
 
-let appointments = [
+let appointments = [ // array com as marcações de presença
+
 ]
 
-function appointmentSubmit() {
-    let name = document.querySelector("[name = 'appointmentName']");
-    let image = document.querySelector("[name = 'appointmentImage']");
-    if (name.value == "" || image.value == "") {
-        alert("Por favor preencha todos os campos");
-    }else {
-        appointments.push({day:10, name: name.value, image: image.value});
-        createAppointment();
-        closeAppointmentModal();
+function appointmentSubmit() { // Trata os dados depois do submit no modal
+    let day = selectedDay.getAttribute("value");
+    let name = document.querySelector("[name = 'appointmentName']"); // Pega o nome inserido no modal
+    let image = document.querySelector("[name = 'appointmentImage']"); // Pega a url da imagem inserido no modal
+    if (name.value == "" || image.value == "") { // Se o nome ou a url não estiverem preenchidos
+        alert("Por favor preencha todos os campos"); // Manda um aviso
+    }else { // caso não
+        appointments.push({day: day, name: name.value, image: image.value}); // Adiciona um objeto com o dia, nome e url da imagem a um array
+        createAppointment(day); // Cria a marcação;
+        closeAppointmentModal(); // Fecha o modal
     }
 }
 
-function createAppointment() {
-    let day = document.querySelector(`div[value = '${selectedDay.getAttribute("value")}']`);
-    let appointment = document.createElement("div");
-    let image = document.createElement("img");
-    let imageId = Math.random() * 100;
-    image.setAttribute("src", appointments[appointments.length - 1].image);
-    image.setAttribute("name", `image${imageId}`);
-
-    if (!day.children[0]) {
-        appointment.appendChild(image);
-        day.appendChild(appointment);
-    } else {
-        day.children[0].appendChild(image);
+function createAppointment(d) { // Cria a marcação de presença
+    let day = d; // Pega o dia selecionado
+    let appointment = document.createElement("div"); // Cria uma div para guardar as marcações
+    let image = document.createElement("img"); // Cria uma imagem
+    image.setAttribute("src", appointments[appointments.length - 1].image); // Pega a imagem do objeto na ultima posição do array
+    if (!day.children[0]) { // Se o dia selecionado não tiver nenhuma div
+        appointment.appendChild(image); // Adiciona a imagem a div
+        day.appendChild(appointment); // Adiciona a div no dia
+    } else { // Caso já tenha uma div
+        day.children[0].appendChild(image); // Coloca a imagem nela
     }
 }
 
-function closeAppointmentModal() {
-    let modal = document.querySelector(".makeAppointmentModal");
-    modal.style.display = "none";
-    clearModal();
+function closeAppointmentModal() { // Fecha o modal
+    let modal = document.querySelector(".makeAppointmentModal"); // Seleciona o modal
+    modal.style.display = "none"; // Muda o display para none
+    clearModal(); // Limpa o modal
 }
 
-function clearModal() {
-    let name = document.querySelector("[name = 'appointmentName']");
-    let image = document.querySelector("[name = 'appointmentImage']");
-    name.value = "";
-    image.value = "";
+function clearModal() { // Limpa o modal
+    let name = document.querySelector("[name = 'appointmentName']"); // Caixa de nome
+    let image = document.querySelector("[name = 'appointmentImage']"); // Caixa de imagem
+    name.value = ""; // Reseta a caixa de nome
+    image.value = ""; // Reseta a caixa de imagem
 }
 
-function dayClick(e) {
-    selectedDay = e;
-    for(let i = 0; i < table.children.length; i++) {
-        if(table.children[i].classList.contains("selectedDay")) {
-            table.children[i].classList.remove("selectedDay");
+function dayClick(e) { // Captura o click no dia
+    selectedDay = e; // Coloca o dia na variavel
+    for(let i = 0; i < table.children.length; i++) { // Let para percorrer todos os elementos da tabela
+        if(table.children[i].classList.contains("selectedDay")) { // Se alguma div tiver a classe
+            table.children[i].classList.remove("selectedDay"); // Remove a classe
         }
     }
     // let modal = document.querySelector(".makeAppointmentModal");
     // modal.style.display = "flex";
-    selectedDay.classList.add("selectedDay");
+    selectedDay.classList.add("selectedDay"); // adiciona a classe no dia selecionado
 }
 
 function weekMode() {
     for (let i = 0; i < days.length; i++) { // Some com todos os dias
-        let hiddenDays = document.querySelector(".days");
-        hiddenDays.children[i].style.display = "none";
+        table.children[i].style.display = "none";
     }
 
     let week = parseInt(selectedDay.getAttribute("week")) // Seleciona a semana de acordo com o dia selecionado
