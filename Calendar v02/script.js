@@ -89,6 +89,13 @@ function clearTable() {
 
 function nextMonth() {
     clearTable();           // Limpa a tabela
+    if (month != date.getMonth()) {
+        let table = document.querySelector(`.days`);
+        for(let i = 0; i < days.length; i++) {
+            table.children[i].classList.remove("unavailableDay");
+            console.log("teste");
+        }
+    }
     if (month < 11) {       // se o mês for menor que 11 (ultimo mês)
         month++;            // aumenta em um o valor do mês
     } else {
@@ -212,7 +219,7 @@ function clearModal() {
 
 function dayClick(e) {
     selectedDay = e;
-    let table = document.querySelector(`.days`)
+    let table = document.querySelector(`.days`);
     for(let i = 0; i < table.children.length; i++) {
         if(table.children[i].classList.contains("selectedDay")) {
             table.children[i].classList.remove("selectedDay");
@@ -248,11 +255,13 @@ function setWeeks() {
         let visibleDay = document.querySelector(`.days`);
         if (i >= 7 * week && i < 7 * (week + 1)) {
             visibleDay.children[i].setAttribute("week", week);
-            // console.log(`${days[i]} : ${visibleDay.children[i].getAttribute("week")}`);
+            console.log(`${days[i]} : ${visibleDay.children[i].getAttribute("week")}`);
         } else {
             week++
-            visibleDay.children[i].setAttribute("week", week);
-            // console.log(`${days[i]} : ${visibleDay.children[i].getAttribute("week")}`);
+            if (i < days.length) {
+                visibleDay.children[i].setAttribute("week", week);
+                console.log(`${days[i]} : ${visibleDay.children[i].getAttribute("week")}`);
+            } 
         }
     }
 }
