@@ -44,7 +44,7 @@ function createTable() {
                 day.classList.add("weekend");                 // cria uma div com a classe weekend
                 day.setAttribute("value", days[i]);           // adiciona um value a div igual ao dia
                 table.appendChild(day);                       // Coloca a nova div no elemento pai
-            } else if (days[i] < date.getUTCDate() || days[i] == date.getUTCDate()) { // se não, cria uma div normal
+            } else if ((days[i] < date.getUTCDate() || days[i] == date.getUTCDate()) && month == date.getMonth()) { // se não, cria uma div normal
                 let day = document.createElement("div");
                 day.innerHTML += days[i];
                 day.setAttribute("value", days[i]);
@@ -89,19 +89,13 @@ function clearTable() {
 
 function nextMonth() {
     clearTable();           // Limpa a tabela
-    if (month != date.getMonth()) {
-        let table = document.querySelector(`.days`);
-        for(let i = 0; i < days.length; i++) {
-            table.children[i].classList.remove("unavailableDay");
-            console.log("teste");
-        }
-    }
     if (month < 11) {       // se o mês for menor que 11 (ultimo mês)
         month++;            // aumenta em um o valor do mês
     } else {
         month = 0;          // volta o valor do mês para 0 (primeiro mês)
         year++;             // Aumenta em um o valor do ano
     }
+
     firstDay = new Date(year, month , 1);   // Define o primeiro dia do mês
     lastDay = new Date(year, month + 1, 0); // Define o ultimo dia do mês
     createTable();                          // Limpa a tabela
@@ -219,7 +213,6 @@ function clearModal() {
 
 function dayClick(e) {
     selectedDay = e;
-    let table = document.querySelector(`.days`);
     for(let i = 0; i < table.children.length; i++) {
         if(table.children[i].classList.contains("selectedDay")) {
             table.children[i].classList.remove("selectedDay");
@@ -255,12 +248,12 @@ function setWeeks() {
         let visibleDay = document.querySelector(`.days`);
         if (i >= 7 * week && i < 7 * (week + 1)) {
             visibleDay.children[i].setAttribute("week", week);
-            console.log(`${days[i]} : ${visibleDay.children[i].getAttribute("week")}`);
+            // console.log(`${days[i]} : ${visibleDay.children[i].getAttribute("week")}`);
         } else {
             week++
             if (i < days.length) {
                 visibleDay.children[i].setAttribute("week", week);
-                console.log(`${days[i]} : ${visibleDay.children[i].getAttribute("week")}`);
+                // console.log(`${days[i]} : ${visibleDay.children[i].getAttribute("week")}`);
             } 
         }
     }
