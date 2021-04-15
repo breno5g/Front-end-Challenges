@@ -216,3 +216,21 @@ function deleteImage(e) {
     document.querySelector(".makeAppointmentModal").style.display = "none";
     console.log(e);
 }
+
+function weekMode(week) { // Recebe o valor da semana, começando em 0 (primeira semana);
+    for (let i = 0; i < days.length; i++) {
+        let hiddenDays = document.querySelector(".days");
+        hiddenDays.children[i].style.display = "none";
+    }
+
+    for (let i = 1; i <= days.length; i++) { // laço de repetição com os todos os dias da tabela;
+        // Se o index for maior ou igual a 7 vezes o numero da semana e menor que 7 vezes o numero da semana +1
+        let visibleDay = document.querySelector(`div[value = "${days[i]}"]`);
+        if (i >= 7 * week && i < 7 * (week + 1)) { 
+            visibleDay.style.display = "flex";
+            console.log(days[i]); // Imprime os dias daquela semana
+        }
+    }
+
+    
+}
