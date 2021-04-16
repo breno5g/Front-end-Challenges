@@ -46,18 +46,20 @@ let table = document.querySelector(".days");
 
 function createTable() {    
     let diaSemana = 0; // Define o dia da semana
+    let unavailableDay;
     table.style.gridTemplateRows = `repeat(${days.length / 7}, 1fr)`; // Define a quantidade de linhas da nossa tabela de acordo com o numero de dias
     for (let i = 0; i < days.length; i++) {
+        unavailableDay = (year <= date.getFullYear()) && ((days[i] <= date.getDate() && month == date.getMonth() && year == date.getFullYear()) || (month < date.getMonth() && year == date.getFullYear()) || (year < date.getFullYear()));
         if (days[i] != 0) { // se o valor dia for diferente de 0
             if (diaSemana == 0 || diaSemana == 6) { // Se o dia da semana for um final de semana
                 let day = document.createElement("div");      // Cria uma div para colocarmos o dia
                 day.innerHTML += days[i];                     // adiciona o valor do dia a div
-                day.classList.add("day");                 // cria uma div com a classe weekend
+                day.classList.add("day");                     // cria uma div com a classe weekend
                 day.classList.add("weekend");                 // cria uma div com a classe weekend
                 day.setAttribute("value", days[i]);           // adiciona um value a div igual ao dia
                 table.appendChild(day);                       // Coloca a nova div no elemento pai
-            } else if (days[i] <= date.getUTCDate() && month == date.getMonth()) { 
-                // se o dia não for menor que a data atual ou igual a data atual, e o mês não for igual ao mẽs atual
+            } else if (unavailableDay) { 
+              // se o dia não for menor que a data atual ou igual a data atual, e o mês não for igual ao mẽs atual
                 let day = document.createElement("div"); // cria uma div
                 day.innerHTML += days[i]; // Adiciona o texto
                 day.setAttribute("value", days[i]); // adiciona o valor
@@ -140,7 +142,7 @@ function nextMonth() {
     
     if (month < date.getMonth() || year < date.getFullYear()) {
         for (let i = 0; i < days.length; i++) {
-            table.children[i].classList.add("unavailableDay");
+            // table.children[i].classList.add("unavailableDay");
             table.children[i].setAttribute("onclick", "");
         }
     }
