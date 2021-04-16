@@ -8,6 +8,13 @@ let lastDay;
 
 let days = [];                                  // Array com todos os dias em ordem
 
+/* =-=-=-= Iniciando todas as funções necessarias =-=-=-=-= */
+function initApp() {
+    getDays();
+    setTheHeaderDate();
+    createTable();
+}
+
 /* =-=-=-=-= Pegando os dias do mês =-=-=-=-= */
 function getDays() {
     firstDay = new Date(year, month , 1);
@@ -31,9 +38,7 @@ function getDays() {
 /* =-=-=-=-= Criando a tabela =-=-=-=-= */
 let table = document.querySelector(".days");
 
-function createTable() {
-    getDays();
-    setTheHeaderDate()
+function createTable() {    
     let diaSemana = 0; // Define o dia da semana
     table.style.gridTemplateRows = `repeat(${days.length / 7}, 1fr)`; // Define a quantidade de linhas da nossa tabela de acordo com o numero de dias
     for (let i = 0; i < days.length; i++) {
@@ -44,18 +49,22 @@ function createTable() {
                 day.classList.add("weekend");                 // cria uma div com a classe weekend
                 day.setAttribute("value", days[i]);           // adiciona um value a div igual ao dia
                 table.appendChild(day);                       // Coloca a nova div no elemento pai
-            } else if ((days[i] < date.getUTCDate() || days[i] == date.getUTCDate()) && month == date.getMonth()) { // se não, cria uma div normal
-                let day = document.createElement("div");
-                day.innerHTML += days[i];
-                day.setAttribute("value", days[i]);
-                day.classList.add("unavailableDay");
-                table.appendChild(day);
-            } else {
-                let day = document.createElement("div");
-                day.innerHTML += days[i];
-                day.setAttribute("value", days[i]);
-                day.setAttribute("onclick", `dayClick(this)`);
-                table.appendChild(day);
+            } else if (days[i] < date.getUTCDate() && month == date.getMonth()) { 
+                // se o dia não for menor que a data atual ou igual a data atual, e o mês não for igual ao mẽs atual
+                let day = document.createElement("div"); // cria uma div
+                day.innerHTML += days[i]; // Adiciona o texto
+                day.setAttribute("value", days[i]); // adiciona o valor
+                day.classList.add("unavailableDay"); // Adiciona a classe de indisponibilidade
+                table.appendChild(day); // Coloca na tabela
+            } else { // Se não
+                let day = document.createElement("div"); // cria a div
+                let animate = document.createElement("div"); // Cria uma div que será usada para uma animação
+                day.innerHTML += days[i]; // adiciona o texto
+                animate.classList.add("animate");   
+                day.setAttribute("value", days[i]); // Adiciona o valor a div
+                day.setAttribute("onclick", `dayClick(this)`); // Adiciona um evento de click
+                day.appendChild(animate); // Coloca a div de animação dentro da principal
+                table.appendChild(day); // Coloca na tabela
             }
         } else { // se o valor do dia for 0
             // Cria uma div com a clase extraDays, que não irá ser mostrada no calendario
@@ -75,6 +84,7 @@ function createTable() {
     actualDayDiv.classList.add("actualDay"); // Coloca a classe actual day para marcar no calendario
     let presetDayWeek = document.querySelector(`div[value='${date.getDate() + 1}']`);
     presetDayWeek.classList.add("selectedDay");
+    // presetDayWeek.classList.remove("unavailableDay");
 
     setWeeks();
 
@@ -103,13 +113,12 @@ function nextMonth() {
     } else {
         month = 0;          // volta o valor do mês para 0 (primeiro mês)
         year++;             // Aumenta em um o valor do ano
-    }
-
+    }    
+    
     firstDay = new Date(year, month , 1);   // Define o primeiro dia do mês
     lastDay = new Date(year, month + 1, 0); // Define o ultimo dia do mês
-    createTable();                          // Limpa a tabela
-    setTheHeaderDate()                      // Altera os dados do header
-
+    initApp();
+    
     if (month < date.getMonth() || year < date.getFullYear()) {
         for (let i = 0; i < days.length; i++) {
             table.children[i].classList.add("unavailableDay");
@@ -136,8 +145,7 @@ function previousMonth() {                  // Mesma coisa da função de cima m
     }
     firstDay = new Date(year, month , 1);
     lastDay = new Date(year, month + 1, 0);
-    createTable();
-    setTheHeaderDate()
+    initApp();
 
     if (month < date.getMonth() || year < date.getFullYear()) {
         for (let i = 0; i < days.length; i++) {
@@ -182,8 +190,8 @@ function actualDay() {
     year = date.getUTCFullYear();                   // Pega o ano atual
     firstDay = new Date(year, month , 1);           // Primeiro dia desse mês
     lastDay = new Date(year, month + 1, 0);         // ultimo dia desse mês
-    clearTable();                                   // Limpa a tabela
-    createTable();                                  // Gera uma nova tabela
+    clearTable();
+    initApp();
     document.getElementById("select-month").value = "Mês";
     document.getElementById("select-month").style.width = "80px";
     document.getElementById("select-month").style.backgroundPosition = "55px center"
@@ -225,15 +233,15 @@ function appointmentSubmit() { // Trata os dados depois do submit no modal
 }
 
 function createAppointment(d) { // Cria a marcação de presença
-    let day = d; // Pega o dia selecionado
+    let day = selectedDay; // Pega o dia selecionado
     let appointment = document.createElement("div"); // Cria uma div para guardar as marcações
     let image = document.createElement("img"); // Cria uma imagem
     image.setAttribute("src", appointments[appointments.length - 1].image); // Pega a imagem do objeto na ultima posição do array
-    if (!day.children[0]) { // Se o dia selecionado não tiver nenhuma div
+    if (!day.children[1]) { // Se o dia selecionado não tiver nenhuma div
         appointment.appendChild(image); // Adiciona a imagem a div
         day.appendChild(appointment); // Adiciona a div no dia
     } else { // Caso já tenha uma div
-        day.children[0].appendChild(image); // Coloca a imagem nela
+        day.children[1].appendChild(image); // Coloca a imagem nela
     }
 }
 
@@ -257,8 +265,8 @@ function dayClick(e) { // Captura o click no dia
             table.children[i].classList.remove("selectedDay"); // Remove a classe
         }
     }
-    // let modal = document.querySelector(".makeAppointmentModal");
-    // modal.style.display = "flex";
+    let modal = document.querySelector(".makeAppointmentModal");
+    modal.style.display = "flex";
     selectedDay.classList.add("selectedDay"); // adiciona a classe no dia selecionado
 }
 
