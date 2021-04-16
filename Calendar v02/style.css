@@ -242,7 +242,7 @@ body {
     height: 100%;
     position: absolute;
     background-color: #48c246;
-    bottom: -100px;
+    bottom: -100%;
     visibility: hidden;
     transition: all .3s;
     z-index: 1;
@@ -271,7 +271,7 @@ body {
 .calendar .table .days div:hover > .animate {
     visibility: visible;
     bottom: 0;
-    transform: translateY(-500px);;
+    /* transform: translateY(-500px);; */
 }
 
 .weekend,

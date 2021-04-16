@@ -346,6 +346,7 @@ function dayClick(e) { // Captura o click no dia
 }
 
 function weekMode() {
+    let animatedDiv = document.querySelectorAll(`.animate`);
     if (checkWeekMode == true) {
         for (let i = 0; i < days.length; i++) { // Some com todos os dias
             table.children[i].style.display = "none";
@@ -362,12 +363,14 @@ function weekMode() {
         }
 
         table.style.gridTemplateRows = "none";
-        let animatedDiv = document.querySelectorAll(`.animate`);
-        animatedDiv.forEach((e) => {
-            e.style.bottom = "-500px";
-        })
+        // animatedDiv.forEach((e) => {
+        //     e.style.bottom = "-300px";
+        // })
 
     } else {
+        // animatedDiv.forEach((e) => {
+        //     e.style.bottom = "-500px";
+        // })
         clearTable();
         initApp();
         console.log("teste");
