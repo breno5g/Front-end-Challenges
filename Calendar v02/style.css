@@ -242,9 +242,9 @@ body {
     height: 100%;
     position: absolute;
     background-color: #48c246;
-    bottom: -100px;    
+    bottom: -100px;
     visibility: hidden;
-    transition: all .5s;
+    transition: all .3s;
     z-index: 1;
 }
 
@@ -271,6 +271,7 @@ body {
 .calendar .table .days div:hover > .animate {
     visibility: visible;
     bottom: 0;
+    transform: translateY(-500px);;
 }
 
 .weekend,
@@ -332,6 +333,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    z-index: 100;
 }
 
 .makeAppointmentModal div {

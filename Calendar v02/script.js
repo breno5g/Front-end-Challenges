@@ -8,7 +8,7 @@ let lastDay;
 
 let days = [];                                  // Array com todos os dias em ordem
 
-let selectedDay = document.querySelector(`div[value = "${date.getDate() + 1}"]`); // Variavel para guardar qual dia está selecionado
+let selectedDay; // Variavel para guardar qual dia está selecionado
 
 let checkWeekMode = false;
 
@@ -19,7 +19,6 @@ function initApp() {
     createTable();
     loadAppointments();
     // weekMode();
-    selectedDay = document.querySelector(`div[value = "${date.getDate() + 1}"]`);
 }
 
 /* =-=-=-=-= Pegando os dias do mês =-=-=-=-= */
@@ -90,7 +89,17 @@ function createTable() {
     let actualDayDiv = document.querySelector(`div[value='${date.getDate()}']`) // Pega o dia atual
     actualDayDiv.classList.add("actualDay"); // Coloca a classe actual day para marcar no calendario
     let presetDayWeek = document.querySelector(`div[value='${date.getDate() + 1}']`);
-    presetDayWeek.classList.add("selectedDay");
+    if (presetDayWeek.classList.contains("weekend")) {
+        presetDayWeek = document.querySelector(`div[value='${date.getDate() + 2}']`);
+        if (presetDayWeek.classList.contains("weekend")) {
+            presetDayWeek = document.querySelector(`div[value='${date.getDate() + 3}']`);
+            presetDayWeek.classList.add("selectedDay");
+        }
+    } else {
+        presetDayWeek.classList.add("selectedDay");
+    }
+
+    selectedDay = presetDayWeek;
 
     setWeeks();
 
@@ -222,54 +231,63 @@ let appointments = [ // array com as marcações de presença
     {
         day: 12,
         month: 3,
+        year: 2021,
         name: "Breno Santos",
         image: "https://avatars.githubusercontent.com/u/51424478?v=4"
     },
     {
         day: 12,
         month: 3,
+        year: 2021,
         name: "Breno Santos",
         image: "https://avatars.githubusercontent.com/u/51424478?v=4"
     },
     {
         day: 10,
         month: 4,
+        year: 2021,
         name: "Breno Santos",
         image: "https://avatars.githubusercontent.com/u/51424478?v=4"
     },
     {
         day: 22,
         month: 2,
+        year: 2021,
         name: "Breno Santos",
         image: "https://avatars.githubusercontent.com/u/51424478?v=4"
     },
     {
         day: 17,
         month: 3,
+        year: 2021,
         name: "Breno Santos",
         image: "https://avatars.githubusercontent.com/u/51424478?v=4"
     },
     {
         day: 22,
         month: 3,
+        year: 2021,
         name: "Breno Santos",
         image: "https://avatars.githubusercontent.com/u/51424478?v=4"
     },
     {
         day: 10,
         month: 4,
+        year: 2021,
         name: "Breno Santos",
         image: "https://avatars.githubusercontent.com/u/51424478?v=4"
     },
     {
         day: 22,
         month: 3,
+        year: 2021,
         name: "Breno Santos",
         image: "https://avatars.githubusercontent.com/u/51424478?v=4"
     },
     {
         day: 17,
         month: 3,
+        year: 2021,
         name: "Breno Santos",
         image: "https://avatars.githubusercontent.com/u/51424478?v=4"
     }
@@ -337,12 +355,18 @@ function weekMode() {
     
     
         for (let i = 0; i <= days.length; i++) { // laço de repetição com os todos os dias da tabela;
-            let visibleDay = document.querySelector(`.days`); // Pega todos os dias da tabela
             // Se o index for maior ou igual a 7 vezes o numero da semana e menor que 7 vezes o numero da semana +1
             if (i >= 7 * week && i < 7 * (week + 1)) {
-                visibleDay.children[i].style.display = "flex"; // Deixa visivel de acordo com os elementos filhos
+                table.children[i].style.display = "flex"; // Deixa visivel de acordo com os elementos filhos
             }
         }
+
+        table.style.gridTemplateRows = "none";
+        let animatedDiv = document.querySelectorAll(`.animate`);
+        animatedDiv.forEach((e) => {
+            e.style.bottom = "-500px";
+        })
+
     } else {
         clearTable();
         initApp();
@@ -356,6 +380,7 @@ function changeWeekMode() {
     } else {
         checkWeekMode = false;
     }
+    weekMode();
 }
 
 function setWeeks() { // Configura em qual semana está cada dia
@@ -380,7 +405,7 @@ function loadAppointments() {
         let image = document.createElement("img"); // Cria uma imagem
         appointment.classList.add("appointmentContainer");
         image.setAttribute("src", appointments[appointments.length - 1].image); // Pega a imagem do objeto na ultima posição do array
-        if (e.month == month) {
+        if (e.month == month && e.year == year) {
             if (day.classList.contains("unavailableDay") || day.classList.contains("weekend")) {
                 if (!day.children[0] )  {
                     appointment.appendChild(image); // Adiciona a imagem a div
