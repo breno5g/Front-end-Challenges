@@ -52,6 +52,7 @@ function createTable() {
             if (diaSemana == 0 || diaSemana == 6) { // Se o dia da semana for um final de semana
                 let day = document.createElement("div");      // Cria uma div para colocarmos o dia
                 day.innerHTML += days[i];                     // adiciona o valor do dia a div
+                day.classList.add("day");                 // cria uma div com a classe weekend
                 day.classList.add("weekend");                 // cria uma div com a classe weekend
                 day.setAttribute("value", days[i]);           // adiciona um value a div igual ao dia
                 table.appendChild(day);                       // Coloca a nova div no elemento pai
@@ -60,12 +61,14 @@ function createTable() {
                 let day = document.createElement("div"); // cria uma div
                 day.innerHTML += days[i]; // Adiciona o texto
                 day.setAttribute("value", days[i]); // adiciona o valor
+                day.classList.add("day"); // Adiciona a classe de indisponibilidade
                 day.classList.add("unavailableDay"); // Adiciona a classe de indisponibilidade
                 table.appendChild(day); // Coloca na tabela
             } else { // Se não
                 let day = document.createElement("div"); // cria a div
                 let animate = document.createElement("div"); // Cria uma div que será usada para uma animação
                 day.innerHTML += days[i]; // adiciona o texto
+                day.classList.add("day");
                 animate.classList.add("animate");   
                 day.setAttribute("value", days[i]); // Adiciona o valor a div
                 day.setAttribute("onclick", `dayClick(this)`); // Adiciona um evento de click
@@ -75,6 +78,7 @@ function createTable() {
         } else { // se o valor do dia for 0
             // Cria uma div com a clase extraDays, que não irá ser mostrada no calendario
             let day = document.createElement("div");
+            day.classList.add("day");
             day.classList.add("extraDays");
             day.setAttribute("value", days[i]);
             table.appendChild(day);
@@ -105,10 +109,10 @@ function createTable() {
 
     let totalWeeks = days.length / 7;
 
-    let teste = document.querySelectorAll(`[week="${totalWeeks - 1}"]`)
+    let borderRadius = document.querySelectorAll(`[week="${totalWeeks - 1}"]`)
 
-    teste[0].style.borderRadius = "0 0 0 10px";
-    teste[6].style.borderRadius = "0 0 10px 0";
+    borderRadius[0].style.borderRadius = "0 0 0 10px";
+    borderRadius[6].style.borderRadius = "0 0 10px 0";
 
 }
 
@@ -236,17 +240,17 @@ let appointments = [ // array com as marcações de presença
         image: "https://avatars.githubusercontent.com/u/51424478?v=4"
     },
     {
-        day: 12,
+        day: 22,
         month: 3,
         year: 2021,
         name: "Breno Santos",
         image: "https://avatars.githubusercontent.com/u/51424478?v=4"
     },
     {
-        day: 10,
+        day: 22,
         month: 4,
         year: 2021,
-        name: "Breno Santos",
+        name: "Breno Santos Ferreira",
         image: "https://avatars.githubusercontent.com/u/51424478?v=4"
     },
     {
@@ -267,7 +271,7 @@ let appointments = [ // array com as marcações de presença
         day: 22,
         month: 3,
         year: 2021,
-        name: "Breno Santos",
+        name: "Breno Santos Ferreira",
         image: "https://avatars.githubusercontent.com/u/51424478?v=4"
     },
     {
@@ -346,7 +350,7 @@ function dayClick(e) { // Captura o click no dia
 }
 
 function weekMode() {
-    let animatedDiv = document.querySelectorAll(`.animate`);
+    let appointmentsDiv = document.querySelectorAll(".appointmentContainer")
     if (checkWeekMode == true) {
         for (let i = 0; i < days.length; i++) { // Some com todos os dias
             table.children[i].style.display = "none";
@@ -363,17 +367,14 @@ function weekMode() {
         }
 
         table.style.gridTemplateRows = "none";
-        // animatedDiv.forEach((e) => {
-        //     e.style.bottom = "-300px";
-        // })
+
+        appointmentsDiv.forEach((e) => {
+            e.classList.add("week");
+        })
 
     } else {
-        // animatedDiv.forEach((e) => {
-        //     e.style.bottom = "-500px";
-        // })
         clearTable();
         initApp();
-        console.log("teste");
     }
 }
 
@@ -405,23 +406,34 @@ function loadAppointments() {
     appointments.forEach((e) => {
         let day = document.querySelector(`div[value= "${e.day}"]`); 
         let appointment = document.createElement("div"); // Cria uma div para guardar as marcações
+        let container = document.createElement("div"); // Cria uma div para guardar a imagem e o nome
+        let name = document.createElement("span"); // Cria o nome da pessoa
+        name.innerHTML = e.name;
         let image = document.createElement("img"); // Cria uma imagem
         appointment.classList.add("appointmentContainer");
         image.setAttribute("src", appointments[appointments.length - 1].image); // Pega a imagem do objeto na ultima posição do array
         if (e.month == month && e.year == year) {
             if (day.classList.contains("unavailableDay") || day.classList.contains("weekend")) {
                 if (!day.children[0] )  {
-                    appointment.appendChild(image); // Adiciona a imagem a div
+                    container.appendChild(image); // Adiciona a imagem a div
+                    container.appendChild(name); // Adiciona o nome a div
+                    appointment.appendChild(container); // Adiciona o container a div
                     day.appendChild(appointment); // Adiciona a div no dia
                 } else {
-                    day.children[0].appendChild(image); // Adiciona a div no dia
+                    container.appendChild(image); // Adiciona a div no dia
+                    container.appendChild(name); // Adiciona o nome a div
+                    day.children[0].appendChild(container); // Adiciona a div no dia
                 }
             } else {
                 if (!day.children[1])  {
-                    appointment.appendChild(image); // Adiciona a imagem a div
+                    container.appendChild(image); // Adiciona a imagem a div
+                    container.appendChild(name); // Adiciona o nome a div
+                    appointment.appendChild(container); // Adiciona o container a div
                     day.appendChild(appointment); // Adiciona a div no dia
                 } else {
-                    day.children[1].appendChild(image); // Adiciona a div no dia
+                    container.appendChild(image); // Adiciona a div no dia
+                    container.appendChild(name); // Adiciona o nome a div
+                    day.children[1].appendChild(container); // Adiciona a div no dia
                 }
             }
         }
