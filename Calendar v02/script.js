@@ -10,12 +10,15 @@ let days = [];                                  // Array com todos os dias em or
 
 let selectedDay = document.querySelector(`div[value = "${date.getDate() + 1}"]`); // Variavel para guardar qual dia está selecionado
 
+let checkWeekMode = false;
+
 /* =-=-=-= Iniciando todas as funções necessarias =-=-=-=-= */
 function initApp() {
     getDays();
     setTheHeaderDate();
     createTable();
     loadAppointments();
+    // weekMode();
     selectedDay = document.querySelector(`div[value = "${date.getDate() + 1}"]`);
 }
 
@@ -53,7 +56,7 @@ function createTable() {
                 day.classList.add("weekend");                 // cria uma div com a classe weekend
                 day.setAttribute("value", days[i]);           // adiciona um value a div igual ao dia
                 table.appendChild(day);                       // Coloca a nova div no elemento pai
-            } else if (days[i] < date.getUTCDate() && month == date.getMonth()) { 
+            } else if (days[i] <= date.getUTCDate() && month == date.getMonth()) { 
                 // se o dia não for menor que a data atual ou igual a data atual, e o mês não for igual ao mẽs atual
                 let day = document.createElement("div"); // cria uma div
                 day.innerHTML += days[i]; // Adiciona o texto
@@ -325,19 +328,33 @@ function dayClick(e) { // Captura o click no dia
 }
 
 function weekMode() {
-    for (let i = 0; i < days.length; i++) { // Some com todos os dias
-        table.children[i].style.display = "none";
-    }
-
-    let week = parseInt(selectedDay.getAttribute("week")) // Seleciona a semana de acordo com o dia selecionado
-
-
-    for (let i = 0; i <= days.length; i++) { // laço de repetição com os todos os dias da tabela;
-        let visibleDay = document.querySelector(`.days`); // Pega todos os dias da tabela
-        // Se o index for maior ou igual a 7 vezes o numero da semana e menor que 7 vezes o numero da semana +1
-        if (i >= 7 * week && i < 7 * (week + 1)) {
-            visibleDay.children[i].style.display = "flex"; // Deixa visivel de acordo com os elementos filhos
+    if (checkWeekMode == true) {
+        for (let i = 0; i < days.length; i++) { // Some com todos os dias
+            table.children[i].style.display = "none";
         }
+    
+        let week = parseInt(selectedDay.getAttribute("week")) // Seleciona a semana de acordo com o dia selecionado
+    
+    
+        for (let i = 0; i <= days.length; i++) { // laço de repetição com os todos os dias da tabela;
+            let visibleDay = document.querySelector(`.days`); // Pega todos os dias da tabela
+            // Se o index for maior ou igual a 7 vezes o numero da semana e menor que 7 vezes o numero da semana +1
+            if (i >= 7 * week && i < 7 * (week + 1)) {
+                visibleDay.children[i].style.display = "flex"; // Deixa visivel de acordo com os elementos filhos
+            }
+        }
+    } else {
+        clearTable();
+        initApp();
+        console.log("teste");
+    }
+}
+
+function changeWeekMode() {
+    if (checkWeekMode == false) {
+        checkWeekMode = true;
+    } else {
+        checkWeekMode = false;
     }
 }
 

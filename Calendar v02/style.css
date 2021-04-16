@@ -209,10 +209,9 @@ body {
     cursor: pointer;
 }
 
-/* .calendar .table .days div:hover:not(.unavailableDay):not(.extraDays):not(.weekend):not(.animate) {
-    background-color: #eeeeee91;
-    border: 1px solid #48c246bb;
-} */
+.calendar .table .days div div {
+    cursor: unset;
+}
 
 .calendar .table .days div[value = "0"] {
     background-color: #D7D7D7;
@@ -290,7 +289,8 @@ body {
 .calendar .table .days div[class="weekend"],
 .calendar .table .days div[class="unavailableDay"],
 .calendar .table .days div[value="0"],
-.calendar .table .days .actualDay {
+.calendar .table .days .actualDay,
+.calendar .table .days div[class="unavailableDay"] div {
     cursor: unset;
 }
 
