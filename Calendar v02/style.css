@@ -244,7 +244,7 @@ body {
     background-color: #48c246;
     bottom: -100%;
     visibility: hidden;
-    transition: all .3s;
+    transition: all .3s ease-in-out;
     z-index: 1;
 }
 
