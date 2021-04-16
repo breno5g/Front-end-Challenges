@@ -8,11 +8,15 @@ let lastDay;
 
 let days = [];                                  // Array com todos os dias em ordem
 
+let selectedDay = document.querySelector(`div[value = "${date.getDate() + 1}"]`); // Variavel para guardar qual dia está selecionado
+
 /* =-=-=-= Iniciando todas as funções necessarias =-=-=-=-= */
 function initApp() {
     getDays();
     setTheHeaderDate();
     createTable();
+    loadAppointments();
+    selectedDay = document.querySelector(`div[value = "${date.getDate() + 1}"]`);
 }
 
 /* =-=-=-=-= Pegando os dias do mês =-=-=-=-= */
@@ -84,7 +88,6 @@ function createTable() {
     actualDayDiv.classList.add("actualDay"); // Coloca a classe actual day para marcar no calendario
     let presetDayWeek = document.querySelector(`div[value='${date.getDate() + 1}']`);
     presetDayWeek.classList.add("selectedDay");
-    // presetDayWeek.classList.remove("unavailableDay");
 
     setWeeks();
 
@@ -212,11 +215,61 @@ function setTheHeaderDate() {
 
 /* =-=-=-= Create an appointment =-=-=-= */
 
-let selectedDay; // Variavel para guardar qual dia está selecionado
-
-
 let appointments = [ // array com as marcações de presença
-
+    {
+        day: 12,
+        month: 3,
+        name: "Breno Santos",
+        image: "https://avatars.githubusercontent.com/u/51424478?v=4"
+    },
+    {
+        day: 12,
+        month: 3,
+        name: "Breno Santos",
+        image: "https://avatars.githubusercontent.com/u/51424478?v=4"
+    },
+    {
+        day: 10,
+        month: 4,
+        name: "Breno Santos",
+        image: "https://avatars.githubusercontent.com/u/51424478?v=4"
+    },
+    {
+        day: 22,
+        month: 2,
+        name: "Breno Santos",
+        image: "https://avatars.githubusercontent.com/u/51424478?v=4"
+    },
+    {
+        day: 17,
+        month: 3,
+        name: "Breno Santos",
+        image: "https://avatars.githubusercontent.com/u/51424478?v=4"
+    },
+    {
+        day: 22,
+        month: 3,
+        name: "Breno Santos",
+        image: "https://avatars.githubusercontent.com/u/51424478?v=4"
+    },
+    {
+        day: 10,
+        month: 4,
+        name: "Breno Santos",
+        image: "https://avatars.githubusercontent.com/u/51424478?v=4"
+    },
+    {
+        day: 22,
+        month: 3,
+        name: "Breno Santos",
+        image: "https://avatars.githubusercontent.com/u/51424478?v=4"
+    },
+    {
+        day: 17,
+        month: 3,
+        name: "Breno Santos",
+        image: "https://avatars.githubusercontent.com/u/51424478?v=4"
+    }
 ]
 
 function appointmentSubmit() { // Trata os dados depois do submit no modal
@@ -268,6 +321,7 @@ function dayClick(e) { // Captura o click no dia
     let modal = document.querySelector(".makeAppointmentModal");
     modal.style.display = "flex";
     selectedDay.classList.add("selectedDay"); // adiciona a classe no dia selecionado
+    console.log(selectedDay)
 }
 
 function weekMode() {
@@ -300,4 +354,31 @@ function setWeeks() { // Configura em qual semana está cada dia
             } 
         }
     }
+}
+
+function loadAppointments() {
+    appointments.forEach((e) => {
+        let day = document.querySelector(`div[value= "${e.day}"]`); 
+        let appointment = document.createElement("div"); // Cria uma div para guardar as marcações
+        let image = document.createElement("img"); // Cria uma imagem
+        appointment.classList.add("appointmentContainer");
+        image.setAttribute("src", appointments[appointments.length - 1].image); // Pega a imagem do objeto na ultima posição do array
+        if (e.month == month) {
+            if (day.classList.contains("unavailableDay") || day.classList.contains("weekend")) {
+                if (!day.children[0] )  {
+                    appointment.appendChild(image); // Adiciona a imagem a div
+                    day.appendChild(appointment); // Adiciona a div no dia
+                } else {
+                    day.children[0].appendChild(image); // Adiciona a div no dia
+                }
+            } else {
+                if (!day.children[1])  {
+                    appointment.appendChild(image); // Adiciona a imagem a div
+                    day.appendChild(appointment); // Adiciona a div no dia
+                } else {
+                    day.children[1].appendChild(image); // Adiciona a div no dia
+                }
+            }
+        }
+    })
 }
