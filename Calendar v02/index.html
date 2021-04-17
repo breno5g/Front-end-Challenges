@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Texto top só pra melhorar o SEO">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
     <title>Calendar</title>
@@ -11,18 +12,28 @@
 <body onload="initApp()">
     <section class="calendar">
         <header>
-            <menu>
+            <nav>
                 <div>
-                    <button><i class="fas fa-bars"></i></button>
+                    <button><i class="fas fa-bars">
+                        <span>open_menu</span>
+                    </i></button>
                     <span class="actual-day">14</span>
                     <h1>Agendamento de presença</h1>
                 </div>
                 <div>
-                    <button onclick="actualDay()"><i class="fas fa-calendar-day"></i></button>
-                        <button onclick="previousMonth()"><i class="fas fa-chevron-left"></i></button>
-                        <span class="actual-month">Abril de 2021</span>
-                        <button  onclick="nextMonth()"><i class="fas fa-chevron-right"></i></button>
-                        <button onclick="changeWeekMode()"><i class="far fa-eye"></i></button>
+                    <button onclick="actualDay()"><i class="fas fa-calendar-day">
+                        <span>turn_to_actual_day</span>
+                    </i></button>
+                    <button onclick="previousMonth()"><i class="fas fa-chevron-left">
+                        <span>previous_button</span>
+                    </i></button>
+                    <span class="actual-month">Abril de 2021</span>
+                    <button  onclick="nextMonth()"><i class="fas fa-chevron-right"></i>
+                        <span>next_button</span>
+                    </button>
+                    <button onclick="changeWeekMode()"><i class="far fa-eye"></i>
+                        <span>turn_to_week_mode</span>
+                    </button>
                 </div>
                 <div>
                     <!-- <select onchange="changeTheMonth(this)" name="" id="select-month">
@@ -40,10 +51,12 @@
                         <option value="10">Novembro</option>
                         <option value="11">Dezembro</option>
                     </select> -->
-                    <button><i class="fas fa-home"></i></button>
-                    <img src="https://avatars.githubusercontent.com/u/51424478?v=4" alt="">
+                    <button><i class="fas fa-home">
+                        <span>turn_to_home</span>
+                    </i></button>
+                    <img src="https://avatars.githubusercontent.com/u/51424478?v=4" alt="Perfil">
                 </div>
-            </menu>
+            </nav>
         </header>
         <section class="table">
             <header class="header">

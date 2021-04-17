@@ -414,6 +414,7 @@ function loadAppointments() {
         let image = document.createElement("img"); // Cria uma imagem
         appointment.classList.add("appointmentContainer");
         image.setAttribute("src", appointments[appointments.length - 1].image); // Pega a imagem do objeto na ultima posição do array
+        image.setAttribute("alt", "foto"); // Coloca um alt na img
         if (e.month == month && e.year == year) {
             if (day.classList.contains("unavailableDay") || day.classList.contains("weekend")) {
                 if (!day.children[0] )  {
