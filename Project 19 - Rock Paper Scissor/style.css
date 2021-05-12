@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    text-transform: uppercase;
+}
+
+body {
+    height: 100vh;
+    background: radial-gradient(circle, #1f3756  0%, #141539 100%);
+}
+
+.gameContainer {
+    height: 100%;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    position: relative;
+}
+
+/* =-=-=-=-= Header =-=-=-=-= */
+
+.gameContainer header {
+    width: 600px;
+    height: 130px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #ffffff70;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gameContainer header .gameTitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 35px;
+    font-weight: 700;
+    line-height: 26px;
+}
+
+.gameContainer header .scoreBoard {
+    width: 120px;
+    height: 100px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.gameContainer header .scoreBoard span:first-child {
+    color: #173d6e;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    line-height: 15px;
+}
+
+.gameContainer header .scoreBoard span:last-child {
+    color: #3b4363;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 60px;
+}
+
+/* =-=-=-=-= Game table init=-=-=-=-= */
+
+.gameContainer .gameTable.init {
+    width: 500px;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    background: url(Assets/images/bg-triangle.svg) no-repeat center 50px;
+    background-size: 270px;
+}
+
+.gameContainer .gameTable .btn {
+    width: 120px;
+    height: 120px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.gameContainer .gameTable.init .btn:last-child {
+    transform: translateY(-50px);
+}
+
+.gameContainer .gameTable .paper {
+    box-shadow: 0 0 0 15px #7412e4,
+                inset 2px 6px 0 0 #00000050;
+}
+.gameContainer .gameTable .scissors {
+    box-shadow: 0 0 0 15px #e0e412,
+                inset 2px 6px 0 0 #00000050;
+}
+.gameContainer .gameTable .rock {
+    box-shadow: 0 0 0 15px #e43c12,
+                inset 2px 6px 0 0 #00000050;
+}
+
+.gameContainer .rules {
+    position: absolute;
+    bottom: 50px;   
+    right: 50px;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 2px solid #ffffff40;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.gameContainer .rules:hover {
+    background-color: white;
+    color: #141539;
+}
+
+/* =-=-=-=-= game table wait COM =-=-=--= */
+
+.gameContainer .gameTable.waitCOM {
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 150px;
+}
+
+.gameContainer .gameTable.waitCOM .btn.COM {
+    background-color: #1415396e;
+}
+
+.gameContainer .gameTable.waitCOM div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.gameContainer .gameTable.waitCOM div span:nth-child(1) {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* =-=-=-=-= COM response =-=-=-= */
+
+.gameContainer .gameTable.COMResponse {
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 150px;
+}
+
+.gameContainer .gameTable.COMResponse div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.gameContainer .gameTable.COMResponse div span:nth-child(1) {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* =-=-=-=-= End Game =-=-=-= */
+.gameContainer .gameTable.end {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    transform: translateX(10px);
+}
+
+.gameContainer .gameTable.end .box {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.gameContainer .gameTable.end .box span:nth-child(1) {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.gameContainer .gameTable.end .endGame {
+    height: 100px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transform: translate(20px, 10px);
+    animation: creation 0.3s ease-in;
+}
+
+@keyframes creation {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
+
+.gameContainer .gameTable.end .endGame span {
+    font-size: 44px;
+    font-weight: 700;
+}
+
+.gameContainer .gameTable.end .endGame button {
+    width: 170px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    color: red;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.gameContainer .gameTable.end div:nth-child(1), 
+.gameContainer .gameTable.end div:nth-child(3) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.gameContainer .gameTable.end div:nth-child(1) span:nth-child(1),
+.gameContainer .gameTable.end div:nth-child(3) span:nth-child(1) {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
