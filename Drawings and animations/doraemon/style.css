@@ -9,6 +9,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    background: linear-gradient(90deg, #fff400 0%, #ff00e8 100%);
 }
 
 .doraemon {
