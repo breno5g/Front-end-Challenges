@@ -1,0 +1,341 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.doraemon {
+    width: 150px;
+    height: 200px;
+    position: relative;
+}
+
+.doraemon .head {
+    width: 100px;
+    height: 100px;
+    background-color: #04a5d9;
+    border-radius: 50%;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #333333;
+}
+
+.doraemon .head::before {
+    content: "";
+    width: 80%;
+    height: 80%;
+    background-color: white;
+    position: absolute;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -5px;
+    border: 1px solid #333333;
+}
+
+.doraemon .head .eyes {
+    width: auto;
+    display: flex;
+    position: absolute;
+    margin: auto;
+    top: 15px;
+}
+
+.doraemon .head .eyes .eye {
+    width: 23px;
+    height: 30px;
+    background-color: white;
+    border-radius: 40%;
+    border: 1px solid #333333;
+    position: relative;
+}
+
+.doraemon .head .eyes .left-eye {
+    transform: rotateY(180deg);
+}
+
+.doraemon .head .eyes .eye::after {
+    content: "";
+    width: 5px;
+    height: 5px;
+    background-color: black;
+    position: absolute;
+    bottom: 5px;
+    right: 2px;
+    border-radius: 50%;
+}
+
+.doraemon .head .nose {
+    width: 13px;
+    height: 13px;
+    background-color: #d62e2e;
+    position: relative;
+    border-radius: 50%;
+    top: -2px;
+    border: 1px solid #333333;
+}
+
+.doraemon .head .nose::before {
+    content: "";
+    width: 40%;
+    height: 40%;
+    position: absolute;
+    background-color: #ffffffb9;
+    border-radius: 50%;
+    top: 25%;
+    right: 1px;
+}
+
+.doraemon .head .nose::after {
+    content: "";
+    width: 1px;
+    height: 30px;
+    position: absolute;
+    background-color: #000;
+    left: 50%;
+    top: 100%;
+}
+
+.doraemon .head .mustaches .m-left,
+.doraemon .head .mustaches .m-right {
+    width: 17px;
+    height: 1px;
+    background-color: black;
+    position: absolute;
+    left: 15px;
+    top: 60%;
+}
+
+.doraemon .head .mustaches .m-right {
+    left: unset;
+    right: 15px;
+}
+
+.doraemon .head .mustaches .m-left::before,
+.doraemon .head .mustaches .m-right::before,
+.doraemon .head .mustaches .m-left::after,
+.doraemon .head .mustaches .m-right::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: inherit;
+    top: -5px;
+    transform: rotate(15deg);
+}
+
+.doraemon .head .mustaches .m-left::after {
+    top: 5px;
+    transform: rotate(-15deg);
+}
+
+.doraemon .head .mustaches .m-right::before {
+    transform: rotate(-15deg);
+}
+
+.doraemon .head .mustaches .m-right::after {
+    top: 5px;
+    transform: rotate(15deg);
+}
+
+.doraemon .head .mouth {
+    width: 45px;
+    height: 20px;
+    position: absolute;
+    bottom: 17px;
+    border-radius: 50%;
+    box-shadow: 0 2px 0 0px #000;
+}
+
+.doraemon .collar {
+    width: 80px;
+    height: 10px;
+    background-color: #b63636;
+    margin: auto;
+    transform: translateY(-13px);
+    border-radius: 20px;
+    border: 1px solid #333333;
+    position: relative;
+    z-index: 10;
+}
+
+.doraemon .collar .bell {
+    width: 15px;
+    height: 15px;
+    background-color: #ffff00;
+    border-radius: 50%;
+    border: 1px solid #333333;
+    margin: auto;
+    transform: translateY(2px);
+    overflow: hidden;
+    position: relative;
+}
+
+.doraemon .collar .bell::before {
+    content: "";
+    width: 1.5px;
+    height: 4px;
+    background-color: #000;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.doraemon .collar .bell::after {
+    content: "";
+    width: 5px;
+    height: 5px;
+    background-color: #000;
+    position: absolute;
+    margin: auto;
+    top: 5.5px;
+    left: 0;
+    right: 0;
+    border-radius: 50%;
+}
+
+.doraemon .collar .bell .bell-lines {
+    width: 100%;
+    height: 0.5px;
+    background-color: #333333;
+    position: absolute;
+    top: 20%;
+    box-shadow: 0 1px 0 0 #333333, 0 2px 0 0 #333333;
+}
+
+.doraemon .body {
+    width: 70px;
+    height: 65px;
+    background-color: #04a5d9;
+    border: 1px solid #333333;
+    border-bottom: none;
+    margin: auto;
+    transform: translateY(-20px);
+    z-index: 3;
+}
+
+.doraemon .body::before {
+    content: "";
+    width: 1px;
+    height: 15px;
+    background-color: #04a5d9;
+    position: absolute;
+    top: 5px;
+    left: -1px;
+    box-shadow: 69px 0 0 0 #04a5d9;
+}
+
+.doraemon .body .magic-bag {
+    width: 85%;
+    height: 90%;
+    background-color: white;
+    border-radius: 25% 25% 50% 50% / 44% 43% 55% 56%;
+    border: 1px solid #333333;
+    margin: auto;
+    transform: translateY(-3px);
+}
+
+.doraemon .body .magic-bag::before {
+    content: "";
+    width: 80%;
+    height: 40%;
+    border: 1px solid #333333;
+    border-radius: 0% 0% 50% 50% / 0% 0% 100% 100%;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 50%;
+}
+
+.doraemon .arms .arm {
+    width: 30px;
+    height: 15px;
+    background-color: #04a5d9;
+    position: absolute;
+    top: 102px;
+    left: 20px;
+    border: 1px solid #333333;
+    border-right: none;
+    z-index: -1;
+    transform: rotate(-40deg);
+}
+
+.doraemon .arms .arm:last-child {
+    left: unset;
+    right: 20px;
+    transform: rotate(40deg) rotateY(180deg);
+}
+
+.doraemon .arms .arm::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    border: 1px solid #333333;
+    position: absolute;
+    left: -10px;
+    top: -4px;
+}
+
+.doraemon .legs {
+    width: 70px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-400%);
+}
+
+.doraemon .legs::after {
+    content: "";
+    width: 6px;
+    height: 5px;
+    background-color: white;
+    border: 1px solid #333333;
+    border-bottom: none;
+    position: absolute;
+    margin: auto;
+    bottom: 2px;
+    left: 0;
+    right: 0;
+    border-radius: 71% 65% 64% 67% / 100% 100% 0% 0%;
+}
+
+.doraemon .legs .leg {
+    width: 32px;
+    height: 5px;
+    background-color: #04a5d9;
+    border: 1px solid #333333;
+    border-top: none;
+}
+
+.doraemon .legs .leg::after {
+    content: "";
+    width: 37px;
+    height: 10px;
+    background-color: white;
+    position: absolute;
+    bottom: -9px;
+    left: -5.5px;
+    border-radius: 10px 5px 5px 5px;
+    border: 1px solid #333333;
+}
+
+.doraemon .legs .leg:last-child:after {
+    left: unset;
+    right: -5.5px;
+    transform: rotateY(180deg);
+}
