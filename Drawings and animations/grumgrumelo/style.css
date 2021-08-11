@@ -4,6 +4,15 @@
     box-sizing: border-box;
 }
 
+:root {
+    --ggmBaseHead: #df2727;
+    --ggmBaseHeadShadow: #c51818;
+    --ggmPoisonHead: #5641d1;
+    --ggmPoisonHeadShadow: #563ebe;
+    --ggmOneUpHead: #38da1f;
+    --ggmOneUpHeadShadow: #11b41983;
+}
+
 body {
     height: 100vh;
     display: flex;
@@ -14,7 +23,6 @@ body {
 .grumGrumMelo {
     width: 150px;
     height: 150px;
-    background-color: #ff634752;
     position: relative;
 }
 
@@ -22,7 +30,7 @@ body {
 .grumGrumMelo .head {
     width: 100%;
     height: 75%;
-    background-color: #df2727;
+    background-color: var(--ggmBaseHead);
     border-radius: 100px 100px 50px 50px;
     border: 2px solid black;
     overflow: hidden;
@@ -35,7 +43,7 @@ body {
     width: 60%;
     height: 50px;
     position: absolute;
-    background-color: #c51818;
+    background-color: var(--ggmBaseHeadShadow);
     margin: auto;
     bottom: -25px;
     left: 0;
@@ -84,6 +92,53 @@ body {
     margin: auto;
     left: 0;
     right: 0;
-    bottom: 10px;
+    bottom: 15px;
     border: 2px solid black;
+    position: relative;
+}
+
+.grumGrumMelo .body::before {
+    content: "";
+    width: 80%;
+    height: 80%;
+    background-color: rgba(255, 255, 255, 0.432);
+    position: absolute;
+    margin: auto;
+    inset: 0;
+    border-radius: 10px;
+}
+
+.grumGrumMelo .body .eyes {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.grumGrumMelo .body .eyes .eye {
+    width: 10px;
+    height: 25px;
+    background-color: black;
+    border-radius: 10px 10px 10px 10px;
+    position: relative;
+}
+
+.grumGrumMelo .body .eyes .eye::before {
+    content: "";
+    width: 50%;
+    height: 50%;
+    background-color: white;
+    position: absolute;
+    top: 3px;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.grumGrumMelo .body .eyes .eye:first-child:before {
+    right: 1.5px;
+}
+
+.grumGrumMelo .body .eyes .eye:last-child:before {
+    left: 1.5px;
 }
