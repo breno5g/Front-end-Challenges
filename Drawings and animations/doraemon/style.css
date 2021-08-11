@@ -9,7 +9,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background: linear-gradient(90deg, #fff400 0%, #ff00e8 100%); */
 }
 
 .doraemon {
@@ -59,6 +58,7 @@ body {
     border-radius: 40%;
     border: 1px solid #333333;
     position: relative;
+    /* box-shadow: inset 2px 2px 0 0 #000000; */
 }
 
 .doraemon .head .eyes .left-eye {
@@ -290,6 +290,7 @@ body {
     position: absolute;
     left: -10px;
     top: -4px;
+    box-shadow: inset 1px 2px 0 0 #00000038;
 }
 
 .doraemon .legs {
@@ -297,7 +298,7 @@ body {
     margin: auto;
     display: flex;
     justify-content: space-between;
-    transform: translateY(-400%);
+    transform: translateY(-350%);
 }
 
 .doraemon .legs::after {
@@ -317,7 +318,7 @@ body {
 
 .doraemon .legs .leg {
     width: 32px;
-    height: 5px;
+    height: 6px;
     background-color: #04a5d9;
     border: 1px solid #333333;
     border-top: none;
@@ -340,3 +341,17 @@ body {
     right: -5.5px;
     transform: rotateY(180deg);
 }
+
+.body {
+    overflow: hidden;
+}
+
+/* .sunga {
+    width: 100px;
+    height: 40px;
+    background-color: tomato;
+    clip-path: polygon(50% 100%, 0 46%, 100% 47%);
+    position: absolute;
+    bottom: 0px;
+    left: -15px;
+} */
