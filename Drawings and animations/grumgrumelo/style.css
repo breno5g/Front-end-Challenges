@@ -9,8 +9,8 @@
     --ggmBaseHeadShadow: #c51818;
     --ggmPoisonHead: #5641d1;
     --ggmPoisonHeadShadow: #563ebe;
-    --ggmOneUpHead: #38da1f;
-    --ggmOneUpHeadShadow: #11b41983;
+    --ggmOneUpHead: #01d801;
+    --ggmOneUpHeadShadow: #0daf0d98;
 }
 
 body {
@@ -30,7 +30,7 @@ body {
 .grumGrumMelo .head {
     width: 100%;
     height: 75%;
-    background-color: var(--ggmBaseHead);
+    background-color: var(--ggmOneUpHead);
     border-radius: 100px 100px 50px 50px;
     border: 2px solid black;
     overflow: hidden;
@@ -43,7 +43,7 @@ body {
     width: 60%;
     height: 50px;
     position: absolute;
-    background-color: var(--ggmBaseHeadShadow);
+    background-color: var(--ggmOneUpHeadShadow);
     margin: auto;
     bottom: -25px;
     left: 0;
