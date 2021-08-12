@@ -200,7 +200,7 @@ body {
                 65px 50px black,
                 70px 50px teal,
                 75px 50px teal,
-                /* Decima camada */
+                /* Decima Primeira camada */
                 0px 55px teal, 
                 5px 55px black, 
                 10px 55px teal, 
@@ -217,7 +217,7 @@ body {
                 65px 55px greenyellow,
                 70px 55px black,
                 75px 55px teal,
-                /* Decima Primeira camada */
+                /* Decima Segunda camada */
                 0px 60px black, 
                 5px 60px whitesmoke, 
                 10px 60px black, 
@@ -234,7 +234,7 @@ body {
                 65px 60px black,
                 70px 60px peru,
                 75px 60px black,
-                /* Decima Segunda camada */
+                /* Decima Terceira camada */
                 0px 65px black, 
                 5px 65px whitesmoke, 
                 10px 65px whitesmoke, 
@@ -251,7 +251,7 @@ body {
                 65px 65px peru,
                 70px 65px peru,
                 75px 65px black,
-                /* Decima Terceira camada */
+                /* Decima Quarta camada */
                 0px 70px black, 
                 5px 70px whitesmoke, 
                 10px 70px blue, 
@@ -268,7 +268,7 @@ body {
                 65px 70px black,
                 70px 70px gray,
                 75px 70px black,
-                /* Decima Quarta camada */
+                /* Decima Quinta camada */
                 0px 75px black, 
                 5px 75px whitesmoke, 
                 10px 75px blue, 
@@ -285,7 +285,7 @@ body {
                 65px 75px gray,
                 70px 75px gray,
                 75px 75px black,
-                /* Decima Quinta camada */
+                /* Decima Sexta camada */
                 0px 80px black, 
                 5px 80px whitesmoke, 
                 10px 80px blue, 
@@ -302,7 +302,7 @@ body {
                 65px 80px black,
                 70px 80px gray,
                 75px 80px black,
-                /* Decima Sexta camada */
+                /* Decima Setima camada */
                 0px 85px black, 
                 5px 85px whitesmoke, 
                 10px 85px blue, 
@@ -319,7 +319,7 @@ body {
                 65px 85px black,
                 70px 85px black,
                 75px 85px teal,
-                /* Decima Setima camada */
+                /* Decima Oitava camada */
                 0px 90px teal, 
                 5px 90px black, 
                 10px 90px whitesmoke, 
@@ -335,6 +335,23 @@ body {
                 60px 90px crimson,
                 65px 90px black,
                 70px 90px teal,
-                75px 90px teal;
+                75px 90px teal,
+                /* Decima Nona camada */
+                0px 95px teal, 
+                5px 95px teal, 
+                10px 95px black, 
+                15px 95px whitesmoke,
+                20px 95px whitesmoke,
+                25px 95px black, 
+                30px 95px black, 
+                35px 95px black, 
+                40px 95px black, 
+                45px 95px black,
+                50px 95px crimson, 
+                55px 95px orange,
+                60px 95px black,
+                65px 95px black,
+                70px 95px teal,
+                75px 95px teal;
                 
 }
