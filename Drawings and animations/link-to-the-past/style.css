@@ -284,6 +284,23 @@ body {
                 60px 75px black,
                 65px 75px gray,
                 70px 75px gray,
-                75px 75px black;
+                75px 75px black,
+                /* Decima Quinta camada */
+                0px 80px black, 
+                5px 80px whitesmoke, 
+                10px 80px blue, 
+                15px 80px cadetblue,
+                20px 80px cadetblue,
+                25px 80px blue, 
+                30px 80px whitesmoke, 
+                35px 80px black, 
+                40px 80px yellow, 
+                45px 80px black,
+                50px 80px yellow, 
+                55px 80px yellow,
+                60px 80px green,
+                65px 80px black,
+                70px 80px gray,
+                75px 80px black;
                 
 }
