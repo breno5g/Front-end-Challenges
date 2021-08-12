@@ -151,7 +151,7 @@ body {
                 75px 35px black,
                 /* Oitava camada */
                 0px 40px teal, 
-                5px 40px teal, 
+                5px 40px black, 
                 10px 40px peru, 
                 15px 40px black, 
                 20px 40px peru,
@@ -165,6 +165,23 @@ body {
                 60px 40px black, 
                 65px 40px peru, 
                 70px 40px black,
-                75px 40px teal;
+                75px 40px teal,
+                /* nona camada */
+                0px 45px teal, 
+                5px 45px teal, 
+                10px 45px black, 
+                15px 45px peru, 
+                20px 45px peru,
+                25px 45px whitesmoke, 
+                30px 45px black, 
+                35px 45px wheat, 
+                40px 45px wheat, 
+                45px 45px black,
+                50px 45px whitesmoke, 
+                55px 45px peru,
+                60px 45px peru,
+                65px 45px black,
+                70px 45px teal,
+                75px 45px teal;
                 
 }
