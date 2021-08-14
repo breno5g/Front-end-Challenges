@@ -18,18 +18,20 @@ body {
     position: relative;
 }
 
-.miojao .hashis .hashi {
+.miojao .hashi {
     width: 90%;
     height: 12px;
     border: 4px solid #246294;
     position: absolute;
+    background-color: whitesmoke;
 }
 
-.miojao .hashis .hashi:last-child {
+.miojao .hashi:nth-child(2) {
     top: 25px;
+    z-index: 15;
 }
 
-.miojao .hashis .hashi::before {
+.miojao .hashi::before {
     content: "";
     width: 4px;
     height: 100%;
@@ -37,4 +39,16 @@ body {
     position: absolute;
     left: 10%;
     box-shadow: 10px 0 #246294;
+}
+
+.miojao .macarone {
+    width: 4px;
+    height: 55%;
+    background-color: #246294;
+    position: absolute;
+    left: 50%;
+    z-index: 10;
+    box-shadow: 8px 0 #246294, 16px 0 #246294, 24px 0 #246294, 32px 0 #246294,
+        40px 0 #246294, 48px 0 #246294, 56px 0 #246294, 64px 0 #246294,
+        72px 0 #246294, 80px 0 #246294;
 }
