@@ -1,0 +1,74 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: antiquewhite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.load-container {
+    width: 250px;
+    height: 250px;
+    background-color: #978cd246;
+    position: relative;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.load-container .load-chan {
+    width: 45%;
+    height: 45%;
+    background-color: #c0dff1;
+    position: absolute;
+    border-radius: 10px;
+}
+
+.load-container .load-chan:nth-child(1) {
+    transform-origin: right bottom;
+    animation: load 5s infinite ease-in-out;
+}
+
+.load-container .load-chan:nth-child(2) {
+    transform-origin: left bottom;
+    left: 49%;
+    background-color: #8abbd9;
+    animation: load 5s 1s infinite ease-in-out;
+}
+
+.load-container .load-chan:nth-child(3) {
+    transform-origin: left top;
+    top: 49%;
+    left: 49%;
+    background-color: #3c5e9b;
+    animation: load 5s 2s infinite ease-in-out;
+}
+.load-container .load-chan:nth-child(4) {
+    transform-origin: right top;
+    top: 49%;
+    background-color: #222d65;
+    animation: load 5s 3s infinite ease-in-out;
+}
+
+@keyframes load {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(90deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    75% {
+        transform: rotate(270deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
