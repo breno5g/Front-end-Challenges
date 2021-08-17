@@ -1,0 +1,60 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.pen-chan {
+    width: 100px;
+    height: 200px;
+    position: relative;
+    border: 2px solid #111111;
+    border-left: none;
+    border-radius: 0 200px 200px 0;
+    left: 50px;
+    animation: 8s draw infinite;
+    transform-origin: 0 50%;
+}
+
+.pen-chan::before {
+    content: "";
+    width: 40px;
+    height: 165px;
+    position: absolute;
+    background: linear-gradient(#ed3569 60%, #d2dfe8 60%) no-repeat,
+        linear-gradient(
+            to right,
+            #f26c37 33.33%,
+            #eb852c 33.33%,
+            #eb852c 66.66%,
+            #f19f22 66.66%
+        );
+    background-size: 100% 40%;
+    background-position: 0 0, 0 100%;
+    left: -20px;
+    top: -5px;
+    border-radius: 10px 10px 0 0;
+}
+
+.pen-chan::after {
+    content: "";
+    width: 42px;
+    height: 40px;
+    background: linear-gradient(#f4c09b 70%, #111111 70%);
+    position: absolute;
+    bottom: -3px;
+    left: -21px;
+    clip-path: polygon(0 0, 50% 100%, 100% 0);
+}
+
+@keyframes draw {
+    100% {
+        transform: rotate(360deg);
+    }
+}
