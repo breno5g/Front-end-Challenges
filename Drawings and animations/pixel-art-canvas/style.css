@@ -112,7 +112,17 @@
 }
 
 .ui .main-container .main-header .opened-project .project:last-child button {
+    font-size: 18px;
     color: #111;
+}
+
+.ui
+    .main-container
+    .main-header
+    .opened-project
+    .project:last-child
+    button:hover {
+    background-color: #f5f5f550;
 }
 
 .ui
@@ -132,8 +142,30 @@
     position: absolute;
     font-size: 16px;
     border-radius: 2px;
-    color: whitesmoke;
+    color: white;
     visibility: hidden;
+}
+
+/* Tools */
+
+.ui .main-container .main-header .tools {
+    height: 40px;
+    display: flex;
+    margin-top: 10px;
+    gap: 1px;
+}
+
+.ui .main-container .main-header .tools .box {
+    width: 30px;
+    height: 30px;
+    background-color: #bbb0b0;
+    display: grid;
+    place-items: center;
+    font-size: 22px;
+    border-radius: 5px;
+    border: 2px solid #111;
+    box-shadow: inset 2px 2px whitesmoke, inset -2px -2px whitesmoke,
+        0 3px #11111150;
 }
 
 /* 
