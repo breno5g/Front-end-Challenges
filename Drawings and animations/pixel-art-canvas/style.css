@@ -12,6 +12,7 @@
 
 .ui {
     position: relative;
+    min-width: 1365px;
     max-width: 1365px;
 }
 
@@ -54,20 +55,20 @@
 
 /* Header de projetos no container principal */
 
-.ui .main-container {
+.ui .container {
     padding-left: 10px;
     border-top: 2px solid #111;
     background-color: #32a1a1;
     box-shadow: inset 0 2px #94cbcb;
 }
 
-.ui .main-container .main-header .opened-project {
+.ui .container .main-header .opened-project {
     display: flex;
     gap: 5px;
     position: relative;
 }
 
-.ui .main-container .main-header .opened-project .project {
+.ui .container .main-header .opened-project .project {
     width: 160px;
     height: 30px;
     display: flex;
@@ -80,14 +81,14 @@
     border-radius: 7px 7px 0 0;
 }
 
-.ui .main-container .main-header .opened-project .selected-project {
+.ui .container .main-header .opened-project .selected-project {
     background-color: #32a1a1;
     top: -28px;
     box-shadow: inset 2px 2px #94cbcb, inset -2px 0px #94cbcb, 2px -2px #111,
         -2px -2px #111;
 }
 
-.ui .main-container .main-header .opened-project .project:last-child {
+.ui .container .main-header .opened-project .project:last-child {
     background-color: #bbb0b0;
     height: 30px;
     left: 165px;
@@ -97,7 +98,7 @@
     color: #111;
 }
 
-.ui .main-container .main-header .opened-project .project button {
+.ui .container .main-header .opened-project .project button {
     width: 20px;
     height: 20px;
     color: white;
@@ -111,22 +112,17 @@
     cursor: pointer;
 }
 
-.ui .main-container .main-header .opened-project .project:last-child button {
+.ui .container .main-header .opened-project .project:last-child button {
     font-size: 18px;
     color: #111;
 }
 
-.ui
-    .main-container
-    .main-header
-    .opened-project
-    .project:last-child
-    button:hover {
+.ui .container .main-header .opened-project .project:last-child button:hover {
     background-color: #f5f5f550;
 }
 
 .ui
-    .main-container
+    .container
     .main-header
     .opened-project
     .selected-project
@@ -134,7 +130,7 @@
     visibility: visible;
 }
 
-.ui .main-container .main-header .opened-project .project button::before {
+.ui .container .main-header .opened-project .project button::before {
     content: "X";
     width: 100%;
     height: 100%;
@@ -147,15 +143,19 @@
 }
 
 /* Tools */
+.ui .container .main-header .header-tools {
+    display: flex;
+    gap: 15px;
+}
 
-.ui .main-container .main-header .tools {
+.ui .container .main-header .header-tools .useless {
     height: 40px;
     display: flex;
     margin-top: 10px;
     gap: 1px;
 }
 
-.ui .main-container .main-header .tools .box {
+.ui .container .main-header .header-tools .box {
     width: 30px;
     height: 30px;
     background-color: #bbb0b0;
@@ -168,6 +168,202 @@
         0 3px #11111150;
 }
 
+.ui .container .main-header .header-tools .form {
+    width: 200px;
+    height: 50px;
+    display: flex;
+    font-size: 16px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ui .container .main-header .header-tools .form .container {
+    display: flex;
+    align-items: center;
+    box-shadow: none;
+    border: none;
+    gap: 10px;
+}
+
+.ui .container .main-header .header-tools .form input {
+    width: 50px;
+    height: 30px;
+    border: none;
+    border-radius: 2px;
+    padding: 3px;
+    border: 2px solid #111;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.ui .container .main-header .header-tools .form span {
+    font-size: 22px;
+}
+
+.ui .container .main-header .header-tools .form button {
+    width: 40px;
+    height: 30px;
+    border: none;
+    background-color: #bbb0b0;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    border: 2px solid #111;
+}
+
+.ui .container .main-header .header-tools .form button:hover {
+    filter: brightness(80%);
+}
+
+/* Main */
+
+.ui .container .main {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Seção de cores */
+
+.ui .container .main .colors-section .pallete {
+    width: 125px;
+    height: 350px;
+    background-color: #86726d;
+    border-radius: 10px;
+    padding: 5px;
+    border: 2px solid #111;
+    display: grid;
+    grid-template: repeat(7, 27px) / repeat(4, 27px);
+    box-shadow: inset 2px 2px #dacdb7, inset -2px -2px #dacdb7;
+}
+
+.ui .container .main .colors-section .pallete .color {
+    width: 27px;
+    height: 27px;
+    background-color: whitesmoke;
+    cursor: pointer;
+    border: 1px solid #111;
+}
+
+.ui .container .main .colors-section .pallete .color:hover {
+    filter: brightness(80%);
+}
+
+/* Coisinha de selecionar cor */
+
+.ui .container .main .colors-section .container {
+    margin-top: 20px;
+    width: 125px;
+    height: 100px;
+    background-color: tomato;
+    border: 2px solid #111;
+    box-shadow: none;
+    background: linear-gradient(35deg, #111111 0%, #ff0000 100%);
+    position: relative;
+    border-radius: 5px 5px 0 0;
+}
+
+.ui .container .main .colors-section .container::before {
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    border: 2px solid #f5f5f598;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.ui .container .main .colors-section .bar {
+    width: 125px;
+    height: 25px;
+    background-color: tomato;
+    border: 2px solid #111;
+    border-top: none;
+    background: rgb(255, 0, 0);
+    background: linear-gradient(
+        90deg,
+        rgba(255, 0, 0, 1) 0%,
+        rgba(255, 102, 0, 1) 5%,
+        rgba(255, 132, 0, 1) 10%,
+        rgba(255, 188, 0, 1) 15%,
+        rgba(255, 244, 0, 1) 20%,
+        rgba(215, 255, 0, 1) 25%,
+        rgba(121, 255, 0, 1) 30%,
+        rgba(18, 255, 0, 1) 35%,
+        rgba(0, 255, 132, 1) 40%,
+        rgba(0, 255, 252, 1) 45%,
+        rgba(0, 168, 255, 1) 50%,
+        rgba(0, 61, 255, 1) 55%,
+        rgba(4, 0, 255, 1) 60%,
+        rgba(76, 0, 255, 1) 68%,
+        rgba(149, 0, 255, 1) 74%,
+        rgba(205, 0, 255, 1) 78%,
+        rgba(255, 0, 232, 1) 85%,
+        rgba(255, 0, 78, 1) 93%,
+        rgba(255, 0, 0, 1) 100%
+    );
+    border-radius: 0 0 5px 5px;
+}
+
+/* Canvas */
+
+.ui .container .main .canvas {
+    width: 1170px;
+    background-color: #86726d;
+    border-radius: 10px;
+    border: 2px solid #111;
+    box-shadow: inset 2px 2px #bbb0b0, inset -2px -2px #bbb0b0;
+    position: relative;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ui .container .main .canvas .pixel-canvas {
+    width: 700px;
+    height: 700px;
+    background-color: #f5f5f579;
+    position: absolute;
+    margin: auto;
+    inset: 0;
+    display: grid;
+    box-shadow: 2px 2px #111;
+}
+
+.ui .container .main .canvas .pixel-canvas .pixel {
+    width: 20px;
+    height: 20px;
+    border: 0.1px solid black;
+}
+
+/* Tools */
+
+.ui .container .main .tools {
+    width: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.ui .container .main .tools .box {
+    width: 30px;
+    height: 30px;
+    background-color: #bbb0b0;
+    display: grid;
+    place-items: center;
+    font-size: 22px;
+    border-radius: 5px;
+    border: 2px solid #111;
+    box-shadow: inset 2px 2px whitesmoke, inset -2px -2px whitesmoke,
+        0 3px #11111150;
+}
+
+.ui footer {
+    background-color: #32a1a1;
+    height: 50px;
+}
 /* 
 .controller {
     width: 520px;

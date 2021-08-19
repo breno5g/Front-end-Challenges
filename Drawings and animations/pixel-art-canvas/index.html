@@ -51,7 +51,7 @@
                     <li><span>Help</span></li>
                 </ul>
             </header>
-            <div class="main-container">
+            <div class="container">
                 <header class="main-header">
                     <div class="opened-project">
                         <div class="project selected-project">
@@ -63,14 +63,82 @@
                             <button>X</button>
                         </div>
                     </div>
+                    <div class="header-tools">
+                        <div class="useless">
+                            <div class="box"><span>+</span></div>
+                            <div class="box"><span>+</span></div>
+                            <div class="box"><span>+</span></div>
+                            <div class="box"><span>+</span></div>
+                        </div>
+                        <div class="form">
+                            <div class="container">
+                                <input type="number" name="width" id="" />
+                                <span>X</span>
+                                <input type="number" name="height" id="" />
+                            </div>
+                            <button onclick="setCanvasSize(this)">Send</button>
+                        </div>
+                    </div>
+                </header>
+                <section class="main">
+                    <div class="colors-section">
+                        <div class="pallete">
+                            <div class="color" onclick="setcolor()"></div>
+                            <div class="color" onclick="setcolor()"></div>
+                            <div class="color" onclick="setcolor()"></div>
+                            <div class="color" onclick="setcolor()"></div>
+                            <div class="color" onclick="setcolor()"></div>
+                            <div class="color" onclick="setcolor()"></div>
+                            <div class="color" onclick="setcolor()"></div>
+                            <div class="color" onclick="setcolor()"></div>
+                            <div class="color" onclick="setcolor()"></div>
+                            <div class="color" onclick="setcolor()"></div>
+                            <div class="color" onclick="setcolor()"></div>
+                            <div class="color" onclick="setcolor()"></div>
+                            <div class="color" onclick="setcolor()"></div>
+                            <div class="color" onclick="setcolor()"></div>
+                            <div class="color" onclick="setcolor()"></div>
+                            <div class="color" onclick="setcolor()"></div>
+                            <div class="color" onclick="setcolor()"></div>
+                            <div class="color" onclick="setcolor()"></div>
+                            <div class="color" onclick="setcolor()"></div>
+                            <div class="color" onclick="setcolor()"></div>
+                            <div class="color" onclick="setcolor()"></div>
+                            <div class="color" onclick="setcolor()"></div>
+                            <div class="color" onclick="setcolor()"></div>
+                            <div class="color" onclick="setcolor()"></div>
+                            <div class="color" onclick="setcolor()"></div>
+                            <div class="color" onclick="setcolor()"></div>
+                            <div class="color" onclick="setcolor()"></div>
+                            <div class="color" onclick="setcolor()"></div>
+                            <div class="color" onclick="setcolor()"></div>
+                            <div class="color" onclick="setcolor()"></div>
+                            <div class="color" onclick="setcolor()"></div>
+                            <div class="color" onclick="setcolor()"></div>
+                        </div>
+                        <div class="color-picker">
+                            <div class="container"></div>
+                            <div class="bar"></div>
+                        </div>
+                    </div>
+                    <div class="canvas">
+                        <div class="pixel-canvas"></div>
+                    </div>
                     <div class="tools">
                         <div class="box"><span>+</span></div>
                         <div class="box"><span>+</span></div>
                         <div class="box"><span>+</span></div>
                         <div class="box"><span>+</span></div>
+                        <div class="box"><span>+</span></div>
+                        <div class="box"><span>+</span></div>
+                        <div class="box"><span>+</span></div>
+                        <div class="box"><span>+</span></div>
+                        <div class="box"><span>+</span></div>
+                        <div class="box"><span>+</span></div>
                     </div>
-                </header>
+                </section>
             </div>
+            <footer></footer>
         </div>
 
         <script src="script.js"></script>
