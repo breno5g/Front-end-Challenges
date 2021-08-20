@@ -35,9 +35,16 @@ function selectColor(e) {
 }
 
 function setCanvasSize(e) {
+    console.log(e);
     let form = document.querySelector(".form");
-    let n1 = form.children[0].children[0].value;
-    let n2 = form.children[0].children[2].value;
+    let n1, n2;
+    if (e != undefined) {
+        n1 = form.children[0].children[0].value;
+        n2 = form.children[0].children[2].value;
+    } else {
+        n1 = 20;
+        n2 = 20;
+    }
 
     document.querySelector(".pixel-canvas").innerHTML = "";
 
@@ -46,6 +53,11 @@ function setCanvasSize(e) {
     document.querySelector(
         ".pixel-canvas"
     ).style.gridTemplate = `repeat(${n2}, 20px) / repeat(${n1}, 20px)`;
+
+    setPixels(n1, n2);
+}
+
+function setPixels(n1, n2) {
     for (let i = 0; i < n1 * n2; i++) {
         let pixel = document.createElement("div");
         pixel.classList.add("pixel");
@@ -61,3 +73,9 @@ function draw(e) {
         e.style.backgroundColor = "";
     }
 }
+
+window.onload = () => {
+    setColors();
+    selectedColor = "#000";
+    setCanvasSize();
+};
