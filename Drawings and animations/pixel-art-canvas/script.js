@@ -25,7 +25,7 @@ let selectedColor = "";
 
 function setColors() {
     let colorSlot = document.querySelector(".pallete");
-    for (let i = 0; i < colorSlot.children.length; i++) {
+    for (let i = 0; i < colors.length; i++) {
         colorSlot.children[i].style.backgroundColor = `${colors[i]}`;
     }
 }

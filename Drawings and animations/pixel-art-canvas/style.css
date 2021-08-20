@@ -309,6 +309,7 @@
 
 .ui .container .main .canvas {
     width: 1170px;
+    max-height: 500px;
     background-color: #86726d;
     border-radius: 10px;
     border: 2px solid #111;
@@ -324,9 +325,6 @@
     width: 700px;
     height: 700px;
     background-color: #f5f5f579;
-    position: absolute;
-    margin: auto;
-    inset: 0;
     display: grid;
     box-shadow: 2px 2px #111;
 }
