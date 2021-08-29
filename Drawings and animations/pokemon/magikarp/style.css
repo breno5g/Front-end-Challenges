@@ -1,0 +1,201 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: wheat;
+}
+
+.container {
+    width: 250px;
+    height: 250px;
+    background-color: whitesmoke;
+    position: relative;
+}
+
+.container::after {
+    content: "";
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    background-color: white;
+    z-index: 100;
+    opacity: 30%;
+}
+
+.magikarp {
+    width: 100px;
+    height: 150px;
+    background-color: #e50027;
+    position: absolute;
+    margin: auto;
+    inset: 0;
+    border-radius: 100px;
+    border: 10px solid #c1001f;
+    z-index: 10;
+}
+
+.crown {
+    width: 18px;
+    height: 40px;
+    background-color: #ffcc33;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 12px;
+    border-radius: 20px;
+}
+
+.crown::before,
+.crown::after {
+    content: "";
+    width: inherit;
+    height: inherit;
+    background-color: inherit;
+    position: absolute;
+    border-radius: inherit;
+}
+
+.crown::before {
+    left: -17px;
+    top: 10px;
+    transform: rotate(-35deg);
+}
+.crown::after {
+    right: -17px;
+    top: 10px;
+    transform: rotate(35deg);
+}
+
+.crown:nth-child(2) {
+    top: unset;
+    bottom: 13px;
+    transform: rotate(180deg);
+}
+
+.eyes {
+    width: 20px;
+    height: 20px;
+    background-color: #111;
+    border-radius: 50%;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    top: 0;
+    bottom: 20px;
+}
+
+.eyes:nth-child(2) {
+    right: 0;
+    left: unset;
+}
+
+.mouth {
+    width: 30px;
+    height: 45px;
+    position: absolute;
+    margin: auto;
+    inset: 0;
+    border-radius: 50px;
+    border: 6px solid #ffb3be;
+}
+
+.gills .gill {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    z-index: 5;
+    left: 40px;
+}
+
+.gills .gill .stick {
+    width: 50px;
+    height: 5px;
+    background-color: #c1001f;
+    position: absolute;
+    border-radius: 20px;
+    top: 50%;
+    z-index: 10;
+}
+
+.gills .gill .stick::before,
+.gills .gill .stick::after {
+    content: "";
+    width: inherit;
+    height: inherit;
+    background-color: inherit;
+    position: absolute;
+    border-radius: inherit;
+    right: -5px;
+}
+
+.gills .gill .stick::before {
+    top: -11px;
+    rotate: 45deg;
+}
+
+.gills .gill .stick::after {
+    bottom: -11px;
+    rotate: -45deg;
+}
+
+.gills .gill .gill-background {
+    width: 40px;
+    height: 40px;
+    background-color: #ffcad2;
+    border-radius: 0 0 0 50px;
+    rotate: 45deg;
+    position: absolute;
+    margin: auto;
+    left: -7px;
+    top: 6px;
+    bottom: 0;
+}
+
+.gills .gill:last-child {
+    left: unset;
+    right: 40px;
+    rotate: 180deg;
+}
+
+.mustaches .mustache {
+    width: 15px;
+    height: 50px;
+    border-top: 5px solid #ffcc33;
+    border-left: 5px solid #ffcc33;
+    border-radius: 50px 0 0 0;
+    position: absolute;
+    margin: auto;
+    inset: 0;
+    bottom: -80px;
+    left: -60px;
+    z-index: 20;
+}
+
+.mustaches .mustache::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border: 5px solid #ffcc33;
+    border-top: unset;
+    position: absolute;
+    border-radius: 0 0 50px 50px;
+    margin: auto;
+    left: -19px;
+    bottom: -10px;
+}
+
+.mustaches .mustache:last-child {
+    transform: rotateY(180deg);
+    left: unset;
+    right: 90px;
+}
