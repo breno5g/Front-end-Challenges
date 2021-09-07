@@ -134,7 +134,7 @@ body {
     height: 20px;
     position: absolute;
     margin: auto;
-    top: -2px;
+    top: -7px;
     border: 3px solid #111;
     border-right: 5px solid transparent;
     border-left: 5px solid transparent;
@@ -143,12 +143,12 @@ body {
 }
 
 .kirby .body .face .mouth::before {
-    transform: rotate(50deg);
+    transform: rotate(70deg);
     left: -20px;
 }
 
 .kirby .body .face .mouth::after {
-    transform: rotate(-50deg);
+    transform: rotate(-70deg);
     left: unset;
     right: -20px;
 }
