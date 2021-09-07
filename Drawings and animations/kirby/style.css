@@ -57,3 +57,119 @@ body {
     top: 13px;
     right: 10px;
 }
+
+.kirby .body .face .eyes .eye {
+    width: 27px;
+    height: 70px;
+    position: absolute;
+    background-color: #007fc8;
+    margin: auto;
+    border-radius: 44%;
+    border: 5px solid #111;
+    top: 30px;
+    left: 90px;
+    overflow: hidden;
+}
+
+.kirby .body .face .eyes .eye::after {
+    content: "";
+    width: 20px;
+    height: 40px;
+    background-color: whitesmoke;
+    position: absolute;
+    top: -10px;
+    border-radius: 50%;
+    box-shadow: 0 15px #111;
+}
+
+.kirby .body .face .eyes .eye:first-child {
+    transform: rotate(2deg);
+}
+
+.kirby .body .face .eyes .eye:last-child {
+    right: 90px;
+    left: unset;
+    transform: rotate(-2deg);
+}
+
+.kirby .body .face .cheeks .cheek {
+    width: 40px;
+    height: 25px;
+    background-color: #ff509b;
+    position: absolute;
+    border-radius: 50%;
+    margin: auto;
+    inset: 0;
+    top: -60px;
+}
+
+.kirby .body .face .cheeks .cheek:first-child {
+    left: -125px;
+    transform: rotate(5deg);
+}
+
+.kirby .body .face .cheeks .cheek:last-child {
+    right: -125px;
+    transform: rotate(-5deg);
+}
+
+.kirby .body .face .mouth {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    margin: auto;
+    inset: 0;
+    bottom: -20px;
+    border: 3px solid #111;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-radius: 30px 30px 10px 10px;
+}
+
+.kirby .body .face .mouth::before,
+.kirby .body .face .mouth::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    margin: auto;
+    top: -2px;
+    border: 3px solid #111;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-radius: 20px 20px 10px 10px;
+}
+
+.kirby .body .face .mouth::before {
+    transform: rotate(50deg);
+    left: -20px;
+}
+
+.kirby .body .face .mouth::after {
+    transform: rotate(-50deg);
+    left: unset;
+    right: -20px;
+}
+
+.kirby .foots .foot {
+    width: 100px;
+    height: 80px;
+    background-color: #e9005c;
+    position: absolute;
+    border-radius: 14% 26% 54% 47% / 0% 0% 89% 89%;
+    border: 5px solid #111;
+    bottom: -25px;
+    z-index: -1;
+}
+
+.kirby .foots .foot:first-child {
+    transform: rotate(15deg);
+    left: 20px;
+}
+
+.kirby .foots .foot:last-child {
+    transform: rotate(-15deg) rotateY(180deg);
+    right: 20px;
+}
