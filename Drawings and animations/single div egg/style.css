@@ -17,6 +17,7 @@ body {
     background-color: whitesmoke;
     border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
     position: relative;
+    box-shadow: 20px 0 #11111120;
 }
 
 .egg::before {
