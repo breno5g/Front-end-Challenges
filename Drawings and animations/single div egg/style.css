@@ -1,0 +1,48 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: rgb(96, 142, 185);
+    display: grid;
+    place-items: center;
+}
+
+.egg {
+    width: 250px;
+    height: 325px;
+    background-color: whitesmoke;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    position: relative;
+}
+
+.egg::before {
+    content: "";
+    position: absolute;
+    background-color: #111;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin: auto;
+    inset: 0;
+    bottom: -70px;
+    left: -40px;
+    box-shadow: 40px 0 0 #111, -20px 18px 0 -2px #ff7513,
+        60px 18px 0 -2px #ff7513, 20px 10px 0 80px #f8c702;
+}
+
+.egg::after {
+    content: "";
+    width: 25px;
+    height: 15px;
+    border: 3px solid #111;
+    position: absolute;
+    margin: auto;
+    inset: 0;
+    bottom: -125px;
+    border-radius: 30px 30px 100px 100px;
+    background: radial-gradient(at 50% 100%, #ff7513 10px, #111 8px);
+}
