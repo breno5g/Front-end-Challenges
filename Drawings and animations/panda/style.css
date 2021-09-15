@@ -1,0 +1,113 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: #398ba0;
+}
+
+.panda .head {
+    width: 210px;
+    height: 190px;
+    background-color: whitesmoke;
+    border-radius: 50% 50% 50% 50% / 65% 65% 40% 40%;
+    position: relative;
+}
+
+.panda .head .eyes .eye-container {
+    width: 55px;
+    height: 65px;
+    background-color: #3c4d5d;
+    border-radius: 50%;
+    position: absolute;
+    margin: auto;
+    inset: 0;
+    bottom: -50px;
+}
+
+.panda .head .eyes .eye-container:first-child {
+    left: -70px;
+    transform: rotate(30deg);
+}
+
+.panda .head .eyes .eye-container:last-child {
+    transform: rotate(-30deg);
+    right: -70px;
+}
+
+.panda .head .eyes .eye-container .eye {
+    width: 30px;
+    height: 30px;
+    background-color: whitesmoke;
+    position: absolute;
+    margin: auto;
+    inset: 0;
+    border-radius: 50%;
+}
+
+.panda .head .eyes .eye-container:first-child .eye {
+    right: -4px;
+    bottom: -7px;
+}
+
+.panda .head .eyes .eye-container:last-child .eye {
+    left: -4px;
+    bottom: -7px;
+}
+
+.panda .head .eyes .eye-container .eye::before {
+    content: "";
+    width: 50%;
+    height: 50%;
+    background-color: #111;
+    position: absolute;
+    margin: auto;
+    inset: 0;
+    border-radius: 50%;
+}
+.panda .head .eyes .eye-container .eye::after {
+    content: "";
+    width: 5px;
+    height: 5px;
+    background-color: whitesmoke;
+    position: absolute;
+    margin: auto;
+    inset: 0;
+    border-radius: 50%;
+}
+
+.panda .head .eyes .eye-container:first-child .eye::after {
+    left: -10px;
+    top: -2px;
+}
+.panda .head .eyes .eye-container:last-child .eye::after {
+    left: -5px;
+    top: -8px;
+}
+
+.panda .head .eyes .eye-container::before {
+    content: "";
+    width: 25px;
+    height: 13px;
+    background-color: #111;
+    position: absolute;
+    margin: auto;
+    border-radius: 50%;
+}
+
+.panda .head .eyes .eye-container:first-child::before {
+    left: 4px;
+    top: 2px;
+    transform: rotate(-30deg);
+}
+
+.panda .head .eyes .eye-container:last-child::before {
+    right: 4px;
+    top: 2px;
+    transform: rotate(30deg);
+}
