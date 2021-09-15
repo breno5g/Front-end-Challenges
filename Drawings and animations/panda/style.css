@@ -8,15 +8,18 @@ body {
     height: 100vh;
     display: grid;
     place-items: center;
-    background-color: #398ba0;
+    background-color: #9363bb;
 }
 
 .panda .head {
     width: 210px;
-    height: 190px;
+    height: 180px;
     background-color: whitesmoke;
     border-radius: 50% 50% 50% 50% / 65% 65% 40% 40%;
     position: relative;
+    overflow: hidden;
+    border: 5px solid #92b7d6;
+    z-index: 10;
 }
 
 .panda .head .eyes .eye-container {
@@ -31,13 +34,13 @@ body {
 }
 
 .panda .head .eyes .eye-container:first-child {
-    left: -70px;
+    left: -75px;
     transform: rotate(30deg);
 }
 
 .panda .head .eyes .eye-container:last-child {
     transform: rotate(-30deg);
-    right: -70px;
+    right: -75px;
 }
 
 .panda .head .eyes .eye-container .eye {
@@ -93,7 +96,7 @@ body {
 .panda .head .eyes .eye-container::before {
     content: "";
     width: 25px;
-    height: 13px;
+    height: 12px;
     background-color: #111;
     position: absolute;
     margin: auto;
@@ -110,4 +113,121 @@ body {
     right: 4px;
     top: 2px;
     transform: rotate(30deg);
+}
+
+.panda .head .nose {
+    width: 25px;
+    height: 15px;
+    background-color: #3c4d5d;
+    border-radius: 50%;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 30px;
+}
+
+.panda .head .mask .tissue {
+    width: 70px;
+    height: 35px;
+    background-color: #a3ecec;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 5px;
+    border: 5px solid #46a7a5;
+    border-radius: 0% 0% 50% 50% / 0% 0% 40% 40%;
+    z-index: 10;
+}
+
+.panda .head .mask .elastic {
+    content: "";
+    width: 230px;
+    height: 40px;
+    position: absolute;
+    margin: auto;
+    bottom: 30px;
+    left: -10px;
+    right: 0;
+    border: 5px solid transparent;
+    border-bottom: 5px solid #46a7a5;
+    border-radius: 50%;
+}
+
+.panda .head .mask .elastic:before,
+.panda .head .mask .elastic:after {
+    content: "";
+    width: 5px;
+    height: 30px;
+    background-color: #46a7a5;
+    position: absolute;
+    margin: auto;
+    bottom: -40px;
+    right: 0;
+    left: 0;
+}
+
+.panda .head .mask .elastic:before {
+    left: -75px;
+    transform: rotate(60deg);
+}
+
+.panda .head .mask .elastic::after {
+    right: -75px;
+    transform: rotate(-60deg);
+}
+
+.panda .ears .ear {
+    width: 60px;
+    height: 60px;
+    background-color: #2a3640;
+    position: absolute;
+    margin: auto;
+    inset: 0;
+    top: -200px;
+    border-radius: 50%;
+    border: 7px solid #111;
+    z-index: 20;
+    overflow: hidden;
+}
+
+.panda .ears .ear:first-child {
+    left: -140px;
+}
+
+.panda .ears .ear:last-child {
+    right: -140px;
+}
+
+.panda .ears .ear::before {
+    content: "";
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    margin: auto;
+    bottom: -50px;
+    border-radius: 50%;
+    border: 5px solid transparent;
+    border-top: 7px solid #111;
+}
+
+.panda .ears .ear:first-child:before {
+    left: -20px;
+    transform: rotate(40deg);
+}
+
+.panda .ears .ear:last-child:before {
+    right: -20px;
+    transform: rotate(-40deg);
+}
+
+.panda .body {
+    width: 220px;
+    height: 70px;
+    background-color: #2a3640;
+    border-radius: 45% 48% 50% 50% / 80% 81% 12% 14%;
+    border: 5px solid #111;
+    transform: translateY(-20px);
+    z-index: -1;
 }
