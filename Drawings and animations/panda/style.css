@@ -141,6 +141,18 @@ body {
     z-index: 10;
 }
 
+.panda .head .mask .tissue:before {
+    content: "";
+    width: 50%;
+    height: 5px;
+    background-color: #8bd8d8;
+    position: absolute;
+    margin: auto;
+    inset: 0;
+    transform: rotate(-5deg);
+    border-radius: 50px;
+}
+
 .panda .head .mask .elastic {
     content: "";
     width: 230px;
