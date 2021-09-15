@@ -15,7 +15,7 @@ body {
     width: 210px;
     height: 180px;
     background-color: whitesmoke;
-    border-radius: 50% 50% 50% 50% / 65% 65% 40% 40%;
+    border-radius: 50% 50% 50% 50% / 65% 65% 33% 33%;
     position: relative;
     overflow: hidden;
     border: 5px solid #92b7d6;
