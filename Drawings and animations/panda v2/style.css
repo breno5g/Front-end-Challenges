@@ -136,7 +136,9 @@ body {
     border: 5px solid #313131;
     z-index: -1;
     position: relative;
-    left: 5px;
+    margin: auto;
+    left: 0;
+    right: 0;
 }
 
 .panda .body::before {
@@ -178,10 +180,10 @@ body {
     bottom: 0;
     border-radius: 0 0 50% 50%;
     z-index: -2;
-    left: 5px;
+    left: 10px;
 }
 
 .panda .legs .leg:last-child {
     left: unset;
-    right: 15px;
+    right: 10px;
 }
