@@ -174,13 +174,14 @@ body {
 
 .panda .legs .leg {
     width: 70px;
-    height: 100px;
+    height: 120px;
     background-color: #313131;
     position: absolute;
     bottom: 0;
     border-radius: 0 0 50% 50%;
     z-index: -2;
     left: 10px;
+    bottom: -10px;
 }
 
 .panda .legs .leg:last-child {
