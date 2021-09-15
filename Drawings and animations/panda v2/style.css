@@ -1,0 +1,187 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: #a4d3b7;
+}
+
+.panda {
+    position: relative;
+}
+
+.panda .head {
+    width: 180px;
+    height: 150px;
+    background-color: #f5f5f5;
+    border-radius: 50% 50% 50% 50% / 55% 55% 40% 40%;
+    border: 5px solid #313131;
+    position: relative;
+    z-index: 100;
+}
+
+.panda .head .eyes .eye {
+    width: 35px;
+    height: 50px;
+    background-color: #313131;
+    border-radius: 50% 50% 50% 50% / 45% 45% 50% 50%;
+    position: absolute;
+    margin: auto;
+    inset: 0;
+    bottom: -20px;
+    z-index: 10;
+}
+
+.panda .head .eyes .eye:first-child {
+    left: -80px;
+    transform: rotate(35deg);
+}
+
+.panda .head .eyes .eye:last-child {
+    right: -80px;
+    transform: rotate(-35deg) rotateY(180deg);
+}
+
+.panda .head .eyes .eye::before {
+    content: "";
+    width: 7px;
+    height: 13px;
+    background-color: #f5f5f5;
+    border-radius: 50%;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    right: 7px;
+}
+
+.panda .head .chicks .chick {
+    width: 35px;
+    height: 35px;
+    background-color: #fec2c2;
+    position: absolute;
+    border-radius: 50%;
+    bottom: 22px;
+    left: 12px;
+}
+
+.panda .head .chicks .chick:last-child {
+    left: unset;
+    right: 12px;
+}
+
+.panda .head .nose {
+    width: 20px;
+    height: 13px;
+    background-color: #313131;
+    position: absolute;
+    margin: auto;
+    inset: 0;
+    bottom: -50px;
+    border-radius: 25% 25% 50% 50% / 25% 25% 60% 60%;
+}
+
+.panda .head .mouth .mouth-line {
+    content: "";
+    width: 25px;
+    height: 25px;
+    border: 3px solid transparent;
+    border-bottom: 5px solid #313131;
+    border-right: 5px solid #313131;
+    border-radius: 50%;
+    position: absolute;
+    margin: auto;
+    inset: 0;
+    bottom: -65px;
+}
+
+.panda .head .mouth .mouth-line:first-child {
+    left: -21px;
+    transform: rotate(20deg);
+}
+
+.panda .head .mouth .mouth-line:last-child {
+    right: -21px;
+    transform: rotate(-20deg) rotateY(180deg);
+}
+
+.panda .ears .ear {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    margin: auto;
+    background-color: #313131;
+    border-radius: 50%;
+    top: -10px;
+    left: -5px;
+    z-index: -1;
+}
+
+.panda .ears .ear:last-child {
+    left: unset;
+    right: -5px;
+}
+
+.panda .body {
+    width: 160px;
+    height: 160px;
+    background-color: #f5f5f5;
+    border-radius: 50% 50% 60% 60%;
+    transform: translateY(-30px);
+    border: 5px solid #313131;
+    z-index: -1;
+    position: relative;
+    left: 5px;
+}
+
+.panda .body::before {
+    content: "";
+    width: inherit;
+    height: 40%;
+    background-color: #313131;
+    position: absolute;
+    margin: auto;
+    left: -5px;
+    border-radius: 50% 50% 0% 0%;
+}
+
+.panda .body .arms .arm {
+    width: 55px;
+    height: 120px;
+    background-color: #313131;
+    position: absolute;
+    border-radius: 50% 50% 0 0 / 40% 40% 0 0;
+}
+
+.panda .body .arms .arm:first-child {
+    transform: rotate(-45deg);
+    left: -50px;
+    top: -60px;
+}
+
+.panda .body .arms .arm:last-child {
+    transform: rotate(45deg);
+    right: -50px;
+    top: -60px;
+}
+
+.panda .legs .leg {
+    width: 70px;
+    height: 100px;
+    background-color: #313131;
+    position: absolute;
+    bottom: 0;
+    border-radius: 0 0 50% 50%;
+    z-index: -2;
+    left: 5px;
+}
+
+.panda .legs .leg:last-child {
+    left: unset;
+    right: 15px;
+}
