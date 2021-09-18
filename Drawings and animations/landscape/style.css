@@ -1,0 +1,317 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: antiquewhite;
+}
+
+.landscape {
+    width: 700px;
+    height: 300px;
+    background: rgb(149, 62, 164);
+    background: linear-gradient(
+        0deg,
+        rgba(149, 62, 164, 1) 0%,
+        rgba(149, 62, 164, 1) 54%,
+        rgba(168, 87, 182, 1) 54%,
+        rgba(168, 87, 182, 1) 66%,
+        rgba(183, 102, 196, 1) 66%,
+        rgba(198, 116, 210, 1) 100%
+    );
+    border-radius: 10px;
+    position: relative;
+    z-index: -100;
+    overflow: hidden;
+}
+
+.landscape .tent .front {
+    width: 250px;
+    height: 200px;
+    background-color: #cf0f5d;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    position: absolute;
+    margin: auto;
+    bottom: 0;
+    left: 100px;
+    overflow: none;
+    z-index: -2;
+}
+
+.landscape .tent .side {
+    content: "";
+    width: 200px;
+    height: 200px;
+    background-color: #e52d73;
+    position: absolute;
+    margin: auto;
+    bottom: 0;
+    left: 286px;
+    transform: skew(32deg);
+    z-index: -2;
+}
+
+.landscape .front-trees .tree {
+    background-color: tomato;
+    position: absolute;
+    margin: auto;
+    bottom: 0;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    z-index: -1;
+}
+
+.landscape .front-trees .tree:nth-child(1) {
+    width: 110px;
+    height: 200px;
+    background: linear-gradient(
+        90deg,
+        rgba(57, 4, 69, 1) 0%,
+        rgba(57, 4, 69, 1) 50%,
+        rgba(86, 15, 99, 1) 50%
+    );
+    position: absolute;
+    left: 40px;
+}
+
+.landscape .front-trees .tree:nth-child(2) {
+    width: 75px;
+    height: 120px;
+    background: #390445;
+    position: absolute;
+    left: 186px;
+    z-index: -1;
+}
+
+.landscape .front-trees .tree:nth-child(3) {
+    width: 150px;
+    height: 300px;
+    background: #390445;
+    position: absolute;
+    right: 50px;
+    z-index: -3;
+}
+
+.landscape .trees-bg .tree {
+    width: 80px;
+    height: 130px;
+    background-color: #7d288e;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    position: absolute;
+    bottom: 0;
+    left: -20px;
+    z-index: -50;
+}
+
+.landscape .trees-bg .tree:nth-child(2) {
+    height: 150px;
+    left: 20px;
+}
+
+.landscape .trees-bg .tree:nth-child(3) {
+    width: 60px;
+    height: 110px;
+    left: 60px;
+}
+
+.landscape .trees-bg .tree:nth-child(5) {
+    width: 80px;
+    height: 140px;
+    left: 100px;
+}
+
+.landscape .trees-bg .tree:nth-child(6) {
+    width: 80px;
+    height: 140px;
+    left: unset;
+    right: 140px;
+}
+
+.landscape .trees-bg .tree:nth-child(7) {
+    width: 80px;
+    height: 140px;
+    left: unset;
+    right: 40px;
+}
+
+.landscape .trees-bg .tree:nth-child(8) {
+    width: 60px;
+    height: 110px;
+    left: unset;
+    right: 20px;
+}
+
+.landscape .trees-bg .tree:nth-child(9) {
+    width: 50px;
+    height: 90px;
+    left: unset;
+    right: -5px;
+}
+
+.landscape .clouds .cloud {
+    width: 50px;
+    height: 25px;
+    background: whitesmoke;
+    position: absolute;
+    margin: auto;
+    top: 20px;
+    left: 75px;
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    box-shadow: 20px 5px 0 -5px whitesmoke;
+    z-index: -4;
+}
+
+.landscape .clouds .cloud:nth-child(2) {
+    top: 50px;
+    left: 200px;
+}
+
+.landscape .clouds .cloud:last-child {
+    top: 60px;
+    left: unset;
+    right: 80px;
+}
+
+.landscape .bush .bushes {
+    width: 30px;
+    height: 15px;
+    background: #390445;
+    position: absolute;
+    margin: auto;
+    bottom: 0;
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    box-shadow: 15px 3px 0 -3px #390445;
+    z-index: -1;
+}
+
+.landscape .bush .bushes:first-child {
+    transform: rotateY(180deg);
+    left: 5px;
+}
+
+.landscape .bush .bushes:nth-child(2) {
+    left: 140px;
+}
+
+.landscape .bush .bushes:nth-child(3) {
+    right: 15px;
+}
+
+.landscape .logs .log {
+    width: 100px;
+    height: 25px;
+}
+
+.landscape .logs .log .front {
+    width: 25px;
+    height: 25px;
+    background-color: #c674d2;
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 5px #7d288e70, inset 0 0 0 10px #7d288e95;
+    border: 1px solid #390445;
+}
+
+.landscape .logs .log .side {
+    content: "";
+    width: 65px;
+    height: 25px;
+    background: linear-gradient(
+        0deg,
+        rgba(57, 4, 69, 1) 0%,
+        rgba(57, 4, 69, 1) 68%,
+        rgba(110, 33, 126, 1) 68%
+    );
+    position: absolute;
+    margin: auto;
+    left: 15px;
+    z-index: -1;
+}
+
+.landscape .logs .log .side::before {
+    content: "";
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: -10px;
+    background: linear-gradient(
+        0deg,
+        rgba(57, 4, 69, 1) 0%,
+        rgba(57, 4, 69, 1) 68%,
+        rgba(110, 33, 126, 1) 68%
+    );
+    border-radius: 50%;
+}
+
+.landscape .logs .log {
+    position: absolute;
+    margin: auto;
+    bottom: 1px;
+    left: 0;
+    right: 0;
+}
+
+.landscape .logs .log:nth-child(2) {
+    right: -50px;
+}
+
+.landscape .logs .log:nth-child(3) {
+    right: -25px;
+    bottom: 24px;
+}
+
+.landscape .campfire .wood {
+    width: 100px;
+    height: 17px;
+    background: linear-gradient(
+        0deg,
+        rgba(57, 4, 69, 1) 0%,
+        rgba(57, 4, 69, 1) 68%,
+        rgba(110, 33, 126, 1) 68%
+    );
+    position: absolute;
+    margin: auto;
+    bottom: 0px;
+    right: 100px;
+    z-index: 100;
+}
+
+.landscape .campfire .wood:nth-child(1) {
+    transform: rotate(-13deg);
+}
+
+.landscape .campfire .wood:nth-child(2) {
+    transform: rotate(13deg);
+}
+
+.landscape .campfire .fire {
+    width: 25px;
+    height: 50px;
+    background-color: #eede9777;
+    border-radius: 50%;
+    position: absolute;
+    margin: auto;
+    bottom: -15px;
+    right: 135px;
+}
+
+.landscape .campfire .fire::before {
+    content: "";
+    width: 30px;
+    height: 30px;
+    background-color: #f5f5f5;
+    position: absolute;
+    margin: auto;
+    inset: 0;
+    transform: translateY(-12px) translateX(-2px);
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #f5f5f5, 0 0 0 30px #f5f5f570, 0 0 0 50px #f5f5f560;
+    filter: opacity(50%);
+    z-index: -2;
+}
