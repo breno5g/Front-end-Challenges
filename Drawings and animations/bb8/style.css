@@ -16,6 +16,8 @@ body {
     height: 500px;
     display: flex;
     justify-content: center;
+    background-color: #11111130;
+    position: relative;
 }
 
 .bb8 .head {
@@ -179,7 +181,7 @@ body {
     border-radius: 50%;
     position: absolute;
     z-index: -1;
-    top: 295px;
+    bottom: 10px;
     overflow: hidden;
 }
 
