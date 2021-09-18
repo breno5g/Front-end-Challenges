@@ -11,6 +11,13 @@ body {
     background-color: #8b6c8b;
 }
 
+.bb8 {
+    width: 400px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+}
+
 .bb8 .head {
     width: 210px;
     height: 120px;
@@ -53,6 +60,30 @@ body {
     margin: auto;
     top: 10px;
     right: 10px;
+}
+
+.bb8 .head .tattoo {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 3px solid #111;
+    position: absolute;
+    margin: auto;
+    inset: 0;
+    bottom: -70px;
+    right: -40px;
+}
+
+.bb8 .head .tattoo::before {
+    content: "";
+    width: 50%;
+    height: 50%;
+    background-color: #111;
+    position: absolute;
+    margin: auto;
+    inset: 0;
+    border-radius: 50%;
 }
 
 .bb8 .head .details {
@@ -139,4 +170,219 @@ body {
     bottom: 0;
     left: -50%;
     border-radius: 10px 10px 0 0;
+}
+
+.bb8 .body {
+    width: 350px;
+    height: 350px;
+    background-color: #fff1ea;
+    border-radius: 50%;
+    position: absolute;
+    z-index: -1;
+    transform: translateY(39%);
+    overflow: hidden;
+}
+
+.bb8 .body .circles .circle {
+    width: 250px;
+    height: 250px;
+    border: 30px solid #ff9543;
+    border-radius: 50%;
+    position: absolute;
+    margin: auto;
+    z-index: 10;
+}
+
+.bb8 .body .circles .circle .details .detail {
+    width: 30px;
+    height: 60px;
+    background-color: #ff9543;
+    position: absolute;
+    margin: auto;
+}
+
+.bb8 .body .circles .circle .details .detail:nth-child(1) {
+    left: 0;
+    right: 0;
+    top: -15px;
+}
+
+.bb8 .body .circles .circle .details .detail:nth-child(2) {
+    left: 0;
+    right: 0;
+    bottom: -15px;
+}
+
+.bb8 .body .circles .circle .details .detail:nth-child(3) {
+    right: 0;
+    bottom: 0px;
+    top: 0;
+    transform: rotate(90deg);
+}
+
+.bb8 .body .circles .circle .details .detail:nth-child(4) {
+    left: 0;
+    bottom: 0px;
+    top: 0;
+    transform: rotate(90deg);
+}
+
+.bb8 .body .circles .circle:nth-child(1) {
+    left: -110px;
+    rotate: 35deg;
+}
+
+.bb8 .body .circles .circle:nth-child(2) {
+    right: -120px;
+    rotate: -30deg;
+}
+
+.bb8 .body .circles .circle:nth-child(3) {
+    left: 0;
+    right: 0;
+    bottom: -140px;
+    rotate: 0deg;
+}
+
+.bb8 .body .circles .circle:nth-child(1) .metal,
+.bb8 .body .circles .circle:nth-child(2) .metal {
+    width: 45%;
+    height: 45%;
+    background-color: #d3d3d3;
+    border-radius: 50%;
+    position: absolute;
+    margin: auto;
+    inset: 0;
+}
+
+.bb8 .body .circles .circle:nth-child(1) .metal:before {
+    content: "";
+    width: 100%;
+    height: 50%;
+    background-color: #d3d3d3;
+    border-radius: 0 0 50% 50% / 0 0 100% 100%;
+    position: absolute;
+    bottom: -25px;
+    right: -25px;
+}
+
+.bb8 .body .circles .circle:nth-child(2) .metal:before {
+    content: "";
+    width: 100%;
+    height: 5px;
+    background-color: #fff1ea;
+    position: absolute;
+    margin: auto;
+    top: 10px;
+    box-shadow: 0 10px #fff1ea, 0 20px #fff1ea, 0 30px #fff1ea, 0 40px #fff1ea,
+        0 50px #fff1ea, 0 60px #fff1ea;
+}
+
+.bb8 .body .circles .circle:nth-child(2) .metal:after {
+    content: "";
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    border-radius: 50%;
+    margin: auto;
+    inset: 0;
+    left: -50%;
+    border: 15px solid transparent;
+    border-bottom: 15px solid #d3d3d3;
+    rotate: 22deg;
+}
+
+.bb8 .body .circles .circle:nth-child(3) .metal {
+    width: 100px;
+    height: 100px;
+    border: 15px solid transparent;
+    border-top: 20px solid #d3d3d3;
+    border-radius: 50%;
+    transform: translate(60px, -40px);
+    rotate: 45deg;
+}
+
+.bb8 .body .lines .line {
+    width: 130px;
+    height: 7px;
+    background-color: #a09ba2;
+    position: absolute;
+    margin: auto;
+    inset: 0;
+}
+
+.bb8 .body .lines .line:first-child {
+    top: -120px;
+    left: 10px;
+}
+
+.bb8 .body .lines .line:nth-child(2) {
+    width: 70px;
+    bottom: -110px;
+    left: -160px;
+    rotate: 45deg;
+}
+
+.bb8 .body .lines .line:nth-child(3) {
+    width: 80px;
+    bottom: -110px;
+    right: -160px;
+    rotate: -45deg;
+}
+
+.bb8 .body .dots .dot {
+    width: 15px;
+    height: 15px;
+    background-color: #a09ba2;
+    position: absolute;
+    margin: auto;
+    inset: 0;
+    border-radius: 50%;
+}
+
+.bb8 .body .dots .dot::before,
+.bb8 .body .dots .dot::after {
+    content: "";
+    width: 70%;
+    height: 70%;
+    position: absolute;
+    margin: auto;
+    inset: 0;
+    background-color: #bfbfbd;
+    border-radius: 50%;
+}
+
+.bb8 .body .dots .dot::after {
+    width: 30%;
+    height: 30%;
+    border: 5px solid #a09ba2;
+    background-color: #bfbfbd;
+}
+
+.bb8 .body .dots .dot:nth-child(1) {
+    top: -170px;
+}
+
+.bb8 .body .dots .dot:nth-child(2) {
+    top: -70px;
+}
+
+.bb8 .body .dots .dot:nth-child(3) {
+    bottom: -160px;
+    left: -190px;
+}
+
+.bb8 .body .dots .dot:nth-child(4) {
+    bottom: -100px;
+    left: -100px;
+}
+
+.bb8 .body .dots .dot:nth-child(5) {
+    bottom: -160px;
+    right: -190px;
+}
+
+.bb8 .body .dots .dot:nth-child(6) {
+    bottom: -100px;
+    right: -100px;
 }
