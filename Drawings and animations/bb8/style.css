@@ -239,19 +239,19 @@ body {
 
 .bb8 .body .circles .circle:nth-child(1) {
     left: -110px;
-    rotate: 35deg;
+    transform: rotate(35deg);
 }
 
 .bb8 .body .circles .circle:nth-child(2) {
     right: -120px;
-    rotate: -30deg;
+    transform: rotate(-30deg);
 }
 
 .bb8 .body .circles .circle:nth-child(3) {
     left: 0;
     right: 0;
     bottom: -140px;
-    rotate: 0deg;
+    transform: rotate(0deg);
 }
 
 .bb8 .body .circles .circle:nth-child(1) .metal,
@@ -299,7 +299,7 @@ body {
     left: -50%;
     border: 15px solid transparent;
     border-bottom: 15px solid #d3d3d3;
-    rotate: 22deg;
+    transform: rotate(22deg);
 }
 
 .bb8 .body .circles .circle:nth-child(3) .metal {
@@ -308,8 +308,7 @@ body {
     border: 15px solid transparent;
     border-top: 20px solid #d3d3d3;
     border-radius: 50%;
-    transform: translate(60px, -40px);
-    rotate: 45deg;
+    transform: translate(70px, 10px) rotate(45deg);
 }
 
 .bb8 .body .lines .line {
@@ -330,14 +329,14 @@ body {
     width: 70px;
     bottom: -110px;
     left: -160px;
-    rotate: 45deg;
+    transform: rotate(45deg);
 }
 
 .bb8 .body .lines .line:nth-child(3) {
     width: 80px;
     bottom: -110px;
     right: -160px;
-    rotate: -45deg;
+    transform: rotate(-45deg);
 }
 
 .bb8 .body .dots .dot {
