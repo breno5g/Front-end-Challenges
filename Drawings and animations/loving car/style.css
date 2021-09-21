@@ -456,7 +456,7 @@ body {
 
 .sunroofs .sunroof {
     width: 80px;
-    height: 30px;
+    height: 25px;
     background: rgb(250, 119, 117);
     background: linear-gradient(
         180deg,
@@ -465,7 +465,7 @@ body {
     );
     border: 4px solid #3b0058;
     position: absolute;
-    top: -23px;
+    top: -18px;
     left: 100px;
     border-radius: 10px;
     z-index: -1;
@@ -473,10 +473,10 @@ body {
 
 .sunroofs .sunroof:last-child {
     width: 100px;
-    height: 50px;
-    top: -40px;
+    height: 40px;
+    top: -30px;
     left: 230px;
-    border-radius: 10px 30px 10px 10px;
+    border-radius: 10px 20px 10px 10px;
 }
 
 .road span {
@@ -498,4 +498,93 @@ body {
 .road span:nth-child(3) {
     width: 70px;
     left: -150px;
+}
+
+.hearts span {
+    width: 15px;
+    height: 15px;
+    background-color: #fe1239;
+    position: absolute;
+    top: -50px;
+    transform: rotate(45deg);
+    margin: auto;
+}
+
+.hearts span::before,
+.hearts span::after {
+    content: "";
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    margin: auto;
+    background-color: #fe1239;
+    border-radius: 50%;
+}
+
+.hearts span::before {
+    left: -50%;
+}
+.hearts span::after {
+    top: -50%;
+}
+
+.hearts span:nth-child(1) {
+    left: -50px;
+    transform: rotate(-10deg);
+    bottom: -200px;
+}
+.hearts span:nth-child(2) {
+    width: 12px;
+    height: 12px;
+    left: -70px;
+    transform: rotate(-40deg);
+    bottom: -150px;
+}
+
+.hearts span:nth-child(3) {
+    width: 12px;
+    height: 12px;
+    left: -100px;
+    transform: rotate(-60deg);
+    bottom: -200px;
+    opacity: 60%;
+}
+.hearts span:nth-child(4) {
+    width: 10px;
+    height: 10px;
+    left: -110px;
+    transform: rotate(-10deg);
+    bottom: -140px;
+    opacity: 80%;
+}
+.hearts span:nth-child(5) {
+    width: 7px;
+    height: 7px;
+    left: -150px;
+    transform: rotate(-80deg);
+    bottom: -170px;
+    opacity: 50%;
+}
+.hearts span:nth-child(6) {
+    width: 7px;
+    height: 7px;
+    left: -180px;
+    transform: rotate(-80deg);
+    bottom: -130px;
+    opacity: 40%;
+}
+.hearts span:nth-child(7) {
+    width: 5px;
+    height: 5px;
+    left: -190px;
+    transform: rotate(-80deg);
+    bottom: -170px;
+    opacity: 30%;
+}
+
+.hearts .right {
+    position: absolute;
+    right: -120px;
+    top: 150px;
+    transform: rotate(90deg);
 }
