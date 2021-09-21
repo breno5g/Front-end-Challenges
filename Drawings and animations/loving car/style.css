@@ -1,0 +1,501 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background: #f6f4f2;
+}
+
+.car {
+    width: 550px;
+    height: 250px;
+    position: relative;
+}
+
+.car .body {
+    width: inherit;
+    height: inherit;
+    background: linear-gradient(
+        180deg,
+        #fee500 0%,
+        #fee500 5%,
+        #c5ebfe 5%,
+        #c5ebfe 75%,
+        #fa7775 75%
+    );
+    border: 5px solid #3b0058;
+    border-radius: 15px 80px 15px 10px;
+    position: relative;
+}
+
+.car .body::before,
+.car .body::after {
+    content: "";
+    height: 4px;
+    background-color: #3b0058;
+    position: absolute;
+    left: 0;
+}
+
+.car .body::before {
+    width: 510px;
+    top: 10px;
+}
+
+.car .body::after {
+    width: 545px;
+    bottom: 60px;
+}
+
+.car .body .door {
+    width: 100px;
+    height: 210px;
+    background-color: #f6f4f2;
+    position: absolute;
+    right: 120px;
+    bottom: 0;
+    border-radius: 10px 10px 0 0;
+    z-index: 10;
+    border: 4px solid #3b0058;
+    border-bottom: none;
+}
+
+.car .body .door .window {
+    width: 80px;
+    height: 80px;
+    background-color: #56b7e8;
+    position: absolute;
+    margin: auto;
+    inset: 0;
+    top: -110px;
+    border-radius: 10px;
+    border: 3px solid #3b0058;
+    overflow: hidden;
+}
+
+.car .body .door .window::after {
+    content: "";
+    width: inherit;
+    height: inherit;
+    background-color: #c5ebfe;
+    position: absolute;
+    margin: auto;
+    bottom: -50%;
+    left: -2px;
+    border-radius: 20px;
+    opacity: 50%;
+}
+
+.car .body .door .window .detail {
+    width: 40px;
+    height: 50px;
+    background-color: #40a3d6;
+    position: absolute;
+    margin: auto;
+    inset: 0;
+    border-radius: 10px;
+}
+
+.car .body .door .window .detail::before,
+.car .body .door .window .detail::after {
+    content: "";
+    width: 5px;
+    height: 50px;
+    background-color: #56b7e8;
+    position: absolute;
+    margin: auto;
+    inset: 0;
+    right: -10px;
+}
+
+.car .body .door .window .detail::before {
+    transform: rotate(90deg);
+    top: -10px;
+    right: 0;
+}
+
+.car .body .door .handle {
+    width: 12px;
+    height: 25px;
+    background-color: #fa7775;
+    position: absolute;
+    margin: auto;
+    inset: 0;
+    bottom: -40px;
+    right: -70px;
+    border-radius: 10px;
+    border: 3px solid #3b0058;
+}
+
+.car .body .big-window .frame {
+    width: 220px;
+    height: 120px;
+    background-color: #f6f4f2;
+    position: absolute;
+    top: 36px;
+    left: 50px;
+    border: 4px solid #3b0058;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.car .body .big-window .frame .glass {
+    width: 90px;
+    height: 90px;
+    background-color: #7acbf6;
+    border-radius: 5px;
+    border: 3px solid #3b0058;
+    position: relative;
+    overflow: hidden;
+}
+
+.car .body .big-window .frame .glass::before {
+    content: "";
+    width: 20px;
+    height: 200px;
+    background-color: #bee6fa;
+    position: absolute;
+    margin: auto;
+    box-shadow: 16px 0 0 -8px #bee6fa, 30px 0 0 -2px #bee6fa;
+    transform: rotate(25deg);
+    top: -50px;
+    left: 25px;
+}
+
+.car .body .big-window .frame .glass:after {
+    content: "";
+    width: inherit;
+    height: 70%;
+    background-color: #11111120;
+    position: absolute;
+}
+
+.car .body .big-window .frame::before,
+.car .body .big-window .frame::after {
+    content: "";
+    width: 240px;
+    height: 5px;
+    background-color: #b8f337;
+    position: absolute;
+    border-radius: 20px;
+    border: 4px solid #3b0058;
+}
+
+.car .body .big-window .frame::before {
+    top: -10px;
+}
+
+.car .body .big-window .frame::after {
+    bottom: -10px;
+}
+
+.car .body .big-window .awning {
+    width: 235px;
+    height: 30px;
+    background-color: #fa7775;
+    border: 4px solid #3b0058;
+    position: absolute;
+    left: 42px;
+    top: 40px;
+}
+
+.car .body .big-window .awning .frufru {
+    width: 30px;
+    height: 25px;
+    background-color: #fa7775;
+    border: 4px solid #3b0058;
+    position: absolute;
+    bottom: -25px;
+    left: -1px;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 5px #11111130;
+}
+
+.car .body .big-window .awning .frufru:nth-child(2) {
+    transform: translateX(25px);
+}
+.car .body .big-window .awning .frufru:nth-child(3) {
+    transform: translateX(50px);
+}
+.car .body .big-window .awning .frufru:nth-child(4) {
+    transform: translateX(75px);
+}
+.car .body .big-window .awning .frufru:nth-child(5) {
+    transform: translateX(100px);
+}
+.car .body .big-window .awning .frufru:nth-child(6) {
+    transform: translateX(125px);
+}
+.car .body .big-window .awning .frufru:nth-child(7) {
+    transform: translateX(150px);
+}
+.car .body .big-window .awning .frufru:nth-child(8) {
+    transform: translateX(175px);
+}
+.car .body .big-window .awning .frufru:nth-child(9) {
+    transform: translateX(200px);
+}
+
+.car .body .big-window .awning .frufru:nth-child(2n) {
+    background-color: #f6f4f2;
+}
+
+.car .body .little-window .glass {
+    width: 80px;
+    height: 90px;
+    background-color: #79cbf3;
+    position: absolute;
+    right: 20px;
+    top: 40px;
+    border: 4px solid #3b0058;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.car .body .little-window:after {
+    content: "";
+    width: 85px;
+    height: 5px;
+    background-color: #b8f337;
+    border: 4px solid #3b0058;
+    position: absolute;
+    top: 35px;
+    right: 14px;
+    border-radius: 20px;
+}
+
+.car .body .little-window .glass::after {
+    content: "";
+    width: 15px;
+    height: 200px;
+    background-color: #bee6fa;
+    position: absolute;
+    margin: auto;
+    box-shadow: 13px 0 0 -4px #bee6fa, 25px 0 0 -2px #bee6fa;
+    transform: rotate(25deg) rotateY(180deg);
+    top: -50px;
+    right: 5px;
+}
+
+.car .body .little-window .awning {
+    width: 85px;
+    height: 30px;
+    background-color: #fa7775;
+    border: 4px solid #3b0058;
+    position: absolute;
+    right: 18px;
+    top: 40px;
+}
+
+.car .body .little-window .awning .frufru {
+    width: 30px;
+    height: 25px;
+    background-color: #fa7775;
+    border: 4px solid #3b0058;
+    position: absolute;
+    bottom: -25px;
+    left: -1px;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 5px #11111130;
+}
+
+.car .body .little-window .awning .frufru:nth-child(2) {
+    transform: translateX(25px);
+    background-color: #f6f4f2;
+}
+
+.car .body .little-window .awning .frufru:nth-child(3) {
+    transform: translateX(50px);
+}
+
+.car .body .air-exit .aperture {
+    width: 35px;
+    height: 3px;
+    background-color: #9071a5;
+    position: absolute;
+    right: 40px;
+    bottom: 97px;
+    border: 2px solid #3b0058;
+    border-radius: 50px;
+}
+
+.car .body .air-exit .aperture:nth-child(2) {
+    transform: translateY(7px);
+}
+.car .body .air-exit .aperture:nth-child(3) {
+    transform: translateY(14px);
+}
+.car .body .air-exit .aperture:nth-child(4) {
+    transform: translateY(21px);
+}
+
+.car .body .rectangles-detail .rectangle {
+    width: 25px;
+    height: 12px;
+    background-color: #f19e4d;
+    position: absolute;
+    border: 3px solid #3b0058;
+}
+
+.car .body .rectangles-detail .rectangle:nth-child(1) {
+    top: 20px;
+    left: 5px;
+}
+
+.car .body .rectangles-detail .rectangle:nth-child(2) {
+    top: 160px;
+    left: 5px;
+}
+
+.car .body .rectangles-detail .rectangle:nth-child(3) {
+    background-color: #fee500;
+    bottom: 40px;
+    right: 5px;
+}
+
+.car .body .metal-detail .metal {
+    width: 45px;
+    height: 25px;
+    background-color: #a6a6a8;
+    position: absolute;
+    border: 5px solid #3b0058;
+    border-radius: 5px;
+    bottom: 20px;
+    left: -15px;
+    z-index: 10;
+}
+
+.car .body .metal-detail .metal:last-child {
+    width: 25px;
+    left: unset;
+    bottom: -10px;
+    right: -10px;
+}
+
+.body .shadow {
+    width: 100%;
+    height: 20px;
+    background-color: #11111120;
+    position: absolute;
+    bottom: 0;
+}
+
+.body .tires .container {
+    width: 100px;
+    height: 50px;
+    background-color: #3b0058;
+    position: absolute;
+    bottom: 0px;
+    left: 65px;
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    z-index: 10;
+}
+
+.body .tires .container:last-child {
+    left: unset;
+    right: 65px;
+}
+
+.body .tires .container .tire {
+    width: 70px;
+    height: 70px;
+    background-color: #a6a6a8;
+    position: absolute;
+    margin: auto;
+    inset: 0;
+    bottom: -55px;
+    border-radius: 50%;
+    border: 4px solid #3b0058;
+    box-shadow: inset 0 10px #11111160;
+}
+
+.body .tires .container .tire .hubcap {
+    width: 60%;
+    height: 60%;
+    background-color: #79cbf3;
+    border-radius: 50%;
+    border: 4px solid #3b0058;
+    position: absolute;
+    margin: auto;
+    inset: 0;
+}
+
+.body .tires .container .tire .hubcap span {
+    width: 7px;
+    height: 7px;
+    background-color: #a6a6a8;
+    border-radius: 50%;
+    border: 1px solid #3b0058;
+    position: absolute;
+    margin: auto;
+    inset: 0;
+}
+
+.body .tires .container .tire .hubcap span:nth-child(1) {
+    top: -20px;
+}
+
+.body .tires .container .tire .hubcap span:nth-child(2) {
+    left: -20px;
+}
+
+.body .tires .container .tire .hubcap span:nth-child(3) {
+    right: -20px;
+}
+
+.body .tires .container .tire .hubcap span:nth-child(4) {
+    bottom: -20px;
+}
+
+.sunroofs .sunroof {
+    width: 80px;
+    height: 30px;
+    background: rgb(250, 119, 117);
+    background: linear-gradient(
+        180deg,
+        rgba(250, 119, 117, 1) 50%,
+        rgba(220, 99, 95, 1) 50%
+    );
+    border: 4px solid #3b0058;
+    position: absolute;
+    top: -23px;
+    left: 100px;
+    border-radius: 10px;
+    z-index: -1;
+}
+
+.sunroofs .sunroof:last-child {
+    width: 100px;
+    height: 50px;
+    top: -40px;
+    left: 230px;
+    border-radius: 10px 30px 10px 10px;
+}
+
+.road span {
+    height: 8px;
+    background-color: #3b0058;
+    position: absolute;
+    bottom: -40px;
+    border-radius: 20px;
+}
+
+.road span:nth-child(1) {
+    width: 70px;
+    right: -150px;
+}
+.road span:nth-child(2) {
+    width: 650px;
+    left: -50px;
+}
+.road span:nth-child(3) {
+    width: 70px;
+    left: -150px;
+}
