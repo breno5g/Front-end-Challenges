@@ -1,0 +1,241 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: #ffaafb;
+}
+
+.bmo {
+    width: 300px;
+    height: 350px;
+    position: relative;
+}
+
+.bmo .body {
+    width: 240px;
+    height: inherit;
+    background-color: #66a395;
+    box-shadow: 60px 0 #558f7d;
+    border-radius: 30px;
+}
+
+.bmo .body .face-container {
+    width: 180px;
+    height: 180px;
+    position: absolute;
+    margin: auto;
+    top: 30px;
+    left: 30px;
+    border-radius: 30px;
+    overflow: hidden;
+    background-color: #427766;
+}
+
+.bmo .body .face-container .face {
+    width: 155px;
+    height: inherit;
+    background-color: #c0ffcc;
+    position: absolute;
+    border-radius: 30px;
+    right: 0;
+    box-shadow: inset 15px 15px #7ed9b1;
+}
+
+.bmo .body .face-container .face span {
+    width: 15px;
+    height: 40px;
+    background-color: #111;
+    position: absolute;
+    margin: auto;
+    inset: 0;
+}
+
+.bmo .body .face-container .face span:first-child {
+    left: -95px;
+}
+
+.bmo .body .face-container .face span:last-child {
+    left: 65px;
+}
+
+.bmo .body .face-container .face span:nth-child(2) {
+    left: -15px;
+    transform: rotate(90deg);
+}
+
+.bmo .body .face-container::before,
+.bmo .body .face-container::after {
+    content: "";
+    width: 70px;
+    height: 300px;
+    background-color: #f9f9f9;
+    position: absolute;
+    left: 40px;
+    top: -130px;
+    transform: rotate(45deg);
+    z-index: 10;
+    opacity: 40%;
+}
+
+.bmo .body .face-container::after {
+    width: 40px;
+    left: unset;
+    right: 00px;
+    top: -40px;
+}
+
+.bmo .cross span {
+    width: 30px;
+    height: 30px;
+    background-color: #f5f5f5;
+    position: absolute;
+    bottom: 60px;
+    left: 30px;
+    border-radius: 5px 0 0 7px;
+}
+
+.bmo .cross span:nth-child(1) {
+    height: 25px;
+}
+
+.bmo .cross span:nth-child(2) {
+    transform: rotate(90deg);
+    bottom: 85px;
+    left: 60px;
+    box-shadow: 0 -5px #a7dfc5, 0 -10px #11111120;
+}
+.bmo .cross span:nth-child(3) {
+    height: 25px;
+    transform: rotate(180deg);
+    bottom: 60px;
+    left: 90px;
+    box-shadow: -5px 0 #a7dfc5, -10px 0 #11111120;
+}
+.bmo .cross span:nth-child(4) {
+    transform: rotate(-90deg);
+    bottom: 30px;
+    left: 60px;
+    box-shadow: 0 5px #a7dfc5, 0 10px #11111120;
+}
+
+.bmo .cross::before {
+    content: "";
+    width: 30px;
+    height: 30px;
+    background-color: #f5f5f5;
+    position: absolute;
+    bottom: 60px;
+    left: 60px;
+}
+
+.bmo .buttons span {
+    width: 40px;
+    height: 25px;
+    background-color: #f5f5f5;
+    position: absolute;
+    right: 90px;
+    bottom: 80px;
+    border-radius: 20px;
+    box-shadow: 5px 0 #a7dfc5, 10px 0 #11111120;
+}
+
+.bmo .buttons span:last-child {
+    right: 120px;
+    bottom: 40px;
+}
+
+.bmo .sound-output span {
+    width: 50px;
+    height: 10px;
+    background-color: #427766;
+    position: absolute;
+    right: 5px;
+    top: 80px;
+    border-radius: 30px;
+}
+
+.bmo .sound-output span:nth-child(2) {
+    top: 100px;
+}
+
+.bmo .sound-output span:nth-child(3) {
+    top: 120px;
+}
+
+.bmo .arms .arm {
+    width: 50px;
+    height: 100px;
+    background-color: #111;
+    position: absolute;
+    border-radius: 50px;
+    margin: auto;
+    bottom: 50px;
+    right: -20px;
+    transform: rotate(-45deg);
+}
+
+.bmo .arms .arm:last-child {
+    right: unset;
+    left: -35px;
+    transform: rotate(45deg);
+    z-index: -1;
+}
+
+.bmo .arms .arm::before {
+    content: "";
+    width: 60px;
+    height: 60px;
+    background-color: #c0ffcc;
+    position: absolute;
+    border-radius: 50%;
+    margin: auto;
+    bottom: -20px;
+    right: -5px;
+}
+
+.bmo .legs .leg {
+    width: 50px;
+    height: 60px;
+    background-color: #111;
+    position: absolute;
+    bottom: -35px;
+    border-radius: 10px;
+    left: 60px;
+    z-index: -1;
+}
+
+.bmo .legs .leg:last-child {
+    left: unset;
+    right: 60px;
+}
+
+.bmo .antenna .base {
+    width: 100px;
+    height: 50px;
+    background-color: #111;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: -50px;
+    top: -35px;
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    z-index: -1;
+}
+
+.bmo .antenna .stem {
+    width: 25px;
+    height: 80px;
+    background-color: #111;
+    border-radius: 20px 20px 0 0;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: -50px;
+    top: -90px;
+}
