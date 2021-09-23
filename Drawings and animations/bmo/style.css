@@ -26,6 +26,18 @@ body {
     border: 1px solid #427766;
 }
 
+.bmo .body:after {
+    content: "";
+    width: 430px;
+    height: 100px;
+    background-color: #11111120;
+    position: absolute;
+    border-radius: 50%;
+    left: -70px;
+    bottom: -90px;
+    z-index: -2;
+}
+
 .bmo .body .face-container {
     width: 180px;
     height: 180px;
