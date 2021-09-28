@@ -132,6 +132,7 @@ body {
     top: -10px;
     left: -23px;
     transform: rotate(-23deg);
+    box-shadow: 5px 0 5px #11111130;
 }
 
 .worker .body .vest span:last-child {
