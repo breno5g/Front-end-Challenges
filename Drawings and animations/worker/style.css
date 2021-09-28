@@ -17,6 +17,18 @@ body {
     position: relative;
 }
 
+.worker:after {
+    content: "";
+    width: 300px;
+    height: 5px;
+    background-color: #174415;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: -10px;
+}
+
 .worker .head {
     width: 100px;
     height: 120px;
@@ -128,6 +140,21 @@ body {
     right: -23px;
 }
 
+.worker .body .vest::before {
+    content: "";
+    width: 4px;
+    height: 14px;
+    background-color: #bb8451;
+    position: absolute;
+    margin: auto;
+    inset: 0;
+    top: -35px;
+    left: -30px;
+    border-radius: 20px;
+    box-shadow: 7px 5px #bb8451, 14px 0px #bb8451, 21px 5px #bb8451,
+        28px 0 #bb8451;
+}
+
 .worker .body .vest::after {
     content: "";
     width: 100%;
@@ -147,6 +174,22 @@ body {
     border-radius: 100% 0% 50% 50% / 50% 0% 15% 15%;
     left: 23px;
     transform: rotate(-12deg);
+    z-index: 10;
+}
+
+.worker .arms .arm span {
+    width: 20px;
+    height: 5px;
+    background-color: #cd9562;
+    position: absolute;
+    margin: auto;
+    inset: 0;
+    left: -20px;
+    top: -30px;
+    border-radius: 20px;
+    box-shadow: 7px 7px #cd9562, 0px 14px #cd9562, 7px 21px #cd9562,
+        0 28px #cd9562, 7px 35px #cd9562, 0 42px #cd9562, 7px 49px #cd9562,
+        0 56px #cd9562;
 }
 
 .worker .arms .arm:last-child {
@@ -197,4 +240,66 @@ body {
 .worker .legs .foot:last-child {
     left: unset;
     right: -48px;
+}
+
+.worker .stone-crusher .engine {
+    width: 55px;
+    height: 70px;
+    background-color: #f79323;
+    border-radius: 20px;
+    position: absolute;
+    margin: auto;
+    inset: 0;
+    bottom: -150px;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.worker .stone-crusher .engine::before {
+    content: "";
+    width: 25px;
+    height: 15px;
+    background-color: #322e2f;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+}
+
+.worker .stone-crusher .handle {
+    width: 150px;
+    height: 15px;
+    background-color: #322e2f;
+    position: absolute;
+    margin: auto;
+    inset: 0;
+    bottom: -150px;
+}
+
+.worker .stone-crusher .cutucador {
+    width: 20px;
+    height: 100px;
+    background-color: #b1b3b2;
+    position: absolute;
+    margin: auto;
+    inset: 0;
+    bottom: -310px;
+    background: linear-gradient(
+        0deg,
+        rgba(141, 133, 148, 1) 16%,
+        rgba(177, 179, 178, 1) 17%
+    );
+}
+
+.worker .stone-crusher .cutucador::after {
+    content: "";
+    width: 35px;
+    height: 50px;
+    background-color: #322e2f;
+
+    position: absolute;
+    margin: auto;
+    top: -20px;
+    left: -8px;
+    border-radius: 15px;
 }
