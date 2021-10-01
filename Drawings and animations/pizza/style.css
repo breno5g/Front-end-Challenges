@@ -1,0 +1,141 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: antiquewhite;
+    display: grid;
+    place-items: center;
+}
+
+.pizza {
+    width: 300px;
+    height: 450px;
+    position: relative;
+}
+
+.pizza .body {
+    width: inherit;
+    height: 300px;
+    background-color: #fcc61a;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 40px;
+    border-radius: 50%;
+    clip-path: polygon(0 0, 50% 100%, 100% 0);
+    z-index: -1;
+    overflow: hidden;
+}
+
+.pizza .body .border {
+    width: 170%;
+    height: 800px;
+    border-radius: 50%;
+    border: 40px solid transparent;
+    border-top: 40px solid #d6934d;
+    position: absolute;
+    left: -105px;
+    top: -2px;
+}
+
+.pizza .body .border::before {
+    content: "";
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-radius: 50%;
+    border: 10px solid transparent;
+    border-top: 10px solid #a82b2b;
+}
+
+.pizza .body .eyes .eye {
+    width: 10px;
+    height: 10px;
+    background-color: #332f2f;
+    position: absolute;
+    margin: auto;
+    inset: 0;
+    top: 0px;
+    border-radius: 50%;
+}
+
+.pizza .body .face .eyes .eye:nth-child(1) {
+    left: -60px;
+}
+.pizza .body .face .eyes .eye:nth-child(2) {
+    right: -60px;
+}
+
+.pizza .body .face .mouth span {
+    width: 10px;
+    height: 3px;
+    background-color: #332f2f;
+    position: absolute;
+    margin: auto;
+    inset: 0;
+    bottom: -10px;
+}
+
+.pizza .body .face .mouth span:first-child {
+    left: -8px;
+    transform: rotate(35deg);
+}
+.pizza .body .face .mouth span:last-child {
+    right: -8px;
+    transform: rotate(-35deg);
+}
+
+.pizza .body .pepperoni span {
+    width: 50px;
+    height: 50px;
+    background-color: #dc644a;
+    position: absolute;
+    margin: auto;
+    inset: 0;
+    border-radius: 50%;
+}
+
+.pizza .body .pepperoni span:nth-child(1) {
+    bottom: -130px;
+}
+.pizza .body .pepperoni span:nth-child(2) {
+    top: -80px;
+    left: -110px;
+}
+.pizza .body .pepperoni span:nth-child(3) {
+    top: -120px;
+    right: -100px;
+}
+
+.pizza .cheese span {
+    width: 10px;
+    height: 130px;
+    background-color: #fcc61a;
+    position: absolute;
+    margin: auto;
+    inset: 0;
+    border-radius: 10px;
+}
+
+.pizza .cheese span:nth-child(1) {
+    left: -70px;
+    bottom: -170px;
+}
+
+.pizza .cheese span:nth-child(2) {
+    bottom: -250px;
+}
+
+.pizza .cheese span:nth-child(3) {
+    right: -90px;
+    bottom: -130px;
+}
