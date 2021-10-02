@@ -1,0 +1,94 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: #bfd8d6;
+}
+
+.mountains {
+    width: 500px;
+    height: 300px;
+    position: relative;
+}
+
+.mountains .ground .dirt {
+    width: 500px;
+    height: 70px;
+    background-color: #603814;
+    clip-path: polygon(52% 100%, 0 0, 100% 0);
+    position: absolute;
+    bottom: 0;
+}
+
+.mountains .ground .grass {
+    width: 500px;
+    height: 30px;
+    background-color: #23b674;
+    clip-path: polygon(0 2%, 100% 0, 94% 28%, 30% 100%, 5% 28%);
+    position: absolute;
+    bottom: 41px;
+}
+
+.mountains .ground .grass-dark {
+    width: 300px;
+    height: 42px;
+    background-color: #187e4a;
+    clip-path: polygon(50% 100%, 0 0, 100% 0);
+    position: absolute;
+    bottom: 28px;
+    right: 0;
+}
+
+/* Hills */
+
+.mountains .hills span {
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    position: absolute;
+    margin: auto;
+    bottom: 70px;
+    z-index: -1;
+    border: 1px solid #111;
+}
+
+.mountains .hills span:nth-child(1) {
+    width: 80px;
+    height: 30px;
+    background-color: #ffa7b6;
+    left: 110px;
+}
+.mountains .hills span:nth-child(2) {
+    width: 150px;
+    height: 80px;
+    background-color: #91ffa9;
+    left: 150px;
+}
+.mountains .hills span:nth-child(3) {
+    width: 120px;
+    height: 60px;
+    background-color: #f6ffa7;
+    left: 250px;
+}
+.mountains .hills span:nth-child(4) {
+    width: 60px;
+    height: 30px;
+    background-color: #43b460;
+    left: 340px;
+    z-index: -2;
+}
+
+/* Trees */
+
+.mountains .trees span {
+    width: 100px;
+    height: 100px;
+    background-color: #f5f5f5;
+    position: absolute;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    border-radius: 20px;
+}
