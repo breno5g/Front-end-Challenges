@@ -1,246 +1,246 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
-    height: 100vh;
-    background-color: antiquewhite;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  height: 100vh;
+  background-color: antiquewhite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .toaster {
-    width: 130px;
-    height: 100px;
-    background-color: #2b77a9;
-    border-radius: 20px 25px 0 0;
-    position: relative;
+  width: 130px;
+  height: 100px;
+  background-color: #2b77a9;
+  border-radius: 20px 25px 0 0;
+  position: relative;
 }
 
 .toaster .cover {
-    width: 130px;
-    height: 100px;
-    background-color: #58c3ef;
-    border-radius: 20px 25px 0 0;
-    position: relative;
-    left: -30px;
-    box-shadow: inset 2px 0px #f1f1f150;
+  width: 130px;
+  height: 100px;
+  background-color: #58c3ef;
+  border-radius: 20px 25px 0 0;
+  position: relative;
+  left: -30px;
+  box-shadow: inset 2px 0px #f1f1f150;
 }
 
 .toaster .cover .glow {
-    width: 25px;
-    height: 15px;
-    background-color: #f1f1f195;
-    position: absolute;
-    border-radius: 50%;
-    transform: rotate(-35deg);
-    top: 7px;
-    left: 4px;
+  width: 25px;
+  height: 15px;
+  background-color: #f1f1f195;
+  position: absolute;
+  border-radius: 50%;
+  transform: rotate(-35deg);
+  top: 7px;
+  left: 4px;
 }
 
 .toaster .cover .handle {
-    width: 40px;
-    height: 8px;
-    background-color: #2b77a9;
-    position: absolute;
-    margin: auto;
-    bottom: 10px;
-    left: 0;
-    right: 0;
-    border-radius: 10px;
-    box-shadow: inset 2px 2px #11111150;
+  width: 40px;
+  height: 8px;
+  background-color: #2b77a9;
+  position: absolute;
+  margin: auto;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  border-radius: 10px;
+  box-shadow: inset 2px 2px #11111150;
 }
 
 .toaster .lever-slot {
-    width: 7px;
-    height: 45px;
-    background-color: #2b2a2a;
-    position: absolute;
-    top: 25px;
-    right: 10px;
-    border-radius: 5px;
-    box-shadow: inset -4px 0px #23567a;
+  width: 7px;
+  height: 45px;
+  background-color: #2b2a2a;
+  position: absolute;
+  top: 25px;
+  right: 10px;
+  border-radius: 5px;
+  box-shadow: inset -4px 0px #23567a;
 }
 
 .toaster .lever-slot .lever {
-    width: 20px;
-    height: 4px;
-    background-color: #e9e3e3;
-    position: absolute;
-    top: 7px;
-    box-shadow: inset 3px 0px #11111150;
-    animation: 2s lever infinite ease-out;
+  width: 20px;
+  height: 4px;
+  background-color: #e9e3e3;
+  position: absolute;
+  top: 7px;
+  box-shadow: inset 3px 0px #11111150;
+  animation: 2s lever infinite ease-out;
 }
 
 .toaster .lever-slot .lever .handle {
-    width: 18px;
-    height: 8px;
-    background-color: #334458;
-    position: absolute;
-    left: 8px;
-    top: -1.5px;
-    border-radius: 10px;
+  width: 18px;
+  height: 8px;
+  background-color: #334458;
+  position: absolute;
+  left: 8px;
+  top: -1.5px;
+  border-radius: 10px;
 }
 
 .toaster .lever-slot .lever .handle::after {
-    content: "";
-    width: 8px;
-    height: 8px;
-    position: absolute;
-    background-color: #202e3b;
-    right: 0;
-    border-radius: 50%;
+  content: '';
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  background-color: #202e3b;
+  right: 0;
+  border-radius: 50%;
 }
 
 .toaster .button {
-    width: 15px;
-    height: 15px;
-    background-color: #202e3b;
-    border-radius: 50%;
-    position: absolute;
-    right: 6px;
-    bottom: 7px;
+  width: 15px;
+  height: 15px;
+  background-color: #202e3b;
+  border-radius: 50%;
+  position: absolute;
+  right: 6px;
+  bottom: 7px;
 }
 
 .toaster .button::before {
-    content: "";
-    width: 15px;
-    height: 12px;
-    background-color: #334458;
-    position: absolute;
-    top: 1.5px;
-    left: 2px;
-    border-radius: 10px;
+  content: '';
+  width: 15px;
+  height: 12px;
+  background-color: #334458;
+  position: absolute;
+  top: 1.5px;
+  left: 2px;
+  border-radius: 10px;
 }
 
 .toaster .button::after {
-    content: "";
-    width: 9px;
-    height: 12px;
-    position: absolute;
-    background-color: #202e3b;
-    border-radius: 50%;
-    right: -3px;
-    top: 1.5px;
+  content: '';
+  width: 9px;
+  height: 12px;
+  position: absolute;
+  background-color: #202e3b;
+  border-radius: 50%;
+  right: -3px;
+  top: 1.5px;
 }
 
 .toaster .base {
-    width: 140px;
-    height: 10px;
-    background-color: #334458;
-    position: absolute;
-    left: -35px;
-    bottom: -8px;
-    border-radius: 10px;
-    box-shadow: 30px 0 #202e3b, inset 3px 0 #f1f1f125;
+  width: 140px;
+  height: 10px;
+  background-color: #334458;
+  position: absolute;
+  left: -35px;
+  bottom: -8px;
+  border-radius: 10px;
+  box-shadow: 30px 0 #202e3b, inset 3px 0 #f1f1f125;
 }
 
 .toaster .base .pad {
-    width: 8px;
-    height: 6px;
-    background-color: #202e3b;
-    position: absolute;
-    border-radius: 0 0 3px 3px;
-    bottom: -6px;
+  width: 8px;
+  height: 6px;
+  background-color: #202e3b;
+  position: absolute;
+  border-radius: 0 0 3px 3px;
+  bottom: -6px;
 }
 
 .toaster .base .pad:nth-child(1) {
-    left: 10px;
+  left: 10px;
 }
 
 .toaster .base .pad:nth-child(2) {
-    left: 40px;
+  left: 40px;
 }
 
 .toaster .base .pad:nth-child(3) {
-    right: 10px;
+  right: 10px;
 }
 
 .toaster .base .pad:nth-child(4) {
-    right: -20px;
+  right: -20px;
 }
 
 .toaster .toast1 {
-    position: absolute;
-    top: -25px;
-    left: 35px;
-    z-index: -1;
-    animation: 2s toast-jump infinite ease-out;
+  position: absolute;
+  top: -25px;
+  left: 35px;
+  z-index: -1;
+  animation: 2s toast-jump infinite ease-out;
 }
 
 .toaster .toast2 {
-    position: absolute;
-    top: -30px;
-    left: 0px;
-    z-index: -1;
-    animation: 2s toast-chan infinite ease-out;
+  position: absolute;
+  top: -30px;
+  left: 0px;
+  z-index: -1;
+  animation: 2s toast-chan infinite ease-out;
 }
 
 .toaster .toast1 .toast-border,
 .toaster .toast2 .toast-border {
-    width: 70px;
-    height: 35px;
-    background-color: #854d3e;
-    position: absolute;
-    top: -10px;
-    border-radius: 20px;
+  width: 70px;
+  height: 35px;
+  background-color: #854d3e;
+  position: absolute;
+  top: -10px;
+  border-radius: 20px;
 }
 
 .toaster .toast1 .toast-border::before,
 .toaster .toast2 .toast-border::before {
-    content: "";
-    width: 60px;
-    height: 60px;
-    background-color: #854d3e;
-    position: absolute;
-    left: 5px;
-    top: 5px;
-    border-radius: 5px 5px 2px 2px;
+  content: '';
+  width: 60px;
+  height: 60px;
+  background-color: #854d3e;
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  border-radius: 5px 5px 2px 2px;
 }
 
 .toaster .toast1 .toast-fill,
 .toaster .toast2 .toast-fill {
-    width: 60px;
-    height: 25px;
-    background-color: #f8ab5d;
-    position: absolute;
-    top: -5px;
-    left: 5px;
-    border-radius: 20px;
+  width: 60px;
+  height: 25px;
+  background-color: #f8ab5d;
+  position: absolute;
+  top: -5px;
+  left: 5px;
+  border-radius: 20px;
 }
 
 .toaster .toast1 .toast-fill::before,
 .toaster .toast2 .toast-fill::before {
-    content: "";
-    width: 50px;
-    height: 50px;
-    background-color: #f8ab5d;
-    position: absolute;
-    left: 5px;
-    top: 5px;
-    border-radius: 5px 5px 2px 2px;
+  content: '';
+  width: 50px;
+  height: 50px;
+  background-color: #f8ab5d;
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  border-radius: 5px 5px 2px 2px;
 }
 
 @keyframes lever {
-    50% {
-        transform: translateY(30px);
-    }
+  50% {
+    transform: translateY(30px);
+  }
 }
 
 @keyframes toast-jump {
-    50% {
-        transform: translateY(25px);
-    }
+  50% {
+    transform: translateY(25px);
+  }
 }
 
 @keyframes toast-chan {
-    50% {
-        transform: translateY(25px);
-    }
-    87% {
-        transform: translateY(-30px);
-    }
+  50% {
+    transform: translateY(25px);
+  }
+  87% {
+    transform: translateY(-30px);
+  }
 }

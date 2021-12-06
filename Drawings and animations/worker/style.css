@@ -1,306 +1,306 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
-    height: 100vh;
-    display: grid;
-    place-items: center;
-    background-color: #a4f8ce;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: #a4f8ce;
 }
 
 .worker {
-    width: 300px;
-    height: 400px;
-    position: relative;
+  width: 300px;
+  height: 400px;
+  position: relative;
 }
 
 .worker:after {
-    content: "";
-    width: 300px;
-    height: 5px;
-    background-color: #174415;
-    position: absolute;
-    margin: auto;
-    left: 0;
-    right: 0;
-    bottom: -10px;
+  content: '';
+  width: 300px;
+  height: 5px;
+  background-color: #174415;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  bottom: -10px;
 }
 
 .worker .head {
-    width: 100px;
-    height: 120px;
-    background-color: #f5c793;
-    border-radius: 50px;
-    position: absolute;
-    margin: auto;
-    left: 0;
-    right: 0;
+  width: 100px;
+  height: 120px;
+  background-color: #f5c793;
+  border-radius: 50px;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
 }
 
 .worker .head .helmet {
-    width: 110px;
-    height: 55px;
-    background-color: #f69222;
-    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-    position: absolute;
-    left: -5px;
-    top: -5px;
+  width: 110px;
+  height: 55px;
+  background-color: #f69222;
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  position: absolute;
+  left: -5px;
+  top: -5px;
 }
 
 .worker .head .helmet::before {
-    content: "";
-    width: 110%;
-    height: 10px;
-    background-color: #f7ae3f;
-    position: absolute;
-    bottom: -10px;
-    left: -5px;
-    clip-path: polygon(5% 0%, 95% 0%, 100% 100%, 0% 100%);
+  content: '';
+  width: 110%;
+  height: 10px;
+  background-color: #f7ae3f;
+  position: absolute;
+  bottom: -10px;
+  left: -5px;
+  clip-path: polygon(5% 0%, 95% 0%, 100% 100%, 0% 100%);
 }
 
 .worker .head .helmet::after {
-    content: "";
-    width: 40px;
-    height: 45px;
-    background-color: #f7ae3f;
-    position: absolute;
-    margin: auto;
-    left: 0;
-    right: 0;
-    top: -3px;
-    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-    transform: rotate(180deg);
+  content: '';
+  width: 40px;
+  height: 45px;
+  background-color: #f7ae3f;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: -3px;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  transform: rotate(180deg);
 }
 
 .worker .head .mask {
-    width: 60px;
-    height: 50px;
-    background-color: #f5f5f5;
-    position: absolute;
-    margin: auto;
-    bottom: -5px;
-    left: 0;
-    right: 0;
-    border-radius: 50%;
-    border: 1px solid #e2e2e2;
+  width: 60px;
+  height: 50px;
+  background-color: #f5f5f5;
+  position: absolute;
+  margin: auto;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  border-radius: 50%;
+  border: 1px solid #e2e2e2;
 }
 
 .worker .head .mask span {
-    width: 60%;
-    height: 5px;
-    background-color: #d4d4d4;
-    position: absolute;
-    margin: auto;
-    left: 0;
-    right: 0;
-    top: 15px;
-    border-radius: 10px;
-    box-shadow: inset 0 -2px #11111130;
+  width: 60%;
+  height: 5px;
+  background-color: #d4d4d4;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 15px;
+  border-radius: 10px;
+  box-shadow: inset 0 -2px #11111130;
 }
 
 .worker .head .mask span:nth-child(2) {
-    top: 22px;
+  top: 22px;
 }
 
 .worker .head .mask span:nth-child(3) {
-    top: 30px;
+  top: 30px;
 }
 
 .worker .body .vest {
-    width: 220px;
-    height: 200px;
-    background-color: #e6a168;
-    position: absolute;
-    margin: auto;
-    left: 0;
-    right: 0;
-    top: 55px;
-    border-radius: 80px 80px 0 0;
-    clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
-    overflow: hidden;
-    z-index: -1;
+  width: 220px;
+  height: 200px;
+  background-color: #e6a168;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 55px;
+  border-radius: 80px 80px 0 0;
+  clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
+  overflow: hidden;
+  z-index: -1;
 }
 
 .worker .body .vest span {
-    width: 150px;
-    height: 200%;
-    background-color: #ea494f;
-    position: absolute;
-    top: -10px;
-    left: -23px;
-    transform: rotate(-23deg);
-    box-shadow: 5px 0 5px #11111130;
+  width: 150px;
+  height: 200%;
+  background-color: #ea494f;
+  position: absolute;
+  top: -10px;
+  left: -23px;
+  transform: rotate(-23deg);
+  box-shadow: 5px 0 5px #11111130;
 }
 
 .worker .body .vest span:last-child {
-    transform: rotate(23deg);
-    left: unset;
-    right: -23px;
+  transform: rotate(23deg);
+  left: unset;
+  right: -23px;
 }
 
 .worker .body .vest::before {
-    content: "";
-    width: 4px;
-    height: 14px;
-    background-color: #bb8451;
-    position: absolute;
-    margin: auto;
-    inset: 0;
-    top: -35px;
-    left: -30px;
-    border-radius: 20px;
-    box-shadow: 7px 5px #bb8451, 14px 0px #bb8451, 21px 5px #bb8451,
-        28px 0 #bb8451;
+  content: '';
+  width: 4px;
+  height: 14px;
+  background-color: #bb8451;
+  position: absolute;
+  margin: auto;
+  inset: 0;
+  top: -35px;
+  left: -30px;
+  border-radius: 20px;
+  box-shadow: 7px 5px #bb8451, 14px 0px #bb8451, 21px 5px #bb8451,
+    28px 0 #bb8451;
 }
 
 .worker .body .vest::after {
-    content: "";
-    width: 100%;
-    height: 30px;
-    position: absolute;
-    background-color: #f5f5f5;
-    bottom: 25px;
-    z-index: 1;
+  content: '';
+  width: 100%;
+  height: 30px;
+  position: absolute;
+  background-color: #f5f5f5;
+  bottom: 25px;
+  z-index: 1;
 }
 
 .worker .arms .arm {
-    width: 50px;
-    height: 210px;
-    background-color: #f5c793;
-    position: absolute;
-    top: 100px;
-    border-radius: 100% 0% 50% 50% / 50% 0% 15% 15%;
-    left: 23px;
-    transform: rotate(-12deg);
-    z-index: 10;
+  width: 50px;
+  height: 210px;
+  background-color: #f5c793;
+  position: absolute;
+  top: 100px;
+  border-radius: 100% 0% 50% 50% / 50% 0% 15% 15%;
+  left: 23px;
+  transform: rotate(-12deg);
+  z-index: 10;
 }
 
 .worker .arms .arm span {
-    width: 20px;
-    height: 5px;
-    background-color: #cd9562;
-    position: absolute;
-    margin: auto;
-    inset: 0;
-    left: -20px;
-    top: -30px;
-    border-radius: 20px;
-    box-shadow: 7px 7px #cd9562, 0px 14px #cd9562, 7px 21px #cd9562,
-        0 28px #cd9562, 7px 35px #cd9562, 0 42px #cd9562, 7px 49px #cd9562,
-        0 56px #cd9562;
+  width: 20px;
+  height: 5px;
+  background-color: #cd9562;
+  position: absolute;
+  margin: auto;
+  inset: 0;
+  left: -20px;
+  top: -30px;
+  border-radius: 20px;
+  box-shadow: 7px 7px #cd9562, 0px 14px #cd9562, 7px 21px #cd9562,
+    0 28px #cd9562, 7px 35px #cd9562, 0 42px #cd9562, 7px 49px #cd9562,
+    0 56px #cd9562;
 }
 
 .worker .arms .arm:last-child {
-    left: unset;
-    right: 23px;
-    transform: rotate(12deg) rotatey(180deg);
+  left: unset;
+  right: 23px;
+  transform: rotate(12deg) rotatey(180deg);
 }
 
 .worker .legs {
-    width: 150px;
-    height: 220px;
-    position: absolute;
-    margin: auto;
-    left: 0;
-    right: 0;
-    bottom: -20px;
-    border-radius: 50% 50% 45% 45%;
-    border: 30px solid #495164;
-    border-top: 60px solid #495164;
-    border-bottom: 20px solid transparent;
-    z-index: -2;
+  width: 150px;
+  height: 220px;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  bottom: -20px;
+  border-radius: 50% 50% 45% 45%;
+  border: 30px solid #495164;
+  border-top: 60px solid #495164;
+  border-bottom: 20px solid transparent;
+  z-index: -2;
 }
 
 .worker .legs::before {
-    content: "";
-    width: 20px;
-    height: 20px;
-    background-color: #495164;
-    position: absolute;
-    margin: auto;
-    top: 0;
-    bottom: -30px;
-    left: -37px;
-    border-radius: 50%;
-    box-shadow: 145px 0 #495164;
+  content: '';
+  width: 20px;
+  height: 20px;
+  background-color: #495164;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: -30px;
+  left: -37px;
+  border-radius: 50%;
+  box-shadow: 145px 0 #495164;
 }
 
 .worker .legs .foot {
-    width: 70px;
-    height: 35px;
-    background-color: #322e2f;
-    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-    position: absolute;
-    bottom: -5px;
-    left: -48px;
+  width: 70px;
+  height: 35px;
+  background-color: #322e2f;
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  position: absolute;
+  bottom: -5px;
+  left: -48px;
 }
 
 .worker .legs .foot:last-child {
-    left: unset;
-    right: -48px;
+  left: unset;
+  right: -48px;
 }
 
 .worker .stone-crusher .engine {
-    width: 55px;
-    height: 70px;
-    background-color: #f79323;
-    border-radius: 20px;
-    position: absolute;
-    margin: auto;
-    inset: 0;
-    bottom: -150px;
-    overflow: hidden;
-    z-index: 10;
+  width: 55px;
+  height: 70px;
+  background-color: #f79323;
+  border-radius: 20px;
+  position: absolute;
+  margin: auto;
+  inset: 0;
+  bottom: -150px;
+  overflow: hidden;
+  z-index: 10;
 }
 
 .worker .stone-crusher .engine::before {
-    content: "";
-    width: 25px;
-    height: 15px;
-    background-color: #322e2f;
-    position: absolute;
-    margin: auto;
-    left: 0;
-    right: 0;
+  content: '';
+  width: 25px;
+  height: 15px;
+  background-color: #322e2f;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
 }
 
 .worker .stone-crusher .handle {
-    width: 150px;
-    height: 15px;
-    background-color: #322e2f;
-    position: absolute;
-    margin: auto;
-    inset: 0;
-    bottom: -150px;
+  width: 150px;
+  height: 15px;
+  background-color: #322e2f;
+  position: absolute;
+  margin: auto;
+  inset: 0;
+  bottom: -150px;
 }
 
 .worker .stone-crusher .cutucador {
-    width: 20px;
-    height: 100px;
-    background-color: #b1b3b2;
-    position: absolute;
-    margin: auto;
-    inset: 0;
-    bottom: -310px;
-    background: linear-gradient(
-        0deg,
-        rgba(141, 133, 148, 1) 16%,
-        rgba(177, 179, 178, 1) 17%
-    );
+  width: 20px;
+  height: 100px;
+  background-color: #b1b3b2;
+  position: absolute;
+  margin: auto;
+  inset: 0;
+  bottom: -310px;
+  background: linear-gradient(
+    0deg,
+    rgba(141, 133, 148, 1) 16%,
+    rgba(177, 179, 178, 1) 17%
+  );
 }
 
 .worker .stone-crusher .cutucador::after {
-    content: "";
-    width: 35px;
-    height: 50px;
-    background-color: #322e2f;
+  content: '';
+  width: 35px;
+  height: 50px;
+  background-color: #322e2f;
 
-    position: absolute;
-    margin: auto;
-    top: -20px;
-    left: -8px;
-    border-radius: 15px;
+  position: absolute;
+  margin: auto;
+  top: -20px;
+  left: -8px;
+  border-radius: 15px;
 }
