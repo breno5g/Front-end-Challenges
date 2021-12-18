@@ -1,0 +1,459 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #e0b421;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.robotnik {
+  width: 400px;
+  height: 400px;
+  position: relative;
+}
+
+.ivo .egg-head {
+  width: 85px;
+  height: 100px;
+  background-color: #f3d7d2;
+  position: absolute;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  margin: auto;
+  top: 10px;
+  left: 180px;
+}
+
+.ivo .egg-head::before {
+  content: '';
+  width: 35px;
+  height: 35px;
+  border: 3px solid transparent;
+  border-right: 4px solid #f5f5f590;
+  position: absolute;
+  border-radius: 50%;
+  transform: rotate(-40deg);
+  right: 13px;
+  top: 10px;
+}
+
+.ivo .egg-head .eyes {
+  width: 7px;
+  height: 20px;
+  background-color: #0e1f2a;
+  border-radius: 10px;
+  position: absolute;
+  margin: auto;
+  inset: 0;
+  right: -5px;
+  box-shadow: 15px 0 #0e1f2a;
+}
+
+.ivo .egg-head .eyes::before {
+  content: '';
+  width: 35px;
+  height: 3px;
+  background-color: #56363650;
+  position: absolute;
+  left: -7px;
+  top: -8px;
+  border-radius: 40%;
+}
+
+.ivo .egg-head .nose {
+  width: 30px;
+  height: 20px;
+  background-color: #fda6a5;
+  border-radius: 30px;
+  position: absolute;
+  margin: auto;
+  inset: 0;
+  right: -25px;
+  bottom: -45px;
+}
+
+.ivo .egg-head .mustache span {
+  display: block;
+  width: 100px;
+  height: 15px;
+  background-color: #533a33;
+  position: absolute;
+  border-radius: 50% 50% 40% 40% / 50% 50% 50% 50%;
+  transform: rotate(15deg);
+  top: 65px;
+  left: -30px;
+}
+
+.ivo .egg-head .mustache span:nth-child(2) {
+  width: 80px;
+  transform: rotate(5deg);
+  left: -20px;
+  top: 73px;
+}
+
+.ivo .egg-head .mustache span:nth-child(3) {
+  width: 80px;
+  transform: rotate(-7deg);
+  left: -10px;
+  top: 80px;
+}
+
+.ivo .egg-head .mustache.right {
+  background-color: #111111;
+  transform: rotateY(180deg) translateX(-15px);
+}
+
+.ivo .glass {
+  width: 100px;
+  height: 110px;
+  background-color: #f5f5f570;
+  position: absolute;
+  border-radius: 50% 0 50% 50%;
+  transform: rotate(60deg);
+  right: 75px;
+  top: 85px;
+}
+
+.ivo .glass::before {
+  content: '';
+  width: 35px;
+  height: 35px;
+  border: 3px solid transparent;
+  border-right: 5px solid #f5f5f590;
+  position: absolute;
+  border-radius: 40%;
+  transform: rotate(-110deg);
+  top: 10px;
+  right: 40px;
+}
+
+.ivo .body {
+  width: 270px;
+  height: 270px;
+  background-color: #c11b2d;
+  border-radius: 50%;
+  margin: 0 auto;
+  overflow: hidden;
+  position: absolute;
+  inset: 0;
+  top: 70px;
+}
+
+.ivo .body::before {
+  content: '';
+  width: 150px;
+  height: 150px;
+  border-right: 3px solid #b41c2e;
+  border-radius: 50%;
+  position: absolute;
+  transform: rotate(-45deg) translateX(-30px);
+}
+
+.ivo .body::after {
+  content: '';
+  width: 80px;
+  height: 150px;
+  background-color: #eec624;
+  position: absolute;
+  left: 48%;
+  top: -20px;
+  transform: rotate(-15deg);
+  clip-path: polygon(0 0, 100% 0, 60% 100%, 40% 100%);
+}
+
+.strange-ship .chassi {
+  width: 350px;
+  height: 350px;
+  background-color: #0e1f2a;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  border-radius: 50%;
+  clip-path: polygon(0 35%, 100% 35%, 100% 100%, 0 100%);
+}
+
+.strange-ship .top-chassi {
+  width: 334px;
+  height: 20px;
+  position: absolute;
+  border-radius: 50px 50px 0 0;
+  background-color: #0e1f2a;
+  margin: auto;
+  inset: 0;
+  transform: translateY(-45px);
+}
+
+.strange-ship .top-metal-detail {
+  width: 375px;
+  height: 65px;
+  background-color: #768c97;
+  border-radius: 15px 15px 0% 0% / 100% 100% 0% 0%;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 155px;
+  overflow: hidden;
+}
+
+.strange-ship .top-metal-detail::after {
+  content: '';
+  width: 100px;
+  height: 180px;
+  background-color: inherit;
+  position: absolute;
+  transform: rotate(-35deg);
+  top: -50px;
+  left: 100px;
+  filter: brightness(130%);
+}
+
+.strange-ship .top-metal-black-balls {
+  width: 300px;
+  height: 65px;
+  position: absolute;
+  margin: auto;
+  inset: 0;
+  top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.strange-ship .top-metal-black-balls::after,
+.strange-ship .top-metal-black-balls::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #111;
+  left: -45px;
+  z-index: -1;
+}
+
+.strange-ship .top-metal-black-balls::before {
+  right: -45px;
+  left: unset;
+}
+
+.strange-ship .top-metal-black-balls span {
+  display: block;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #111;
+}
+
+.strange-ship .bottom-metal-detail .main-container {
+  width: 260px;
+  height: 60px;
+  background-color: #5a6c76;
+  position: absolute;
+  margin: auto;
+  inset: 0;
+  left: -115px;
+  bottom: -110px;
+  border-radius: 0px 0px 0px 15px / 0 0 100% 100%;
+  overflow: hidden;
+}
+
+.strange-ship .bottom-metal-detail .main-container .yellow-band {
+  width: 80%;
+  height: 50%;
+  background-color: #fbcd26;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  border-radius: 0 50px 50px 0;
+  overflow: hidden;
+}
+
+.strange-ship .bottom-metal-detail .main-container .yellow-band::before {
+  content: '';
+  width: 30px;
+  height: 100px;
+  background-color: #111;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: -5px;
+  transform: rotate(-40deg);
+  box-shadow: 60px 60px #111, 120px 120px #111;
+}
+
+.strange-ship .bottom-metal-detail .rest-of-container {
+  content: '';
+  width: 85px;
+  height: 15px;
+  background-color: #5a6c76;
+  position: absolute;
+  margin: auto;
+  inset: 0;
+  right: -230px;
+  bottom: -65px;
+}
+
+.strange-ship .bottom-metal-detail .rest-of-container::before {
+  content: '';
+  width: 34px;
+  height: 100px;
+  background-color: #5a6c76;
+  position: absolute;
+  right: -30px;
+  border-radius: 10% 0% 81% 0% / 0% 10% 92% 10%;
+}
+
+.strange-ship .bottom-metal-detail .rest-of-container .air-output {
+  width: 110px;
+  height: 50px;
+  background-color: #5a6c76;
+  position: absolute;
+  left: -110px;
+  top: 50px;
+  /* z-index: 10; */
+}
+
+.strange-ship .bottom-metal-detail .rest-of-container .air-output::before {
+  content: '';
+  width: 90px;
+  height: 5px;
+  background-color: #3d474d;
+  position: absolute;
+  top: 5px;
+  margin: auto;
+  right: 0;
+  left: 0;
+  border-radius: 5px;
+  box-shadow: 0 15px #3d474d, 0 30px #3d474d;
+}
+
+.strange-ship .bottom-metal-detail .exhaust .pipe {
+  width: 100px;
+  height: 35px;
+  border: 15px solid #55737b;
+  border-left: none;
+  border-top: none;
+  border-radius: 0 0 15px 15px;
+  position: absolute;
+  bottom: 50px;
+  left: 140px;
+  z-index: 10;
+}
+
+.strange-ship .bottom-metal-detail .exhaust .pipe::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border: 2px solid transparent;
+  border-right: 2px solid #55737b;
+  border-radius: 50%;
+  position: absolute;
+  right: -2px;
+  top: 8px;
+  transform: rotate(45deg);
+}
+
+.strange-ship .bottom-metal-detail .exhaust .pipe span {
+  display: block;
+  width: 40px;
+  height: 20px;
+  border: 15px solid #55737b;
+  border-left: none;
+  border-bottom: none;
+  border-radius: 0 15px 0 0;
+  transform: translateX(-25px);
+}
+
+.strange-ship .bottom-metal-detail .exhaust .pipe span::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border: 2px solid transparent;
+  border-right: 2px solid #55737b;
+  border-radius: 50%;
+  position: absolute;
+  left: 38px;
+  top: -6px;
+  transform: rotate(130deg);
+}
+
+.strange-ship .bottom-metal-detail .exhaust .output {
+  width: 110px;
+  height: 40px;
+  background-color: #517375;
+  position: absolute;
+  bottom: 60px;
+  left: 20px;
+  border-radius: 15px;
+}
+
+.strange-ship .bottom-metal-detail .exhaust .output::before {
+  content: '';
+  width: 30px;
+  height: 40px;
+  background-color: inherit;
+  filter: brightness(150%);
+  position: absolute;
+  border-radius: 50%;
+  right: 0;
+}
+
+.strange-ship .bottom-metal-detail .exhaust .output::after {
+  content: '';
+  width: 25px;
+  height: 25px;
+  background-color: #111;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: -7px;
+  z-index: -1;
+  transform: skew(25deg);
+}
+
+.strange-ship .bottom-metal-detail .exhaust .output span {
+  width: 8px;
+  height: 8px;
+  background-color: #111111;
+  position: absolute;
+  border-radius: 50%;
+  transform: translate(7px, 7px);
+  box-shadow: 20px 0 #111111, 40px 0 #111111, 60px 0 #111111, 10px 10px #111111,
+    30px 10px #111111, 50px 10px #111111, 0px 20px #111111, 20px 20px #111111,
+    40px 20px #111111, 60px 20px #111111;
+}
+
+.strange-ship .bottom-metal-detail .headlight {
+  width: 40px;
+  height: 70px;
+  background-color: #b99e2f;
+  position: absolute;
+  border-radius: 50%;
+  right: 65px;
+  bottom: 80px;
+  transform: rotate(10deg);
+  overflow: hidden;
+}
+
+.strange-ship .bottom-metal-detail .headlight::before {
+  content: '';
+  width: 70%;
+  height: 70%;
+  background-color: #f5f5f5;
+  position: absolute;
+  margin: auto;
+  inset: 0;
+  left: -30px;
+  border-radius: 50%;
+  box-shadow: 5px 0 10px 10px #11111120;
+}
