@@ -11,6 +11,14 @@ body {
   place-items: center;
 }
 
+.container {
+  width: 500px;
+  height: 500px;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
 .robotnik {
   width: 400px;
   height: 400px;
@@ -82,7 +90,7 @@ body {
 }
 
 .ivo .egg-head .glasses span::before {
-  content: "";
+  content: '';
   position: absolute;
   width: 5px;
   height: 25px;
@@ -93,7 +101,7 @@ body {
 }
 
 .ivo .egg-head .glasses span::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 4px;
   height: 4px;
@@ -105,7 +113,7 @@ body {
 }
 
 .ivo .egg-head .glasses::after {
-  content: "";
+  content: '';
   width: 13px;
   height: 17px;
   position: absolute;
@@ -510,4 +518,130 @@ body {
   left: -30px;
   border-radius: 50%;
   box-shadow: 5px 0 10px 10px #11111120;
+}
+
+.logo {
+  width: 210px;
+  height: 210px;
+  background-color: #800000;
+  border-radius: 50%;
+  border: 7px solid #111;
+  scale: 0.4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -20px;
+  left: -20px;
+}
+
+.logo .face {
+  width: 150px;
+  height: 150px;
+  background-color: #111;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.logo .face .glasses {
+  width: 35px;
+  height: 35px;
+  background-color: whitesmoke;
+  border-radius: 50%;
+  position: absolute;
+  margin: auto;
+  inset: 0;
+  top: -45px;
+  left: -45px;
+  box-shadow: 45px 0 whitesmoke;
+}
+
+.logo .face .glasses::before {
+  content: '';
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  margin: auto;
+  inset: 0;
+  right: -45px;
+  top: 25px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top: 3px solid whitesmoke;
+}
+
+.logo .face .mouth {
+  width: 80%;
+  height: 35%;
+  background-color: whitesmoke;
+  position: absolute;
+  margin: auto;
+  inset: 0;
+  bottom: -40%;
+  border-radius: 0 0 50% 50% / 0% 0% 100% 100%;
+  overflow: hidden;
+}
+
+.logo .face .mouth::before {
+  content: '';
+  width: 3px;
+  height: 100px;
+  background-color: #111;
+  position: absolute;
+  left: 18px;
+  top: -10px;
+  box-shadow: 20px 0 #111, 40px 0 #111, 60px 0 #111, 80px 0 #111;
+}
+
+.logo .face .nose {
+  width: 30px;
+  height: 30px;
+  background-color: #111;
+  transform: rotate(45deg);
+  position: absolute;
+  margin: auto;
+  inset: 0;
+  bottom: -7px;
+}
+
+.logo .face .mustache span {
+  display: block;
+  width: 170px;
+  height: 100px;
+  background-color: #111;
+  position: absolute;
+  margin: auto;
+  inset: 0;
+  bottom: -10px;
+  clip-path: polygon(20% 35%, 0 0, 100% 50%, 0 100%, 20% 70%, 0% 50%);
+}
+
+.logo .face .mustache span:first-of-type {
+  left: -160px;
+}
+
+.logo .face .mustache span:last-of-type {
+  transform: rotateY(180deg);
+  right: -160px;
+}
+
+.logo .face .head-glasses span {
+  width: 50px;
+  height: 20px;
+  background-color: #111;
+  position: absolute;
+  margin: auto;
+  inset: 0;
+  top: -130px;
+  border-radius: 15px 15px 0 0;
+}
+
+.logo .face .head-glasses span:first-child {
+  left: -90px;
+  transform: rotate(-35deg);
+}
+
+.logo .face .head-glasses span:last-child {
+  right: -90px;
+  transform: rotate(35deg);
 }
