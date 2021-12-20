@@ -64,6 +64,60 @@ body {
   border-radius: 40%;
 }
 
+.ivo .egg-head .glasses span {
+  width: 17px;
+  height: 17px;
+  background-color: #0069ae;
+  border-radius: 50%;
+  position: absolute;
+  margin: auto;
+  inset: 0;
+  left: -5px;
+  overflow: hidden;
+  border: 1px solid #111;
+}
+
+.ivo .egg-head .glasses span:last-of-type {
+  right: -60%;
+}
+
+.ivo .egg-head .glasses span::before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 25px;
+  background-color: #f5f5f550;
+  margin: auto;
+  inset: 0;
+  transform: rotate(-35deg) translate(-2px);
+}
+
+.ivo .egg-head .glasses span::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background-color: #f5f5f550;
+  margin: auto;
+  top: 2px;
+  right: 2px;
+  border-radius: 50%;
+}
+
+.ivo .egg-head .glasses::after {
+  content: "";
+  width: 13px;
+  height: 17px;
+  position: absolute;
+  border-radius: 50%;
+  margin: auto;
+  inset: 0;
+  border: 2px solid transparent;
+  border-top: 2px solid #111;
+  left: 20px;
+  top: 15px;
+}
+
 .ivo .egg-head .nose {
   width: 30px;
   height: 20px;
