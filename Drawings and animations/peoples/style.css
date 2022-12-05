@@ -1,0 +1,367 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --second-people-skin: #aa494a;
+  --second-people-skin-2: #883934;
+  --second-people-hair: #fee2bd;
+  --second-people-hair-2: #ddbc9e;
+}
+
+body { 
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.second-people {
+  width: 400px;
+  height: 450px;
+  background-color: #a1befd;
+  position: relative;
+}
+
+.second-people .head {
+  width: 100px;
+  height: 150px;
+  position: absolute;
+  margin: auto;
+  inset: 0;
+  top: -30%;
+}
+
+.second-people .head .shape {
+  width: 100px;
+  height: 150px;
+  background-color: var(--second-people-skin);
+  border-radius: 30% 30% 47% 47%;
+  position: absolute;
+  z-index: 10;
+}
+
+.second-people .head .ears .left, 
+.second-people .head .ears .right {
+  width: 20px;
+  height: 30px;
+  background-color: var(--second-people-skin-2);
+  border-radius: 50% 50% 40% 70%;
+  position: absolute;
+  margin: auto;
+  inset: 0;
+  top: -15%;
+}
+
+.second-people .head .ears .left {
+  left: -105%;
+  transform: rotate(-5deg);
+}
+
+.second-people .head .ears .right {
+  right: -105%;
+  transform: rotate(5deg) rotateY(180deg);
+}
+
+.second-people .head .mouth {
+  width: 30px;
+  height: 30px;
+  border-radius: 0 90px;
+  background: linear-gradient(-135deg, #aa494a 0%, #aa494a 50%, #f5f5f5 51%, #f5f5f5 100%); 
+  position: absolute;
+  z-index: 11;
+  margin: auto;
+  inset: 0;
+  bottom: -45%;
+  transform: rotate(-45deg);
+}
+
+.second-people .head .eyes .left,
+.second-people .head .eyes .right {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  z-index: 12;
+  margin: auto;
+  inset: 0;
+  top: -5%;
+  border-radius: 50%;
+  border: 2px solid black;
+  border-left: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  transform: rotate(-45deg);
+}
+
+.second-people .head .eyes .left {
+  left: -50%;
+}
+
+.second-people .head .eyes .right {
+  right: -50%;
+}
+
+/* .second-people .head .eyes .left::after,
+.second-people .head .eyes .right::after {
+  content: "";
+  width: 95%;
+  height: 100%;
+  background-color: var(--second-people-skin);
+  position: absolute;
+  margin: auto;
+  inset: 0;
+  border-radius: 50%;
+  transform: translateY(3px);
+} */
+
+.second-people .head .eyebrows .left,
+.second-people .head .eyebrows .right {
+  width: 27px;
+  height: 20px;
+  background-color: #000;
+  position: absolute;
+  z-index: 11;
+  margin: auto;
+  inset: 0;
+  top: -30%;
+  border-radius: 50%;
+}
+
+.second-people .head .eyebrows .left {
+  left: -55%;
+  transform: rotate(5deg);
+}
+
+.second-people .head .eyebrows .right {
+  right: -55%;
+  transform: rotate(-5deg);
+}
+
+.second-people .head .eyebrows .left::after,
+.second-people .head .eyebrows .right::after {
+  content: "";
+  width: 120%;
+  height: 90%;
+  background-color: var(--second-people-skin);
+  position: absolute;
+  margin: auto;
+  inset: 0;
+  border-radius: 50%;
+  transform: translateY(3px) translateX(-10%);
+}
+
+.second-people .head .nose .right {
+  width: 3px;
+  height: 35px;
+  background-color: var(--second-people-skin-2);
+  border-radius: 100%;
+  position: absolute;
+  z-index: 11;
+  margin: auto;
+  inset: 0;
+  right: -15px;
+  top: -10px;
+  transform: rotate(-15deg);
+}
+
+.second-people .head .nose .bottom {
+  width: 3px;
+  height: 15px;
+  background-color: var(--second-people-skin-2);
+  position: absolute;
+  z-index: 11;
+  margin: auto;
+  inset: 0;
+  transform: rotate(-130deg);
+  top: 30px;
+  right: -12px;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.second-people .head .hair .chops > div {
+  width: 7px;
+  height: 60px;
+  background-color: var(--second-people-hair);
+  position: absolute;
+  z-index: 12;
+  top: 7px;
+}
+
+.second-people .head .hair .chops .left {
+  left: -4px;
+  transform: rotate(-3deg);
+}
+
+.second-people .head .hair .chops .right {
+  right: -4px;
+  transform: rotate(3deg);
+  background-color: var(--second-people-hair-2);
+}
+
+.second-people .head .hair .locks div {
+  position: absolute;
+  z-index: 12;
+}
+
+.second-people .head .hair .locks div:nth-child(1) {
+  width: 100px;
+  height: 40px;
+  background-color: var(--second-people-hair);
+  border-radius: 45%;
+  position: absolute;
+  left: -15px;
+  top: -20px;
+  transform: rotate(-10deg);
+}
+
+.second-people .head .hair .locks div:nth-child(2) {
+  width: 15px;
+  height: 40px;
+  background-color: var(--second-people-hair);
+  border-radius: 45%;
+  position: absolute;
+  left: -2px;
+  top: 5px;
+  transform: rotate(10deg);
+}
+
+.second-people .head .hair .locks div:nth-child(3) {
+  width: 30px;
+  height: 60px;
+  right: -5px;
+  top: -17px;
+  transform: rotate(3deg);
+  background-color: var(--second-people-hair-2);
+  border-radius: 51% 50% 0% 100% / 30% 30% 68% 71%  ;
+}
+
+.second-people .head .hair .locks div:nth-child(4) {
+  width: 30px;
+  height: 60px;
+  border-radius: 51% 50% 50% 50% / 30% 30% 68% 71% ;
+  position: absolute;
+  transform: rotate(40deg);
+  margin: auto;
+  left: 0;
+  right: -30px;
+  top: -30px;
+  background-color: var(--second-people-hair);
+  overflow: hidden;
+}
+
+.second-people .head .hair .locks div:nth-child(4)::after {
+  content: "";
+  width: 40px;
+  height: 80px;
+  position: absolute;
+  border-radius: 50%;
+  border-right: 1rem solid var(--second-people-hair-2);
+  left: -20px;
+  top: -10px;
+}
+
+.second-people .head .hair .locks div:nth-child(5),
+.second-people .head .hair .locks div:nth-child(6) {
+  width: 80px;
+  height: 17px;
+  background-color: var(--second-people-hair);
+  border-radius: 50%;
+  position: absolute;
+}
+
+.second-people .head .hair .locks div:nth-child(5) {
+  top: -40px;
+  transform: rotate(10deg);
+  right: 19px;
+}
+
+.second-people .head .hair .locks div:nth-child(6) {
+  top: -25px;
+  height: 15px;
+  transform: rotate(5deg);
+  right: 30px;
+}
+
+/* -=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=--=-=- */
+
+.second-people .neck .shape {
+  width: 80px;
+  height: 40px;
+  background-color: var(--second-people-skin);
+  position: absolute;
+  margin: auto;
+  inset: 0;
+  bottom: -30px;
+  clip-path: polygon(69% 0, 73% 43%, 79% 63%, 86% 84%, 100% 100%, 0 100%, 13% 83%, 20% 63%, 25% 45%, 28% 0);
+  overflow: hidden;
+  z-index: 2;
+}
+
+.second-people .neck .shape::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  background-color: var(--second-people-skin-2);
+  transform: rotate(-10deg);
+}
+
+/* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
+
+.second-people .torso .chest {
+  width: 80px;
+  height: 40px;
+  background-color: var(--second-people-skin);
+  border-radius: 50% 50% 50% 50% / 0% 0% 100% 100% ;
+  margin: auto;
+  position: absolute;
+  inset: 0;
+  bottom: -109px;
+  z-index: 2;
+}
+
+.second-people .torso .shirt {
+  width: 100px;
+  height: 120px;
+  margin: auto;
+  position: absolute;
+  inset: 0;
+  bottom: -190px;
+  z-index: 1;
+  border-radius: 5px 5px 0 0;
+  background: linear-gradient(160deg, rgba(255,236,238,1) 0%, rgba(255,236,238,1) 45%, rgba(240,217,217,1) 50%, rgba(240,217,217,1) 100%);
+}
+
+.second-people .torso .jacket > div {
+  width: 70px;
+  height: 120px;
+  position: absolute;
+  background-color: #5e8ec1;
+  border-radius: 70% 0 0 0;
+  position: absolute;
+  margin: auto;
+  inset: 0;
+  bottom: -190px;
+  z-index: 2;
+}
+
+.second-people .torso .jacket div:first-child {
+  left: -170px;
+}
+
+.second-people .torso .jacket div:last-child {
+  right: -170px;
+  transform: rotateY(180deg);
+}
+
+.second-people .torso .jacket div .collar {
+  width: 50%;
+  height: 105%;
+  background-color: #6eb6ec;
+  position: absolute;
+  left: 0;
+  top: -7px;
+  z-index: 100;
+  transform: translateX(100%);
+  border-radius: 50% 50% 0% 100% / 20% 10% 89% 83%  ;
+}
